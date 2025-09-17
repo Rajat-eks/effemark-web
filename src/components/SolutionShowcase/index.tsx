@@ -72,14 +72,14 @@ const SolutionShowcase: React.FC<IndexProps> = ({
                     *All results designated by the US at WIPO are always
                     included.
                   </span>
-                  <div className="flex items-center justify-center">
+                  {/* <div className="flex items-center justify-center">
                     <Link
                       href={`/checkout/${item.path}`}
                       className="border-[1px] py-2 px-4 rounded border-gray-400 flex items-center gap-1 hover:ease-in duration-300 group-hover:bg-[#202F5A] group-hover:text-white"
                     >
                       Start Your Order <ChevronRight />
                     </Link>
-                  </div>
+                  </div> */}
                 </div>
               ))}
           </section>
@@ -139,14 +139,14 @@ const SolutionShowcase: React.FC<IndexProps> = ({
                     *All results designated by the US at WIPO are always
                     included.
                   </span>
-                  <div className="flex items-center justify-center">
+                  {/* <div className="flex items-center justify-center">
                     <Link
                       href={`/checkout/${item.path}`}
                       className="border-[1px] py-2 px-4 rounded border-gray-400 flex items-center gap-1 hover:ease-in duration-300 group-hover:bg-[#202F5A] group-hover:text-white"
                     >
                       Start Your Order <ChevronRight />
                     </Link>
-                  </div>
+                  </div> */}
                 </div>
               ))}
           </section>
