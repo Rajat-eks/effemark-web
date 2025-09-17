@@ -1,0 +1,125 @@
+import React from "react";
+
+interface PageProps {
+  // define props here
+}
+
+const page: React.FC<PageProps> = (props) => {
+  return (
+    <main className="bg-gradient-to-tr bg-[#D9D9D9]  py-10 px-60 ">
+      <div className="container mx-auto p-8  bg-white shadow-xl rounded-lg">
+        <h1 className="text-3xl font-bold mb-2 text-center">
+          Terms & Condition
+        </h1>
+
+        <section className="mb-6 pt-4 border-t-2">
+          <h2 className="text-xl font-semibold mb-4">1. Introduction</h2>
+          <p className="text-gray-700 leading-relaxed">
+            Before using Effectual Services's website,{" "}
+            <a
+              href="https://www.effemark.com"
+              target="_blank"
+              className="text-blue-600 underline"
+            >
+              www.effemark.com
+            </a>{" "}
+            ("the Site"), please carefully read these Terms and Conditions
+            ("Agreement," "Terms and Conditions"). The legally enforceable terms
+            and conditions for using the www.effemark.com site are outlined in
+            this agreement.
+          </p>
+          <p>
+            You consent to be bound by these Terms and Conditions by using the
+            Site in any way, including but not limited to visiting or browsing
+            the Site or adding content or other materials to the Site. This
+            Agreement defines capitalized terms.
+          </p>
+          <p>
+            International copyright, trademark, patent, trade secret, and other
+            intellectual property or proprietary rights laws protect the Site
+            and its original content, features, and functionality, which are
+            owned by EffeMark.
+          </p>
+        </section>
+
+        <section className="mb-6">
+          <h2 className="text-xl font-semibold mb-4">2. Termination</h2>
+          <p>
+            Without prior notice or explanation, we have the right to stop your
+            use of the site, which could lead to the loss and destruction of all
+            of your personal data. Any clause in this agreement that should, by
+            definition, endure termination will do so, including but not limited
+            to ownership clauses, warranty disclaimers, indemnification clauses,
+            and liability limitations.
+          </p>
+        </section>
+        <section className="mb-6">
+          <h2 className="text-xl font-semibold mb-4">
+            3. Links to Other Sites
+          </h2>
+          <p>
+            Links to external websites that EffeMark does not own or control may
+            be found on our site.
+          </p>
+          <p>
+            The content, privacy practices, and policies of any third-party
+            websites or services are beyond EffeMark's control and
+            responsibility. Reading the privacy statement and terms and
+            conditions of any third-party website you visit is highly
+            recommended.
+          </p>
+        </section>
+        <section className="mb-6">
+          <h2 className="text-xl font-semibold mb-4">4. Governing Law</h2>
+          <p>
+            The laws of New York, United States, shall govern and be construed
+            in accordance with this Agreement (and any additional rules,
+            policies, or guidelines included by reference), without giving
+            respect to any conflict of law principles.
+          </p>
+        </section>
+        <section className="mb-6">
+          <h2 className="text-xl font-semibold mb-4">
+            5. Changes to this agreement
+          </h2>
+          <p>
+            By publishing the amended terms on the Site, we reserve the right,
+            at our sole discretion, to change or replace these Terms and
+            Conditions. You agree to the updated Terms and Conditions if you
+            keep using the site after they have been made. Please check this
+            agreement for updates on a regular basis. Do not use, access, or
+            continue to use the Site; if you disagree with any of the terms of
+            this Agreement or any of its modifications, stop using the Site
+            right away.
+          </p>
+        </section>
+
+        <div className="flex flex-col pt-6">
+          <span>
+            <b>Website: </b>
+            <a
+              href="https://www.effemark.com "
+              className="text-blue-700 font-semibold"
+            >
+              www.effemark.com
+            </a>
+          </span>
+          <span>
+            <b>Support Email: </b>
+            info@effemark.com
+          </span>
+          <span>
+            <b>Support Call: </b>
+            India - +1-972-256-8133 , (469) 666-1181
+          </span>
+          <span>
+            <b>Office: </b>Suite-427, 425 Broadhollow Road, <br />
+            Melville | NY-11747
+          </span>
+        </div>
+      </div>
+    </main>
+  );
+};
+
+export default page;

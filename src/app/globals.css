@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+:root {
+  --color-gray: #d9d9d9;
+  --color-blue: #202f5a;
+}
+
+body {
+  font-family: var(--font-poppins), sans-serif;
+}
+@layer base {
+  h6 {
+    @apply text-[16px]  text-gray-800 tracking-wide;
+  }
+  h5 {
+    @apply text-xl font-bold text-gray-800 tracking-wide;
+  }
+  h4 {
+    @apply text-[16px] font-semibold text-gray-800 tracking-wide;
+  }
+}
+
+/* globals.css */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+button {
+  @apply transition duration-200 ease-in-out cursor-pointer;
+}
+link {
+  @apply transition duration-200 ease-in-out cursor-pointer;
+}
