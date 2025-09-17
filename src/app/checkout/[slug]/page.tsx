@@ -33,7 +33,7 @@ const page: React.FC<PageProps> = (props) => {
     <>
       <main className="flex items-start p-16 gap-10">
         <section className="w-1/2 space-y-10">
-          <div className="shadow rounded-2xl bg-green-200 mt-14 p-5 space-y-3">
+          {/* <div className="shadow rounded-2xl bg-green-200 mt-14 p-5 space-y-3">
             <div className="flex items-center justify-between bg-[#202F5A] text-white p-4 rounded-xl">
               <h3 className="text-xl font-semibold">{data.name}</h3>
               <span className="text-2xl font-bold">${data?.price}</span>
@@ -58,7 +58,7 @@ const page: React.FC<PageProps> = (props) => {
                 ))}
               </span>
             </div>
-          </div>
+          </div> */}
           <div>
             <Image
               src={data?.banner}
@@ -69,7 +69,7 @@ const page: React.FC<PageProps> = (props) => {
           </div>
         </section>
         <section className="w-1/2">
-          <h5 className="text-center pb-5">US Trademark Monitoring Service</h5>
+          {/* <h5 className="text-center pb-5">US Trademark Monitoring Service</h5> */}
           <CheckoutForm data={data} />
         </section>
       </main>
