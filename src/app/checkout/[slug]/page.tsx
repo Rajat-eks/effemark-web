@@ -69,7 +69,7 @@ const page: React.FC<PageProps> = (props) => {
           </div>
         </section>
         <section className="w-1/2">
-          {/* <h5 className="text-center pb-5">US Trademark Monitoring Service</h5> */}
+          <h5 className="text-center pb-5">{data?.name}</h5>
           <CheckoutForm data={data} />
         </section>
       </main>
