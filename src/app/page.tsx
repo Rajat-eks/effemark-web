@@ -121,7 +121,7 @@ export default function Home() {
       <CTA />
       {/* <CaseStudy /> */}
       <GetInTouch />
-      <div className="py-5">
+      {/* <div className="py-5">
         <h5 className="text-center">Checkout Our Latest Articles</h5>
         <ul className="grid grid-cols-1 md:grid-cols-3 gap-5 m-10">
           <li>
@@ -139,7 +139,7 @@ export default function Home() {
             Load More
           </button>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

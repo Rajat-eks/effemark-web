@@ -43,11 +43,11 @@ const navBarItems = [
   { name: "Samples", link: "/samples" },
   { name: "About Us", link: "/about-us" },
   { name: "FAQs", link: "/faqs" },
-  {
-    name: "Resources",
-    link: "/articles",
-    child: [{ name: "Articles", link: "/articles" }],
-  },
+  // {
+  //   name: "Resources",
+  //   link: "/articles",
+  //   child: [{ name: "Articles", link: "/articles" }],
+  // },
   { name: "Contact", link: "/contact-us" },
 ];
 
