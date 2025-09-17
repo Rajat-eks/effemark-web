@@ -2,9 +2,10 @@ import React from "react";
 
 interface IndexProps {
   // define props here
+  data: any;
 }
 
-const CheckoutForm: React.FC<IndexProps> = (props) => {
+const CheckoutForm: React.FC<IndexProps> = ({data}) => {
   return (
     <div className="shadow-2xl rounded-2xl p-8 bg-white">
       <div>
@@ -12,10 +13,15 @@ const CheckoutForm: React.FC<IndexProps> = (props) => {
           Choose Add-ons (Optional){" "}
         </h6>
         <ul className="text-[13px] pt-5 space-y-2">
-          <li className="flex items-center gap-2">
-            <input type="checkbox" />{" "}
-            <label htmlFor="">US (52) States + $105</label>
-          </li>
+          {data?.addOns?.map((item:any) => {
+            return (
+              <li className="flex items-center gap-2">
+                <input type="checkbox" />{" "}
+                <label htmlFor="">{item.name} + ${item.price}</label>
+              </li>
+            );
+          })}
+
           <li className="flex items-center gap-2">
             <input type="checkbox" />{" "}
             <label htmlFor="">Common Law- US + $55</label>
@@ -114,7 +120,9 @@ const CheckoutForm: React.FC<IndexProps> = (props) => {
             <span className="text-[14px]">Total Price</span>
             <span className="text-[#C31117] font-bold">$100.00</span>
           </div>
-          <button className="w-full text-white rounded-xl text-center bg-[#C31117] py-2 cursor-pointer">Add to Cart</button>
+          <button className="w-full text-white rounded-xl text-center bg-[#C31117] py-2 cursor-pointer">
+            Add to Cart
+          </button>
         </form>
       </div>
     </div>
