@@ -9,11 +9,11 @@ import { QuesAns } from "../faqs/_component/QuesAns";
 import GetInTouch from "@/components/GetInTouch";
 import Banner from "@/components/assets/bg/trademark-search-service.svg";
 
-import SilentLogo from "@/components/assets/icons/silent.svg";
-import GlobalMarket from "@/components/assets/icons/global Market.svg";
-import Diluation from "@/components/assets/icons/brand dilution.svg";
-import Damage from "@/components/assets/icons/damage.svg";
-import Financial from "@/components/assets/icons/financial.svg";
+import SilentLogo from "@/components/assets/icons/registration rejection.svg";
+import GlobalMarket from "@/components/assets/icons/Legal.svg";
+import Diluation from "@/components/assets/icons/geographics limitation.svg";
+import Damage from "@/components/assets/icons/MArket confusion.svg";
+import Financial from "@/components/assets/icons/barrier.svg";
 import Solutions from "@/components/Solutions";
 
 import Global from "@/components/assets/icons/global.svg";
@@ -69,28 +69,28 @@ const FAQs = [
 
 const thretsContent: { avatar?: any; title: string; description: string }[] = [
   {
-    title: "Silent Infringers",
-    description: "Competitors subtly encroaching on your brand's unique space",
+    title: "Registration Rejection",
+    description: "Months of work & investment wasted when trademark applications are denied",
     avatar: SilentLogo,
   },
   {
-    title: "Global Market Risks",
-    description: "Unexpected challenges in emerging and established markets",
+    title: "Legal Challenges",
+    description: "Unexpected opposition from existing trademark holders claiming infringement",
     avatar: GlobalMarket,
   },
   {
-    title: "Brand Dilution",
-    description: "Gradual erosion of your trademark's distinctive character",
+    title: "Geographic Limitations",
+    description: "Discovering unexpected restrictions on your brand's market reach",
     avatar: Diluation,
   },
   {
-    title: "Reputation Vulnerability",
-    description: "Unauthorized use damaging your brand's integrity",
+    title: "Market Confusion",
+    description: "Potential legal battles that blur your brand's unique identity",
     avatar: Damage,
   },
   {
-    title: "Financial Exposure",
-    description: "Potential revenue loss from unchecked trademark misuse",
+    title: "Expansion Barriers",
+    description: "Unintended conflicts blocking your business growth and potential",
     avatar: Financial,
   },
 ];
@@ -105,8 +105,8 @@ const page: React.FC<PageProps> = (props) => {
         title="Comprehensive Trademark Search Services"
       />
       <Threats
-        title="The Invisible Threats to Your Brand Sovereignty"
-        description="In today's hyper-competitive marketplace, your trademark is more than just a legal document - it's the essence of your brand's identity. Yet, countless businesses remain unaware of the constant threats lurking just beyond their visibility:"
+        title="Trademark Risks Hidden in Plain Sight"
+        description="Building a strong brand requires significant investment of time, money, and creativity. Yet many businesses overlook the critical step of comprehensive trademark availability searches, leaving their brand identity vulnerable to:"
         content={thretsContent}
       />
       <SilentThrets
