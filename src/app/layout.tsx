@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import ReduxProvider from "@/components/ReduxProvider";
 
 import { Poppins } from "next/font/google";
+import Head from "next/head";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -25,6 +26,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Head>
+        <title>
+          EffeMark | Professional Trademark Search and Brand Monitoring
+        </title>
+        <meta
+          name="description"
+          content="Secure your intellectual property with expert trademark services. Relied upon by legal professionals & enterprises globally. Quick, reliable & top-tier trademark solutions. Reach Out Today!"
+        />
+        <meta
+          name="keywords"
+          content="Trademark Search, Trademark Monitoring, Trademark Watch"
+        />
+      </Head>
       <body className={`${poppins.variable}`}>
         <ReduxProvider>
           <Header />

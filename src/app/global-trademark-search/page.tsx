@@ -16,6 +16,14 @@ import Premium from "@/components/assets/icons/premium.svg";
 interface PageProps {
   // define props here
 }
+
+export const metadata = {
+  title: "International Trademark Search | Covering 190+ Countries",
+  description:
+   "Secure your brand through comprehensive worldwide trademark search spanning 190+ nations. International trademark research from $525. Reach Out Today!",
+  keywords: ["Global Trademark Search", "International Trademark Search"],
+};
+
 export const trademarkSearchTestimonial = [
   {
     question: "What is a global trademark search?",

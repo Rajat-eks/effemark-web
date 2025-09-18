@@ -30,7 +30,14 @@ import { ChevronRight } from "lucide-react";
 interface PageProps {
   // define props here
 }
-console.log("et", monitorProduct);
+
+
+export const metadata = {
+  title: "Real-Time Trademark Monitoring Services | Starting at $55",
+  description:
+   "Defend your intellectual property with advanced trademark monitoring services that identify emerging risks and deliver instant notifications. Start protecting now!",
+  keywords: ["Trademark Monitoring Services", "Trademark Monitoring Company","Trademark Watch Services","Trademark Watch Company"],
+};
 
 const FAQs = [
   {
@@ -141,10 +148,18 @@ const page: React.FC<PageProps> = (props) => {
           Boundaries
         </p>
         <div className="bg-[#D9D9D9] w-[90%] rounded-xl   md:p-10  m-5 md:my-10 grid md:grid-cols-2">
-          {monitorProduct?.map((product: any,index:any) => (
-            <div key={index} className="bg-white rounded-xl p-5 m-5 flex flex-col space-y-4 group">
+          {monitorProduct?.map((product: any, index: any) => (
+            <div
+              key={index}
+              className="bg-white rounded-xl p-5 m-5 flex flex-col space-y-4 group"
+            >
               <div className="flex items-center justify-center">
-                <Image src={product.avatar} alt="canada_logo" width={100} height={100} />
+                <Image
+                  src={product.avatar}
+                  alt="canada_logo"
+                  width={100}
+                  height={100}
+                />
               </div>
               <h5 className="text-[25px]">{product.name}</h5>
 

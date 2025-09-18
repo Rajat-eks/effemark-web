@@ -28,6 +28,13 @@ interface PageProps {
   // define props here
 }
 
+export const metadata = {
+  title: "Comprehensive Trademark Search Services | Starting at $65",
+  description:
+    "Strengthen your brand protection with trademark search services that detect potential disputes and preserve your brand identity. Reach out today!",
+  keywords: ["Trademark Search Services", "Trademark Search Company"],
+};
+
 const FAQs = [
   {
     question: "What exactly is a trademark search?",
@@ -70,27 +77,32 @@ const FAQs = [
 const thretsContent: { avatar?: any; title: string; description: string }[] = [
   {
     title: "Registration Rejection",
-    description: "Months of work & investment wasted when trademark applications are denied",
+    description:
+      "Months of work & investment wasted when trademark applications are denied",
     avatar: SilentLogo,
   },
   {
     title: "Legal Challenges",
-    description: "Unexpected opposition from existing trademark holders claiming infringement",
+    description:
+      "Unexpected opposition from existing trademark holders claiming infringement",
     avatar: GlobalMarket,
   },
   {
     title: "Geographic Limitations",
-    description: "Discovering unexpected restrictions on your brand's market reach",
+    description:
+      "Discovering unexpected restrictions on your brand's market reach",
     avatar: Diluation,
   },
   {
     title: "Market Confusion",
-    description: "Potential legal battles that blur your brand's unique identity",
+    description:
+      "Potential legal battles that blur your brand's unique identity",
     avatar: Damage,
   },
   {
     title: "Expansion Barriers",
-    description: "Unintended conflicts blocking your business growth and potential",
+    description:
+      "Unintended conflicts blocking your business growth and potential",
     avatar: Financial,
   },
 ];

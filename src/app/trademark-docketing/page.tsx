@@ -15,6 +15,13 @@ import { trademarkProducts } from "@/data/products";
 interface PageProps {
   // define props here
 }
+
+export const metadata = {
+  title: "Trademark Docketing Services | EffeMark",
+  description:
+   "Maintain compliance with expert trademark docketing services - providing worldwide coverage, prompt document management & integrated quality assurance. Start today!",
+  keywords: ["Trademark Docketing Services"],
+};
 const FAQs = [
   {
     question:
