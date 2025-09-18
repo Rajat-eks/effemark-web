@@ -81,12 +81,22 @@ const Footer: React.FC<IndexProps> = (props) => {
             Road, Suite 427, Melville | NY 11747
           </div>
           <div className="flex items-center justify-center gap-2">
-            <Mail size={16} /> info@effemark.com
+            <a
+              href="mailto:info@effemark.com"
+              className="flex gap-2 items-center  text-white "
+            >
+              <Mail size={20} />
+              info@effemark.com
+            </a>
           </div>
           <div className="flex items-center justify-center gap-2">
-            {" "}
-            <Phone size={16} />
-            +1-972-256-8133
+            <a
+              href="tel:+19722568133"
+              className="flex gap-2 items-center text-white "
+            >
+              <Phone size={20} />
+              +1-972-256-8133
+            </a>
           </div>
           <div className="flex flex-col">
             <h4 className="text-white">Follow Us:</h4>
@@ -121,7 +131,9 @@ const Footer: React.FC<IndexProps> = (props) => {
         </div>
       </section>
       <section className="text-[14px] text-white flex flex-col md:flex-row items-start justify-between p-3 border-t-[1px] border-dotted">
-        <span className="order-2 md:order-1">@2025 EffeMark. All rights reserved.</span>
+        <span className="order-2 md:order-1">
+          @2025 EffeMark. All rights reserved.
+        </span>
         <ul className="flex flex-col md:flex-row items-start justify-between gap-5 order-1 md:order-2">
           <li>
             <Link href="/contact-us">Contact Us</Link>

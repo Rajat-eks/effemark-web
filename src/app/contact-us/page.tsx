@@ -45,14 +45,24 @@ const page: React.FC<PageProps> = (props) => {
             </div>
             <div className="border-b-[1px] py-4 border-gray-500 w-[80%]">
               <span className=" flex flex-col items-center justify-start gap-4 text-[15px]">
-                <Mail size={20} />
-                info@effectualservices.com
+                <a
+                  href="mailto:info@effemark.com"
+                  className="flex flex-col gap-2 items-center  text-white "
+                >
+                  <Mail size={30} />
+                  info@effemark.com
+                </a>
               </span>
             </div>
             <div className="border-b-[1px]  py-4 border-gray-500 w-[80%]">
               <span className=" flex flex-col items-center justify-start gap-4 text-[15px]">
-                <Phone size={20} />
-                 +1-972-256-8133
+                <a
+                  href="tel:+19722568133"
+                  className="flex flex-col gap-2 items-center text-white "
+                >
+                  <Phone size={30} />
+                  +1-972-256-8133
+                </a>
               </span>
             </div>
             <div className=" flex items-center justify-between w-[30%] py-4  border-gray-500 ">

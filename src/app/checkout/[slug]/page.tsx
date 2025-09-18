@@ -60,12 +60,7 @@ const page: React.FC<PageProps> = (props) => {
             </div>
           </div> */}
           <div>
-            <Image
-              src={data?.banner}
-              alt="image"
-              width={600}
-              height={100}
-            />
+            <Image src={data?.banner} alt="image" width={600} height={100} />
           </div>
         </section>
         <section className="w-1/2">
@@ -74,7 +69,7 @@ const page: React.FC<PageProps> = (props) => {
         </section>
       </main>
       <Features
-        features={[
+        features={[            
           {
             title: "Global Coverage",
             description:

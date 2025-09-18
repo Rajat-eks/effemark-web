@@ -62,19 +62,29 @@ const Header: React.FC<IndexProps> = () => {
       {/* Top bar */}
       <section className="bg-[#134493] text-white flex justify-between items-center gap-10 py-2 px-4 text-sm">
         <div className="flex gap-4 flex-wrap">
-          <a href="#" className="flex gap-2 items-center">
+          <a
+            href="mailto:info@effemark.com"
+            className="flex gap-2 items-center text-sm text-white "
+          >
             <Mail size={20} />
             info@effemark.com
           </a>
-          <a href="#" className="flex gap-2 items-center">
+
+          <a
+            href="tel:+19722568133"
+            className="flex gap-2 items-center text-sm text-white "
+          >
             <Phone size={20} />
             +1-972-256-8133
           </a>
         </div>
         <div className="hidden sm:flex gap-4 items-center">
-          {/* <button className="text-white px-4 text-[16px] bg-gradient-to-r from-[#E90303] to-[#202F5A] via-[#731D36] rounded flex items-center justify-center gap-2">
+          <Link
+            href={"/"}
+            className="text-white px-4 text-[16px] bg-gradient-to-r from-[#E90303] to-[#202F5A] via-[#731D36] rounded flex items-center justify-center gap-2"
+          >
             <Image src={Cart} alt="Cart" /> Cart
-          </button> */}
+          </Link>
           <a href="https://www.linkedin.com/company/effemark/ " target="_blank">
             <Image src={Linkedin} alt="twitter" width={26} />
           </a>
@@ -90,7 +100,7 @@ const Header: React.FC<IndexProps> = () => {
       {/* Main nav */}
       <section className="flex justify-between items-center px-5 py-4 relative">
         {/* Logo */}
-        <Link href={'/'} className="flex items-center">
+        <Link href={"/"} className="flex items-center">
           <Image src={Logo} alt="Logo" width={160} />
         </Link>
 

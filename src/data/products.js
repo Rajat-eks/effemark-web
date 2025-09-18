@@ -516,7 +516,7 @@ export const trademarkProducts = [
   {
     name: "EU (27) Countries Trademark Search - Manual Full Search",
     included: " EU (27) Countries + EUIPO + Domain Names",
-    price: 125,
+    price: 215,
     banner: "/checkout/EU (27) Countries Trademark Search - Manual.png",
     path: "/eu-countries-trademark-search-manual-full-search",
     addOns: [
@@ -591,6 +591,75 @@ export const trademarkProducts = [
       },
       {
         name: "General Opinion ",
+        price: 65,
+      },
+    ],
+  },
+  {
+    name: "China Trademark Search - Manual Full Search",
+    included: "China + WIPO + Domain Names",
+    price: 125,
+    banner: "/checkout/Europe Trademark Search - Manual.png",
+    path: "/china-trademark-search-manual-full-search",
+    addOns: [
+      {
+        name: "Common Law - CN",
+        price: 55,
+      },
+      {
+        name: "General Opinion",
+        price: 65,
+      },
+      {
+        name: "US Federal ",
+        price: 60,
+      },
+      {
+        name: "US (52) States",
+        price: 100,
+      },
+      {
+        name: "Canada",
+        price: 60,
+      },
+      {
+        name: "Canada (7) Business Registeries",
+        price: 35,
+      },
+      {
+        name: "Mexico",
+        price: 60,
+      },
+      {
+        name: "Europe (56) Countries ",
+        price: 65,
+      },
+      {
+        name: "EU (27) Countries ",
+        price: 65,
+      },
+      {
+        name: "EUIPO ",
+        price: 65,
+      },
+      {
+        name: "United Kingdom ",
+        price: 65,
+      },
+      {
+        name: "New Zealand",
+        price: 65,
+      },
+      {
+        name: "WIPO",
+        price: 65,
+      },
+      {
+        name: "Korea",
+        price: 65,
+      },
+      {
+        name: "Japan",
         price: 65,
       },
     ],
@@ -1288,8 +1357,8 @@ export const monitorProduct = [
   {
     name: "Global Trademark Monitoring",
     path: "/global-trademark-monitoring",
-    strikePrice: 109,
-    price: 105,
+    strikePrice: 319,
+    price: 315,
     avatar:"/flag/World.png",
     banner: "/checkout/GLOBAL Trademark Monitoring.png",
     addOns: [

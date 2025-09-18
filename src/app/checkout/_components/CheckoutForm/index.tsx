@@ -1,4 +1,7 @@
-import React from "react";
+'use client';
+
+import React, { useState, useEffect } from "react";
+import AddToCartButton from "@/components/AddToCartButton";
 
 interface IndexProps {
   // define props here
@@ -6,6 +9,27 @@ interface IndexProps {
 }
 
 const CheckoutForm: React.FC<IndexProps> = ({data}) => {
+  const [selectedAddOns, setSelectedAddOns] = useState<Array<{name: string; price: number}>>([]);
+  const [totalPrice, setTotalPrice] = useState(data?.price || 0);
+
+  useEffect(() => {
+    // Calculate total price including selected add-ons
+    const addOnsTotal = selectedAddOns.reduce((sum, addOn) => sum + addOn.price, 0);
+    setTotalPrice((data?.price || 0) + addOnsTotal);
+  }, [selectedAddOns, data?.price]);
+
+  const handleAddOnChange = (addOn: {name: string; price: number}, isChecked: boolean) => {
+    if (isChecked) {
+      setSelectedAddOns(prev => [...prev, addOn]);
+    } else {
+      setSelectedAddOns(prev => prev.filter(item => item.name !== addOn.name));
+    }
+  };
+
+  if (!data) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className="shadow-2xl rounded-2xl p-8 bg-white">
       <div>
@@ -13,40 +37,17 @@ const CheckoutForm: React.FC<IndexProps> = ({data}) => {
           Choose Add-ons (Optional){" "}
         </h6>
         <ul className="text-[13px] pt-5 space-y-2">
-          {data?.addOns?.map((item:any) => {
+          {data?.addOns?.map((item:any, index: number) => {
             return (
-              <li className="flex items-center gap-2">
-                <input type="checkbox" />{" "}
+              <li key={index} className="flex items-center gap-2">
+                <input 
+                  type="checkbox" 
+                  onChange={(e) => handleAddOnChange(item, e.target.checked)}
+                />{" "}
                 <label htmlFor="">{item.name} + ${item.price}</label>
               </li>
             );
           })}
-
-          <li className="flex items-center gap-2">
-            <input type="checkbox" />{" "}
-            <label htmlFor="">Common Law- US + $55</label>
-          </li>
-          <li className="flex items-center gap-2">
-            <input type="checkbox" />{" "}
-            <label htmlFor="">Canada/CIPO + $65</label>
-          </li>
-          <li className="flex items-center gap-2">
-            <input type="checkbox" />{" "}
-            <label htmlFor="">Canada (7) Business Registeries + $55</label>
-          </li>
-          <li className="flex items-center gap-2">
-            <input type="checkbox" /> <label htmlFor="">Mexico  + $65</label>
-          </li>
-          <li className="flex items-center gap-2">
-            <input type="checkbox" /> <label htmlFor="">EUIPO + $65</label>
-          </li>
-          <li className="flex items-center gap-2">
-            <input type="checkbox" />{" "}
-            <label htmlFor="">United Kingdom + $65</label>
-          </li>
-          <li className="flex items-center gap-2">
-            <input type="checkbox" /> <label htmlFor="">WIPO + $65</label>
-          </li>
         </ul>
       </div>
       <div className="pt-10">
@@ -118,11 +119,19 @@ const CheckoutForm: React.FC<IndexProps> = ({data}) => {
           </div>
           <div className="flex items-center justify-between px-4">
             <span className="text-[14px]">Total Price</span>
-            <span className="text-[#C31117] font-bold">$100.00</span>
+            <span className="text-[#C31117] font-bold">${totalPrice.toFixed(2)}</span>
           </div>
-          <button className="w-full text-white rounded-xl text-center bg-[#C31117] py-2 cursor-pointer">
-            Add to Cart
-          </button>
+          <AddToCartButton 
+            product={{
+              id: data.path || data.name,
+              name: data.name,
+              price: data.price,
+              banner: data.banner,
+              included: data.included,
+              addOns: data.addOns
+            }}
+            selectedAddOns={selectedAddOns}
+          />
         </form>
       </div>
     </div>
