@@ -73,6 +73,13 @@ const monitorProducts: {
     price: 65,
   },
 ];
+
+export const metadata = {
+  title: "EffeMark | Professional Trademark Search and Brand Monitoring",
+  description:
+    ": Secure your intellectual property with expert trademark services. Relied upon by legal professionals & enterprises globally. Quick, reliable & top-tier trademark solutions. Reach Out Today!",
+  keywords: ["Trademark Search", "Trademark Monitoring", "Trademark Watch"],
+};
 export default function Home() {
   return (
     <div>
