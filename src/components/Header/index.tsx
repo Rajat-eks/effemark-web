@@ -79,12 +79,12 @@ const Header: React.FC<IndexProps> = () => {
           </a>
         </div>
         <div className="hidden sm:flex gap-4 items-center">
-          <Link
+          {/* <Link
             href={"/"}
             className="text-white px-4 text-[16px] bg-gradient-to-r from-[#E90303] to-[#202F5A] via-[#731D36] rounded flex items-center justify-center gap-2"
           >
             <Image src={Cart} alt="Cart" /> Cart
-          </Link>
+          </Link> */}
           <a href="https://www.linkedin.com/company/effemark/ " target="_blank">
             <Image src={Linkedin} alt="twitter" width={26} />
           </a>
