@@ -1290,6 +1290,7 @@ export const monitorProduct = [
     path: "/global-trademark-monitoring",
     strikePrice: 109,
     price: 105,
+    avatar:"/flag/World.png",
     banner: "/checkout/GLOBAL Trademark Monitoring.png",
     addOns: [
       {
