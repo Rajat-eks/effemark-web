@@ -37,10 +37,10 @@ const page: React.FC<PageProps> = (props) => {
                 projects.
               </p>
             </div>
-            <div className="border-b-[1px] py-4 border-gray-500 w-[80%]">
+            <div className="border-b-[1px] py-2 border-gray-500 w-[85%]">
               <span className=" flex flex-col  items-center justify-center gap-4 text-[15px]">
                 <MapPin size={34} />
-                425 Broadhollow Road, Suite 427, Melville | NY 11747
+                SDF A-05, NSEZ, Noida–Dadri Road, Noida Phase II 201305
               </span>{" "}
             </div>
             <div className="border-b-[1px] py-4 border-gray-500 w-[80%]">

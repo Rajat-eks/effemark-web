@@ -10,6 +10,14 @@ import Premium from "@/components/assets/icons/premium.svg";
 import Process from "@/components/Process";
 import CTA from "@/components/CTA";
 import Testimonial from "@/components/Testimonial";
+import { Linkedin } from "lucide-react";
+import AMIT_GOEL from "@/components/assets/img/amit-goel.svg";
+import AMIT_AGGARWAL from "@/components/assets/img/amit-agg.svg";
+import MEETIKA from "@/components/assets/img/meetika.svg";
+import RAM from "@/components/assets/img/ram-tenneti.svg";
+import MANOJ from "@/components/assets/img/manoj.svg";
+import RAKESH from "@/components/assets/img/rakesh.svg";
+import GERHARD from "@/components/assets/img/gerherd.svg";
 
 interface PageProps {
   // define props here
@@ -48,6 +56,97 @@ const page: React.FC<PageProps> = (props) => {
           decisions that could potentially save them thousands
         </p>
       </section>
+      <section className="flex flex-col justify-center items-center py-6  bg-[#202F5A] text-white ">
+        <h2 className="font-semibold text-center text-[37px] w-[90%]">
+          Leadership Team
+        </h2>
+        <p className="text-[17px]  text-center w-[85%]">
+          Our team is empowered by highly experienced individuals from the
+          Technology, Management and Legal fraternities. They bring with them
+          years of rich and diverse experience and have also worked on several
+          emerging technology fields. This diverse and versatile experience of
+          our team helps us in understanding the client requirements better.
+        </p>
+        <div className="grid grid-cols-3 gap-12 p-10 w-[90%] border-b-[1px] border-dotted">
+          <div className="bg-[#D8D8D8]  rounded-2xl flex flex-col items-center justify-center space-y-4 py-4 px-5">
+            <Image src={AMIT_GOEL} alt="amit_goel" className="w-full" />
+            <div className="flex flex-col items-center space-y-1">
+              <h4 className="text-[28px] font-bold">Dr. Amit Goel</h4>
+              <h6 className="text-[15px]">(Director & Co-Founder)</h6>
+              <a href="https://in.linkedin.com/in/dramitgoel">
+                <Linkedin color="black" />
+              </a>
+            </div>
+          </div>
+          <div className="bg-[#D8D8D8]  rounded-2xl flex flex-col items-center justify-center space-y-4 py-4 px-5">
+            <Image src={AMIT_AGGARWAL} alt="amit_goel" className="w-full" />
+            <div className="flex flex-col items-center space-y-1">
+              <h4 className="text-[28px] font-bold">Amit Aggarwal</h4>
+              <h6 className="text-[15px]">(Co-Founder)</h6>
+              <a href="https://www.linkedin.com/in/amit-aggarwal-386aa129/?originalSubdomain=in">
+                <Linkedin color="black" />
+              </a>
+            </div>
+          </div>
+          <div className="bg-[#D8D8D8]  rounded-2xl flex flex-col items-center justify-center space-y-4 py-4 px-5">
+            <Image src={MEETIKA} alt="amit_goel"  className="w-full" />
+            <div className="flex flex-col items-center space-y-1">
+              <h4 className="text-[28px] font-bold text-center">Meetika Aggarwal</h4>
+              <h6 className="text-[15px]">(Director)</h6>
+              <a href="https://www.linkedin.com/in/meetika-aggarwal-8273148/">
+                <Linkedin color="black" />
+              </a>
+            </div>
+          </div>
+        </div>
+        <section className="w-full flex flex-col items-center justify-center py-4">
+          <h2 className="font-semibold text-center text-[37px] w-[90%]">
+            Executive Leadership
+          </h2>
+          <div className="grid grid-cols-4 gap-4 p-5 w-[100%]">
+            <div className="bg-[#D8D8D8]  rounded-2xl flex flex-col items-center justify-center space-y-4 py-4 px-1">
+              <Image src={RAM} alt="amit_goel" className="w-full"  />
+              <div className="flex flex-col items-center space-y-1">
+                <h4 className="text-[28px] font-bold">Ram Tenneti</h4>
+                <h6 className="text-[15px]">(Senior Vice President)</h6>
+                <a href="https://in.linkedin.com/in/ram-tenneti-6a91976">
+                  <Linkedin color="black" />
+                </a>
+              </div>
+            </div>
+            <div className="bg-[#D8D8D8]  rounded-2xl flex flex-col items-center justify-center space-y-4 py-2 px-1">
+              <Image src={MANOJ} alt="amit_goel" className="w-full"  />
+              <div className="flex flex-col items-center space-y-1">
+                <h4 className="text-[28px] font-bold">Manoj Poonia</h4>
+                <h6 className="text-[15px]">(Senior Vice President)</h6>
+                <a href="https://in.linkedin.com/in/pooniamanoj">
+                  <Linkedin color="black" />
+                </a>
+              </div>
+            </div>
+            <div className="bg-[#D8D8D8]  rounded-2xl flex flex-col items-center justify-center space-y-4 py-4 px-1">
+              <Image src={RAKESH} alt="amit_goel"  className="w-full" />
+              <div className="flex flex-col items-center space-y-1">
+                <h4 className="text-[28px] font-bold">Rakesh Pandey</h4>
+                <h6 className="text-[15px]">(Senior Vice President)</h6>
+                <a href="https://in.linkedin.com/in/rakeshpandeyeffectual">
+                  <Linkedin color="black" />
+                </a>
+              </div>
+            </div>
+            <div className="bg-[#D8D8D8]  rounded-2xl flex flex-col items-center justify-center space-y-4 py-4 px-1">
+              <Image src={GERHARD} alt="amit_goel"className="w-full" />
+              <div className="flex flex-col items-center space-y-1">
+                <h4 className="text-[28px] font-bold text-center">Dr. Gerhard Hörsch</h4>
+                <h6 className="text-[15px]">(Senior Vice President)</h6>
+                <a href="https://de.linkedin.com/in/dr-gerhard-hoersch-4157b41">
+                  <Linkedin color="black" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
       <Features
         features={[
           {
@@ -76,9 +175,9 @@ const page: React.FC<PageProps> = (props) => {
           },
         ]}
       />
-      <Process/>
-      <CTA/>
-      <Testimonial/>
+      <Process />
+      <CTA />
+      <Testimonial />
     </main>
   );
 };
