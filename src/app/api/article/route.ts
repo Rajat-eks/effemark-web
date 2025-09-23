@@ -3,6 +3,10 @@ import { validateArticlePayload } from "@/lib/articles";
 import { connectMongoose } from "@/lib/mongoose";
 import { ArticleModel } from "@/models/Article";
 import mongoose from "mongoose";
+import { preflight, withCors } from "@/lib/cors";
+export async function OPTIONS(req: Request) {
+  return preflight(req);
+}
 
 function badRequest(message: string, extra?: Record<string, unknown>) {
   return NextResponse.json(
@@ -36,22 +40,25 @@ export async function GET(req: Request) {
           return badRequest("Invalid id");
         const doc = await ArticleModel.findById(id).lean();
         if (!doc) return notFound();
-        return NextResponse.json({ success: true, data: doc });
+        return withCors(req, NextResponse.json({ success: true, data: doc }));
       } else if (slug) {
         const doc = await ArticleModel.findOne({ slug }).lean();
         if (!doc) return notFound();
-        return NextResponse.json({ success: true, data: doc });
+        return withCors(req, NextResponse.json({ success: true, data: doc }));
       }
       // Fallback if neither path returned (shouldn't reach here)
       return notFound();
     }
 
     const list = await ArticleModel.find({}).sort({ createdAt: -1 }).lean();
-    return NextResponse.json({ success: true, data: list });
+    return withCors(req, NextResponse.json({ success: true, data: list }));
   } catch (err: any) {
-    return NextResponse.json(
-      { success: false, error: err?.message || "Unexpected error" },
-      { status: 500 }
+    return withCors(
+      req,
+      NextResponse.json(
+        { success: false, error: err?.message || "Unexpected error" },
+        { status: 500 }
+      )
     );
   }
 }
@@ -70,11 +77,17 @@ export async function POST(req: Request) {
     if (existing) return conflict("Article with this slug already exists");
 
     const created = await ArticleModel.create(payload as any);
-    return NextResponse.json({ success: true, data: created }, { status: 201 });
+    return withCors(
+      req,
+      NextResponse.json({ success: true, data: created }, { status: 201 })
+    );
   } catch (err: any) {
-    return NextResponse.json(
-      { success: false, error: err?.message || "Unexpected error" },
-      { status: 500 }
+    return withCors(
+      req,
+      NextResponse.json(
+        { success: false, error: err?.message || "Unexpected error" },
+        { status: 500 }
+      )
     );
   }
 }
@@ -117,11 +130,14 @@ export async function PUT(req: Request) {
       { new: true }
     ).lean();
     if (!doc) return notFound();
-    return NextResponse.json({ success: true, data: doc });
+    return withCors(req, NextResponse.json({ success: true, data: doc }));
   } catch (err: any) {
-    return NextResponse.json(
-      { success: false, error: err?.message || "Unexpected error" },
-      { status: 500 }
+    return withCors(
+      req,
+      NextResponse.json(
+        { success: false, error: err?.message || "Unexpected error" },
+        { status: 500 }
+      )
     );
   }
 }
@@ -136,11 +152,14 @@ export async function DELETE(req: Request) {
     await connectMongoose();
     const res = await ArticleModel.findByIdAndDelete(id).lean();
     if (!res) return notFound();
-    return NextResponse.json({ success: true });
+    return withCors(req, NextResponse.json({ success: true }));
   } catch (err: any) {
-    return NextResponse.json(
-      { success: false, error: err?.message || "Unexpected error" },
-      { status: 500 }
+    return withCors(
+      req,
+      NextResponse.json(
+        { success: false, error: err?.message || "Unexpected error" },
+        { status: 500 }
+      )
     );
   }
 }

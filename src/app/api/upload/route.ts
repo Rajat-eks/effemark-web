@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { promises as fs } from "fs";
 import path from "path";
+import { preflight, withCors } from "@/lib/cors";
 
 const uploadDir = path.join(process.cwd(), "public", "uploads");
 
@@ -19,6 +20,10 @@ function badRequest(message: string, extra?: Record<string, unknown>) {
       status: 400,
     }
   );
+}
+
+export async function OPTIONS(req: Request) {
+  return preflight(req);
 }
 
 export async function POST(req: Request) {
@@ -55,7 +60,7 @@ export async function POST(req: Request) {
     await fs.writeFile(filePath, buffer);
 
     const publicUrl = `/uploads/${safeName}`;
-    return NextResponse.json(
+    const res = NextResponse.json(
       {
         success: true,
         path: `https://effemark.com/${publicUrl}`,
@@ -63,10 +68,14 @@ export async function POST(req: Request) {
       },
       { status: 201 }
     );
+    return withCors(req, res);
   } catch (err: any) {
-    return NextResponse.json(
-      { success: false, error: err?.message || "Unexpected error" },
-      { status: 500 }
+    return withCors(
+      req,
+      NextResponse.json(
+        { success: false, error: err?.message || "Unexpected error" },
+        { status: 500 }
+      )
     );
   }
 }
@@ -82,17 +91,23 @@ export async function DELETE(req: Request) {
     const filePath = path.join(uploadDir, safeName);
 
     await fs.unlink(filePath);
-    return NextResponse.json({ success: true });
+    return withCors(req, NextResponse.json({ success: true }));
   } catch (err: any) {
     if (err && (err as any).code === "ENOENT") {
-      return NextResponse.json(
-        { success: false, error: "File not found" },
-        { status: 404 }
+      return withCors(
+        req,
+        NextResponse.json(
+          { success: false, error: "File not found" },
+          { status: 404 }
+        )
       );
     }
-    return NextResponse.json(
-      { success: false, error: err?.message || "Unexpected error" },
-      { status: 500 }
+    return withCors(
+      req,
+      NextResponse.json(
+        { success: false, error: err?.message || "Unexpected error" },
+        { status: 500 }
+      )
     );
   }
 }
