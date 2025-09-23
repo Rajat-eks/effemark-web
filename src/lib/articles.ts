@@ -2,11 +2,15 @@ import { promises as fs } from "fs";
 import path from "path";
 
 export interface Article {
-  slug: string;
-  title: string;
+  heading: string;
   description: string;
-  banner: string;
-  keywords: string[];
+  slug: string;
+  filepath: string;
+  metaTitle: string;
+  metaDescription: string;
+  metakewword: string[];
+  articleDate: string; // ISO date string
+  status: string;
   createdAt: string;
   updatedAt: string;
 }
@@ -44,40 +48,84 @@ export function validateArticlePayload(input: any): {
   errors: string[];
   data?: Pick<
     Article,
-    "slug" | "title" | "description" | "banner" | "keywords"
+    | "heading"
+    | "description"
+    | "slug"
+    | "filepath"
+    | "metaTitle"
+    | "metaDescription"
+    | "metakewword"
+    | "articleDate"
+    | "status"
   >;
 } {
   const errors: string[] = [];
 
-  const slug = typeof input?.slug === "string" ? input.slug.trim() : "";
-  const title = typeof input?.title === "string" ? input.title.trim() : "";
+  const heading =
+    typeof input?.heading === "string" ? input.heading.trim() : "";
   const description =
     typeof input?.description === "string" ? input.description.trim() : "";
-  const banner = typeof input?.banner === "string" ? input.banner.trim() : "";
-  const keywordsInput = input?.keywords;
+  const slug = typeof input?.slug === "string" ? input.slug.trim() : "";
+  const filepath =
+    typeof input?.filepath === "string" ? input.filepath.trim() : "";
+  const metaTitle =
+    typeof input?.metaTitle === "string" ? input.metaTitle.trim() : "";
+  const metaDescription =
+    typeof input?.metaDescription === "string"
+      ? input.metaDescription.trim()
+      : "";
+  const metakewwordInput = input?.metakewword;
+  const articleDateRaw = input?.articleDate;
+  const status = typeof input?.status === "boolean" ? input.status : false;
 
-  let keywords: string[] = [];
-  if (Array.isArray(keywordsInput)) {
-    keywords = keywordsInput.map((k) => String(k).trim()).filter(Boolean);
-  } else if (typeof keywordsInput === "string") {
-    keywords = keywordsInput
+  let metakewword: string[] = [];
+  if (Array.isArray(metakewwordInput)) {
+    metakewword = metakewwordInput
+      .map((k: any) => String(k).trim())
+      .filter(Boolean);
+  } else if (typeof metakewwordInput === "string") {
+    metakewword = metakewwordInput
       .split(",")
       .map((k: string) => k.trim())
       .filter(Boolean);
   }
 
-  if (!slug) errors.push("slug is required");
-  if (!title) errors.push("title is required");
+  // Validate required fields
+  if (!heading) errors.push("heading is required");
   if (!description) errors.push("description is required");
-  if (!banner) errors.push("banner is required");
-  if (keywords.length === 0)
-    errors.push("keywords must have at least one item");
+  if (!slug) errors.push("slug is required");
+  if (!filepath) errors.push("filepath is required");
+  if (!metaTitle) errors.push("metaTitle is required");
+  if (!metaDescription) errors.push("metaDescription is required");
+  if (metakewword.length === 0)
+    errors.push("metakewword must have at least one item");
+  if (!status) errors.push("status is required");
+
+  // articleDate can be a Date or ISO string input
+  let articleDate = "";
+  if (articleDateRaw instanceof Date) {
+    articleDate = articleDateRaw.toISOString();
+  } else if (typeof articleDateRaw === "string") {
+    const d = new Date(articleDateRaw);
+    if (!isNaN(d.getTime())) articleDate = d.toISOString();
+  }
+  if (!articleDate) errors.push("articleDate must be a valid date");
 
   if (errors.length) return { valid: false, errors };
 
   return {
     valid: true,
     errors: [],
-    data: { slug, title, description, banner, keywords },
+    data: {
+      heading,
+      description,
+      slug,
+      filepath,
+      metaTitle,
+      metaDescription,
+      metakewword,
+      articleDate,
+      status,
+    },
   };
 }
