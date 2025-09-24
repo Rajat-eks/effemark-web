@@ -4,6 +4,8 @@ import { connectMongoose } from "@/lib/mongoose";
 import { ArticleModel } from "@/models/Article";
 import mongoose from "mongoose";
 import { preflight, withCors } from "@/lib/cors";
+import { promises as fs } from "fs";
+import path from "path";
 export async function OPTIONS(req: Request) {
   return preflight(req);
 }
@@ -23,6 +25,52 @@ function notFound(message = "Article not found") {
 
 function conflict(message: string) {
   return NextResponse.json({ success: false, error: message }, { status: 409 });
+}
+
+// Helpers for saving uploaded files when content-type is multipart/form-data
+const uploadDir = path.join(process.cwd(), "public", "uploads");
+
+async function ensureUploadDir() {
+  try {
+    await fs.access(uploadDir);
+  } catch {
+    await fs.mkdir(uploadDir, { recursive: true });
+  }
+}
+
+function guessExtensionFromMime(mimeType: string) {
+  if (mimeType === "image/png") return ".png";
+  if (mimeType === "image/jpeg") return ".jpg";
+  if (mimeType === "image/svg+xml") return ".svg";
+  if (mimeType === "application/pdf") return ".pdf";
+  if (mimeType === "image/webp") return ".webp";
+  if (mimeType === "image/gif") return ".gif";
+  return ".bin";
+}
+
+async function saveIncomingFile(file: File) {
+  await ensureUploadDir();
+  const originalName = (file as any).name as string | undefined;
+  const mimeType = file.type || "";
+  let ext = (originalName && path.extname(originalName)) || "";
+  if (!ext) ext = guessExtensionFromMime(mimeType);
+  const randomPart = Math.random().toString(36).slice(2, 10);
+  const safeName = `upload-${Date.now()}-${randomPart}${ext}`;
+  const filePath = path.join(uploadDir, safeName);
+  const arrayBuffer = await file.arrayBuffer();
+  const buffer = Buffer.from(arrayBuffer);
+  await fs.writeFile(filePath, buffer);
+  const publicUrlPath = `/uploads/${safeName}`;
+  return {
+    filename: safeName,
+    publicPath: publicUrlPath,
+  };
+}
+
+function coerceBoolean(input: any): boolean {
+  if (typeof input === "boolean") return input;
+  if (typeof input === "string") return input === "true" || input === "1";
+  return false;
 }
 
 export async function GET(req: Request) {
@@ -65,6 +113,50 @@ export async function GET(req: Request) {
 
 export async function POST(req: Request) {
   try {
+    const contentType = req.headers.get("content-type") || "";
+
+    // Branch: multipart form-data with optional file under key 'file'
+    if (contentType.includes("multipart/form-data")) {
+      const form = await req.formData();
+      const maybeFile = form.get("file");
+      let filepath = String(form.get("filepath") || "").trim();
+
+      if (maybeFile && typeof maybeFile !== "string") {
+        const saved = await saveIncomingFile(maybeFile as File);
+        // Use absolute URL path for stored image, or keep as site-relative path
+        filepath = `https://effemark.com${saved.publicPath}`;
+      }
+
+      // Build payload expected by validateArticlePayload
+      const payload: any = {
+        heading: String(form.get("heading") || "").trim(),
+        description: String(form.get("description") || "").trim(),
+        slug: String(form.get("slug") || "").trim(),
+        filepath,
+        metaTitle: String(form.get("metaTitle") || "").trim(),
+        metaDescription: String(form.get("metaDescription") || "").trim(),
+        metakewword: form.getAll("metakewword").length
+          ? form.getAll("metakewword")
+          : String(form.get("metakewword") || ""),
+        articleDate: String(form.get("articleDate") || "").trim(),
+        status: coerceBoolean(form.get("status")),
+      };
+
+      const v = validateArticlePayload(payload);
+      if (!v.valid) return badRequest("Invalid payload", { details: v.errors });
+
+      await connectMongoose();
+      const existing = await ArticleModel.findOne({ slug: v.data!.slug }).lean();
+      if (existing) return conflict("Article with this slug already exists");
+
+      const created = await ArticleModel.create(v.data as any);
+      return withCors(
+        req,
+        NextResponse.json({ success: true, data: created }, { status: 201 })
+      );
+    }
+
+    // Fallback: JSON body (existing behavior)
     const json = await req.json();
     const v = validateArticlePayload(json);
     if (!v.valid) return badRequest("Invalid payload", { details: v.errors });
