@@ -69,8 +69,35 @@ async function saveIncomingFile(file: File) {
 
 function coerceBoolean(input: any): boolean {
   if (typeof input === "boolean") return input;
-  if (typeof input === "string") return input === "true" || input === "1";
+  if (typeof input === "string")
+    return input.toLowerCase() === "true" || input === "1";
+  if (typeof input === "number") return input === 1;
   return false;
+}
+
+function normalizeKeywords(input: unknown): string[] {
+  console.log("input", input);
+  const normalizeArray = (vals: any[]): string[] =>
+    vals
+      .filter((v) => typeof v === "string")
+      .map((v) => v.trim())
+      .filter(Boolean);
+
+  if (Array.isArray(input)) return normalizeArray(input as any[]);
+
+  if (typeof input === "string") {
+    const s = input.trim();
+    if (!s) return [];
+    if (s.startsWith("[") && s.endsWith("]")) {
+      try {
+        const parsed = JSON.parse(s);
+        if (Array.isArray(parsed)) return normalizeArray(parsed as any[]);
+      } catch {}
+    }
+    return s.split(",").map((v) => v.trim());
+  }
+
+  return [];
 }
 
 export async function GET(req: Request) {
@@ -123,30 +150,59 @@ export async function POST(req: Request) {
 
       if (maybeFile && typeof maybeFile !== "string") {
         const saved = await saveIncomingFile(maybeFile as File);
-        // Use absolute URL path for stored image, or keep as site-relative path
         filepath = `https://effemark.com${saved.publicPath}`;
       }
 
-      // Build payload expected by validateArticlePayload
+      // Collect keywords from common field names
+      const keywordFields = [
+        "metakewword",
+        "metakewword[]",
+        "keyword",
+        "keyword[]",
+        "keywords",
+        "keywords[]",
+      ];
+      let keywordValues: any[] = [];
+      for (const k of keywordFields) {
+        const values = form.getAll(k);
+        if (values && values.length)
+          keywordValues = keywordValues.concat(values);
+      }
+      // If still empty, try single-value keys
+      if (keywordValues.length === 0) {
+        const single = (form.get("metakewword") ||
+          form.get("keyword") ||
+          form.get("keywords") ||
+          "") as any;
+        if (single) keywordValues = [single];
+      }
+
       const payload: any = {
         heading: String(form.get("heading") || "").trim(),
-        description: String(form.get("description") || "").trim(),
+        content: String(
+          form.get("description") ||
+            form.get("descrption") ||
+            form.get("content") ||
+            ""
+        ).trim(),
         slug: String(form.get("slug") || "").trim(),
         filepath,
         metaTitle: String(form.get("metaTitle") || "").trim(),
         metaDescription: String(form.get("metaDescription") || "").trim(),
-        metakewword: form.getAll("metakewword").length
-          ? form.getAll("metakewword")
-          : String(form.get("metakewword") || ""),
+        metakewword: normalizeKeywords(
+          keywordValues.length === 1 ? keywordValues[0] : (keywordValues as any)
+        ),
         articleDate: String(form.get("articleDate") || "").trim(),
         status: coerceBoolean(form.get("status")),
       };
-
+      console.log("payload", payload);
       const v = validateArticlePayload(payload);
+      console.log("v", v);
       if (!v.valid) return badRequest("Invalid payload", { details: v.errors });
-
       await connectMongoose();
-      const existing = await ArticleModel.findOne({ slug: v.data!.slug }).lean();
+      const existing = await ArticleModel.findOne({
+        slug: v.data!.slug,
+      }).lean();
       if (existing) return conflict("Article with this slug already exists");
 
       const created = await ArticleModel.create(v.data as any);
@@ -156,9 +212,47 @@ export async function POST(req: Request) {
       );
     }
 
-    // Fallback: JSON body (existing behavior)
-    const json = await req.json();
-    const v = validateArticlePayload(json);
+    // Fallback: JSON body (existing behavior), accept aliases
+    let json: any;
+    try {
+      json = await req.json();
+    } catch {
+      return badRequest("Invalid JSON body");
+    }
+
+    const normalized: any = { ...json };
+    if (!normalized.description && normalized.descrption) {
+      normalized.description = normalized.descrption;
+    }
+    if (!normalized.description && normalized.content) {
+      normalized.description = normalized.content;
+    }
+
+    // Map keyword/keywords -> metakewword and normalize
+    if (
+      !normalized.metakewword &&
+      (normalized.keyword ||
+        normalized.keywords ||
+        normalized["keyword[]"] ||
+        normalized["keywords[]"])
+    ) {
+      const candidate =
+        normalized["metakewword[]"] ??
+        normalized.metakewword ??
+        normalized["keyword[]"] ??
+        normalized.keyword ??
+        normalized["keywords[]"] ??
+        normalized.keywords;
+      normalized.metakewword = normalizeKeywords(candidate);
+    } else if (normalized.metakewword) {
+      normalized.metakewword = normalizeKeywords(normalized.metakewword);
+    }
+
+    if (normalized.status !== undefined) {
+      normalized.status = coerceBoolean(normalized.status);
+    }
+
+    const v = validateArticlePayload(normalized);
     if (!v.valid) return badRequest("Invalid payload", { details: v.errors });
 
     await connectMongoose();

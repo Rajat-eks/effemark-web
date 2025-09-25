@@ -65,7 +65,7 @@ export const trademarkSearchTestimonial = [
     question:
       "Which countries should I prioritize for global trademark protection?",
     answer:
-      "Prioritize current/planned markets, major economies (US, EU, China, Japan), competitor territories, manufacturing locations, and countries prone to counterfeiting. Consider regional systems for cost-effective multi-country coverage",
+      "Prioritize current/planned markets, major economies (US,India, EU, China, Japan), competitor territories, manufacturing locations, and countries prone to counterfeiting. Consider regional systems for cost-effective multi-country coverage",
   },
 ];
 const page: React.FC<PageProps> = (props) => {

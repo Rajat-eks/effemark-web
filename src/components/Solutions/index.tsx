@@ -26,32 +26,43 @@ const Solutions: React.FC<IndexProps> = ({ products }) => {
         ensure your brand remains protected in a competitive marketplace.
       </p>
       <section className="bg-[#202F5A] grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-10 w-full p-5 md:p-16">
-        {products?.map(
-          ({ addOns, included,name,path,price }) => (
-            <div className="bg-white rounded-xl flex flex-col  p-6 gap-3 shadow-2xl group">
-              <div className="flex items-center justify-center">
-                <Image src={name.includes("AI") ? AI : Manual} alt="AI" />
-              </div>
-              <h5>{name}</h5>
-              <p className="text-[14px]">{
-                name.includes("AI") ? 'Similar + Phonetic Alternatives [Searched + Curated by Advanced AI]' : 'Similar + Phonetic Alternatives + Language Variants [AI-Enhanced + Expert Verified]'
-                }</p>
-              <span>
-                <b>Coverage: </b>
-                {included}
-              </span>
-              <span>
-                <b>Turnaround: </b>
-               1-2 Business Days
-              </span>
-              <span>
-                <b>Add-Ons: </b> {addOns.length}+ Add-Ons Available
-              </span>
-             <div>
-                    <h5 className="text-[25px] group-hover:text-[30px] group-hover:text-red-600">Price: ${price}</h5>
-                  </div>
-              <span className="text-red-500 text-[13px]">*All results designated by the US at WIPO are always included.</span>
-              {/* <div className="flex items-center justify-center">
+        {products?.map(({ addOns, included, name, path, price }) => (
+          <div className="bg-white rounded-xl flex flex-col  p-6 gap-3 shadow-2xl group">
+            <div className="flex items-center justify-center">
+              <Image src={name.includes("AI") ? AI : Manual} alt="AI" />
+            </div>
+            <h5>{name}</h5>
+            <p className="text-[14px]">
+                <p className="text-[16px]">
+                    {name?.toLowerCase().includes("ai")
+                      ? "Similar + Phonetic Alternatives [Searched + Curated by Advanced AI]"
+                      : ["china", "japan", "korea"].some((country) =>
+                          name?.toLowerCase().includes(country)
+                        )
+                      ? "Similar + Phonetic Alternatives  [AI-Enhanced + Expert Verified]"
+                      : "Similar + Phonetic Alternatives + Language Variants [AI-Enhanced + Expert Verified]"}
+                  </p>
+            </p>
+            <span>
+              <b>Coverage: </b>
+              {included}
+            </span>
+            <span>
+              <b>Turnaround: </b>
+              1-2 Business Days
+            </span>
+            <span>
+              <b>Add-Ons: </b> {addOns.length}+ Add-Ons Available
+            </span>
+            <div>
+              <h5 className="text-[25px] group-hover:text-[30px] group-hover:text-red-600">
+                Price: ${price}
+              </h5>
+            </div>
+            <span className="text-red-500 text-[13px]">
+              *All results designated by the US at WIPO are always included.
+            </span>
+            {/* <div className="flex items-center justify-center">
                 <div className="flex items-center justify-center">
                     <Link
                       href={`/checkout/${path}`}
@@ -61,9 +72,8 @@ const Solutions: React.FC<IndexProps> = ({ products }) => {
                     </Link>
                   </div>
               </div> */}
-            </div>
-          )
-        )}
+          </div>
+        ))}
       </section>
     </div>
   );

@@ -3,7 +3,7 @@ import path from "path";
 
 export interface Article {
   heading: string;
-  description: string;
+  content: string;
   slug: string;
   filepath: string;
   metaTitle: string;
@@ -49,7 +49,7 @@ export function validateArticlePayload(input: any): {
   data?: Pick<
     Article,
     | "heading"
-    | "description"
+    | "content"
     | "slug"
     | "filepath"
     | "metaTitle"
@@ -63,8 +63,8 @@ export function validateArticlePayload(input: any): {
 
   const heading =
     typeof input?.heading === "string" ? input.heading.trim() : "";
-  const description =
-    typeof input?.description === "string" ? input.description.trim() : "";
+  const content =
+    typeof input?.content === "string" ? input.content.trim() : "";
   const slug = typeof input?.slug === "string" ? input.slug.trim() : "";
   const filepath =
     typeof input?.filepath === "string" ? input.filepath.trim() : "";
@@ -92,7 +92,7 @@ export function validateArticlePayload(input: any): {
 
   // Validate required fields
   if (!heading) errors.push("heading is required");
-  if (!description) errors.push("description is required");
+  if (!content) errors.push("content is required");
   if (!slug) errors.push("slug is required");
   if (!filepath) errors.push("filepath is required");
   if (!metaTitle) errors.push("metaTitle is required");
@@ -118,7 +118,7 @@ export function validateArticlePayload(input: any): {
     errors: [],
     data: {
       heading,
-      description,
+      content,
       slug,
       filepath,
       metaTitle,

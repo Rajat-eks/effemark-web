@@ -46,8 +46,12 @@ const SolutionShowcase: React.FC<IndexProps> = ({
                     {item.name}
                   </h5>
                   <p className="text-[16px]">
-                    {item.name.includes("AI")
+                    {item?.name?.toLowerCase().includes("ai")
                       ? "Similar + Phonetic Alternatives [Searched + Curated by Advanced AI]"
+                      : ["china", "japan", "korea"].some((country) =>
+                          item?.name?.toLowerCase().includes(country)
+                        )
+                      ? "Similar + Phonetic Alternatives  [AI-Enhanced + Expert Verified]"
                       : "Similar + Phonetic Alternatives + Language Variants [AI-Enhanced + Expert Verified]"}
                   </p>
                   <span className="text-[19px]">
@@ -84,7 +88,10 @@ const SolutionShowcase: React.FC<IndexProps> = ({
               ))}
           </section>
           <div className="flex items-center justify-center">
-            <Link href={'/trademark-search-services'} className="text-[18px] py-2 px-3 rounded text-white bg-[#1264FF] hover:bg-white hover:text-black">
+            <Link
+              href={"/trademark-search-services"}
+              className="text-[18px] py-2 px-3 rounded text-white bg-[#1264FF] hover:bg-white hover:text-black"
+            >
               View all Trademark Search Services
             </Link>
           </div>
@@ -151,7 +158,10 @@ const SolutionShowcase: React.FC<IndexProps> = ({
               ))}
           </section>
           <div className="flex items-center justify-center">
-            <Link href={'/trademark-monitoring'} className="text-[18px] py-2 px-3 rounded text-white bg-[#1264FF] hover:bg-white hover:text-black">
+            <Link
+              href={"/trademark-monitoring"}
+              className="text-[18px] py-2 px-3 rounded text-white bg-[#1264FF] hover:bg-white hover:text-black"
+            >
               View all Trademark Monitoring Services
             </Link>
           </div>
