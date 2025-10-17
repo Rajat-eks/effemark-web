@@ -42,9 +42,9 @@ const Footer: React.FC<IndexProps> = (props) => {
             <li>
               <Link href={"/faqs"}>FAQ</Link>
             </li>
-            <li>
+            {/* <li>
               <Link href={"/articles"}>Articles</Link>
-            </li>
+            </li> */}
             <li>
               <Link href={"/contact-us"}>Contact Us</Link>
             </li>
@@ -139,7 +139,7 @@ const Footer: React.FC<IndexProps> = (props) => {
             <Link href="/contact-us">Contact Us</Link>
           </li>
           <li>
-            <Link href={"/faq"}>FAQ</Link>
+            <Link href={"/faqs"}>FAQ</Link>
           </li>
           <li>
             <Link href={"/terms-condition"}>Terms & Condition</Link>
@@ -150,9 +150,9 @@ const Footer: React.FC<IndexProps> = (props) => {
           <li>
             <Link href={"/refund-policy"}>Refund Policy</Link>
           </li>
-          <li>
+          {/* <li>
             <Link href={"/blog"}>Articles</Link>
-          </li>
+          </li> */}
         </ul>
       </section>
     </footer>
