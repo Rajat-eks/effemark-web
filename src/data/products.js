@@ -7,11 +7,11 @@ export const trademarkProducts = [
     path: "/us-trademark-search-advanced-ai-full-search",
     addOns: [
       {
-        name: "US (52)  States",
+        name: "US (52) States",
         price: 35,
       },
       {
-        name: "Common Law- US",
+        name: "Common Law-US",
         price: 25,
       },
       {
@@ -37,7 +37,7 @@ export const trademarkProducts = [
     included: "US Federal + WIPO + Domain Names",
     price: 125,
     banner: "/checkout/US Trademark search - Manual.png",
-    path: "/us-trademark-search-advanced-ai-full-search",
+    path: "/us-trademark-search-advanced-manual-full-search",
     addOns: [
       {
         name: "US (52)  States",
@@ -69,7 +69,7 @@ export const trademarkProducts = [
       },
       {
         name: "COLA Registry",
-        price: 35,
+        price: 55,
       },
       {
         name: "EU (27) Countries",
@@ -109,10 +109,6 @@ export const trademarkProducts = [
         price: 65,
       },
       {
-        name: "UIPO",
-        price: 65,
-      },
-      {
         name: "WIPO",
         price: 65,
       },
@@ -126,16 +122,16 @@ export const trademarkProducts = [
     path: "/Canada Trademark Search - Manual Full Search",
     addOns: [
       {
-        name: "US (52)  States",
-        price: 100,
+        name: "US Federal",
+        price: 60,
       },
       {
-        name: "Common Law- US",
+        name: "Common Law- Canada",
         price: 55,
       },
       {
-        name: "Canada/CIPO",
-        price: 60,
+        name: "US (52) States",
+        price: 100,
       },
       {
         name: "Mexico",
@@ -145,6 +141,7 @@ export const trademarkProducts = [
         name: "EUIPO",
         price: 60,
       },
+
       {
         name: "WIPO",
         price: 60,
@@ -155,7 +152,7 @@ export const trademarkProducts = [
       },
       {
         name: "COLA Registry",
-        price: 35,
+        price: 55,
       },
       {
         name: "EU (27) Countries",
@@ -266,7 +263,7 @@ export const trademarkProducts = [
   {
     name: "Australia Trademark Search - Advanced AI Full Search",
     included: "AU Trademarks",
-    price: 65,
+    price: 125,
     banner: "/checkout/Australia Trademark Search - AI.png",
     path: "/australia-trademark-search-advanced-ai-full-search",
     addOns: [
@@ -281,19 +278,16 @@ export const trademarkProducts = [
 
       {
         name: "US Federal",
-        price: 65,
+        price: 60,
       },
-      {
-        name: "US Federal",
-        price: 35,
-      },
+
       {
         name: "US (52) States",
-        price: 35,
+        price: 100,
       },
       {
         name: "Canada",
-        price: 65,
+        price: 60,
       },
       {
         name: "Mexico",
@@ -351,11 +345,23 @@ export const trademarkProducts = [
         price: 365,
       },
       {
-        name: "Europe (56) Countries",
+        name: "Europe (27) Countries",
         price: 210,
       },
       {
+        name: "EU (27) Countries",
+        price: 60,
+      },
+      {
         name: "United Kingdom",
+        price: 60,
+      },
+      {
+        name: "General Opinion",
+        price: 65,
+      },
+      {
+        name: "WIPO",
         price: 60,
       },
     ],
@@ -365,7 +371,7 @@ export const trademarkProducts = [
     included: " NZ Trademarks",
     price: 65,
     banner: "/checkout/New zealand Trademark Search - AI.png",
-    path: "/australia-trademark-search-manual-full-search",
+    path: "/new-zealand-trademark-search-advanced-ai-full-search",
     addOns: [
       {
         name: "Common Law",
@@ -577,8 +583,9 @@ export const trademarkProducts = [
         name: "US (52) States",
         price: 100,
       },
+
       {
-        name: "US (52) States",
+        name: "Canada",
         price: 60,
       },
       {
@@ -632,35 +639,35 @@ export const trademarkProducts = [
       },
       {
         name: "Europe (56) Countries ",
-        price: 65,
+        price: 365,
       },
       {
         name: "EU (27) Countries ",
-        price: 65,
+        price: 210,
       },
       {
         name: "EUIPO ",
-        price: 65,
+        price: 60,
       },
       {
         name: "United Kingdom ",
-        price: 65,
+        price: 60,
       },
       {
         name: "New Zealand",
-        price: 65,
+        price: 60,
       },
       {
         name: "WIPO",
-        price: 65,
+        price: 60,
       },
       {
         name: "Korea",
-        price: 65,
+        price: 60,
       },
       {
         name: "Japan",
-        price: 65,
+        price: 60,
       },
     ],
   },
@@ -672,15 +679,15 @@ export const trademarkProducts = [
     path: "/japan-trademark-search-manual-full-search",
     addOns: [
       {
-        name: "WIPO",
-        price: 60,
-      },
-      {
-        name: "Common Law",
+        name: "Common Law - CN",
         price: 55,
       },
       {
-        name: "US Federal ",
+        name: "General Opinion",
+        price: 65,
+      },
+      {
+        name: "US Federal",
         price: 60,
       },
       {
@@ -688,7 +695,7 @@ export const trademarkProducts = [
         price: 100,
       },
       {
-        name: "US (52) States",
+        name: "Canada",
         price: 60,
       },
       {
@@ -700,8 +707,36 @@ export const trademarkProducts = [
         price: 60,
       },
       {
-        name: "General Opinion ",
-        price: 65,
+        name: "Europe (56) Countries",
+        price: 365,
+      },
+      {
+        name: "EU (27) Countries",
+        price: 210,
+      },
+      {
+        name: "EUIPO",
+        price: 60,
+      },
+      {
+        name: "United Kingdom",
+        price: 60,
+      },
+      {
+        name: "New Zealand",
+        price: 100,
+      },
+      {
+        name: "WIPO",
+        price: 60,
+      },
+      {
+        name: "Korea ",
+        price: 60,
+      },
+      {
+        name: "China",
+        price: 60,
       },
     ],
   },
@@ -719,6 +754,10 @@ export const trademarkProducts = [
       {
         name: "General Opinion",
         price: 65,
+      },
+      {
+        name: "US Federal",
+        price: 60,
       },
       {
         name: "US (52) States",
@@ -802,7 +841,7 @@ export const monitorProduct = [
     name: "US Trademark Monitoring",
     path: "/us-trademark-monitoring",
     included:
-      " US Federal + WIPO (*All US designated WIPO results are always included)",
+      "US Federal + WIPO (*All US designated WIPO results are always included)",
     strikePrice: 59,
     price: 55,
     banner: "/checkout/US Trademark Monitoring.png",
@@ -810,7 +849,7 @@ export const monitorProduct = [
     addOns: [
       {
         name: "US (52) States",
-        price: 110,
+        price: 105,
       },
       {
         name: "Common Law- US",
@@ -861,11 +900,11 @@ export const monitorProduct = [
         price: 105,
       },
       {
-        name: "Common Law- US",
+        name: "Common Law- CA",
         price: 55,
       },
       {
-        name: "Canada/CIPO",
+        name: "US Federal ",
         price: 65,
       },
       {
@@ -873,13 +912,14 @@ export const monitorProduct = [
         price: 55,
       },
       {
-        name: "Mexico ",
+        name: "Mexico",
         price: 65,
       },
       {
         name: "EU (27) Countries",
         price: 130,
       },
+
       {
         name: "EUIPO",
         price: 65,
@@ -959,13 +999,10 @@ export const monitorProduct = [
         price: 65,
       },
       {
-        name: "Canada (7) Business Registeries ",
-        price: 55,
-      },
-      {
-        name: "Mexico",
+        name: "Mexico ",
         price: 65,
       },
+
       {
         name: "United Kingdom",
         price: 65,
@@ -989,7 +1026,7 @@ export const monitorProduct = [
     banner: "/checkout/EUIPO Countries Trademark Monitoring.png",
     addOns: [
       {
-        name: "US (52) States",
+        name: "US (27) Countries",
         price: 105,
       },
       {
@@ -997,28 +1034,33 @@ export const monitorProduct = [
         price: 55,
       },
       {
-        name: "US Federal ",
+        name: "WIPO",
         price: 65,
       },
-      {
-        name: "Canada (7) Business Registeries ",
-        price: 55,
-      },
-      {
-        name: "Mexico",
-        price: 65,
-      },
+
       {
         name: "United Kingdom",
         price: 65,
       },
       {
-        name: "WIPO",
+        name: "Europe ",
+        price: 185,
+      },
+      {
+        name: "US (52) States ",
         price: 65,
       },
       {
-        name: "Canada ",
+        name: "US Federal",
         price: 65,
+      },
+      {
+        name: "Canada CIPO",
+        price: 65,
+      },
+      {
+        name: "Canada (7) Business Registeries ",
+        price: 55,
       },
     ],
   },
@@ -1113,6 +1155,10 @@ export const monitorProduct = [
         price: 55,
       },
       {
+        name: "Mexico ",
+        price: 65,
+      },
+      {
         name: "Europe (56) Countries ",
         price: 180,
       },
@@ -1165,6 +1211,10 @@ export const monitorProduct = [
       {
         name: "Canada (7) Business Registeries ",
         price: 55,
+      },
+      {
+        name: "Mexico ",
+        price: 65,
       },
       {
         name: "Europe (56) Countries ",
@@ -1359,56 +1409,22 @@ export const monitorProduct = [
     path: "/global-trademark-monitoring",
     strikePrice: 319,
     price: 315,
-    avatar:"/flag/World.png",
+    avatar: "/flag/World.png",
     banner: "/checkout/GLOBAL Trademark Monitoring.png",
     addOns: [
       {
         name: "Common Law",
         price: 55,
       },
-      {
-        name: "WIPO",
-        price: 65,
-      },
-      {
-        name: "US Federal",
-        price: 65,
-      },
+
       {
         name: "US (52) States",
         price: 105,
       },
-      {
-        name: "Canada",
-        price: 65,
-      },
+
       {
         name: "Canada (7) Business Registeries",
         price: 55,
-      },
-      {
-        name: "Mexico",
-        price: 65,
-      },
-      {
-        name: "Europe (56) Countries",
-        price: 180,
-      },
-      {
-        name: "EU (27) Countries",
-        price: 130,
-      },
-      {
-        name: "EUIPO",
-        price: 65,
-      },
-      {
-        name: "United Kingdom ",
-        price: 65,
-      },
-      {
-        name: "New Zealand",
-        price: 65,
       },
     ],
   },

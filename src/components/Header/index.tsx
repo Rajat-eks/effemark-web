@@ -13,6 +13,7 @@ import {
   TwitterIcon,
   X,
 } from "lucide-react";
+import { useAppSelector } from "@/lib/hooks";
 
 // import Call from "@/components/assets/Call.svg";
 // import Email from "@/components/assets/Email.svg";
@@ -54,6 +55,7 @@ const navBarItems = [
 const Header: React.FC<IndexProps> = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const { itemCount } = useAppSelector((state) => state.cart);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
@@ -79,12 +81,18 @@ const Header: React.FC<IndexProps> = () => {
           </a>
         </div>
         <div className="hidden sm:flex gap-4 items-center">
-          {/* <Link
-            href={"/"}
-            className="text-white px-4 text-[16px] bg-gradient-to-r from-[#E90303] to-[#202F5A] via-[#731D36] rounded flex items-center justify-center gap-2"
+          <Link
+            href={"/cart"}
+            className="text-white px-4 text-[16px] bg-gradient-to-r from-[#E90303] to-[#202F5A] via-[#731D36] rounded flex items-center justify-center gap-2 relative"
           >
-            <Image src={Cart} alt="Cart" /> Cart
-          </Link> */}
+            <Image src={Cart} alt="Cart" /> 
+            Cart
+            {itemCount > 0 && (
+              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                {itemCount}
+              </span>
+            )}
+          </Link>
           <a href="https://www.linkedin.com/company/effemark/ " target="_blank">
             <Image src={Linkedin} alt="twitter" width={26} />
           </a>
@@ -174,6 +182,17 @@ const Header: React.FC<IndexProps> = () => {
                 )}
               </li>
             ))}
+            <li>
+              <Link href="/cart" className="font-medium text-gray-800 flex items-center gap-2">
+                <Image src={Cart} alt="Cart" width={20} height={20} />
+                Cart
+                {itemCount > 0 && (
+                  <span className="bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                    {itemCount}
+                  </span>
+                )}
+              </Link>
+            </li>
           </ul>
         </div>
       )}

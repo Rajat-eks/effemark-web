@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export interface CartItem {
   id: string;
@@ -15,6 +15,17 @@ export interface CartItem {
     name: string;
     price: number;
   }>;
+  customerInfo?: {
+    fullName: string;
+    email: string;
+    contactNumber: string;
+    country: string;
+    markTypes: string;
+    niceClasses: string;
+    goodsServices: string;
+    referenceNumber: string;
+    message: string;
+  };
 }
 
 interface CartState {
@@ -30,73 +41,120 @@ const initialState: CartState = {
 };
 
 const cartSlice = createSlice({
-  name: 'cart',
+  name: "cart",
   initialState,
   reducers: {
-    addToCart: (state, action: PayloadAction<Omit<CartItem, 'quantity'>>) => {
-      const existingItem = state.items.find(item => item.id === action.payload.id);
-      
+    addToCart: (state, action: PayloadAction<Omit<CartItem, "quantity">>) => {
+      const existingItem = state.items.find(
+        (item) => item.id === action.payload.id
+      );
+
       if (existingItem) {
         existingItem.quantity += 1;
       } else {
         state.items.push({ ...action.payload, quantity: 1 });
       }
-      
+
       // Recalculate totals
-      state.itemCount = state.items.reduce((total, item) => total + item.quantity, 0);
+      state.itemCount = state.items.reduce(
+        (total, item) => total + item.quantity,
+        0
+      );
       state.total = state.items.reduce((total, item) => {
         const basePrice = item.price * item.quantity;
-        const addOnsPrice = item.selectedAddOns?.reduce((addOnTotal, addOn) => 
-          addOnTotal + (addOn.price * item.quantity), 0) || 0;
-        return total + basePrice + addOnsPrice;
+        const addOnsPrice =
+          item.selectedAddOns?.reduce(
+            (addOnTotal, addOn) => addOnTotal + addOn.price * item.quantity,
+            0
+          ) || 0;
+        const itemTotal = basePrice + addOnsPrice;
+        console.log('🔍 Cart item calculation:', {
+          name: item.name,
+          price: item.price,
+          quantity: item.quantity,
+          basePrice,
+          addOnsPrice,
+          itemTotal,
+          runningTotal: total + itemTotal
+        });
+        return total + itemTotal;
       }, 0);
+      
+      console.log('🔍 Cart total calculated:', state.total);
     },
-    
+
     removeFromCart: (state, action: PayloadAction<string>) => {
-      state.items = state.items.filter(item => item.id !== action.payload);
-      
+      state.items = state.items.filter((item) => item.id !== action.payload);
+
       // Recalculate totals
-      state.itemCount = state.items.reduce((total, item) => total + item.quantity, 0);
+      state.itemCount = state.items.reduce(
+        (total, item) => total + item.quantity,
+        0
+      );
       state.total = state.items.reduce((total, item) => {
         const basePrice = item.price * item.quantity;
-        const addOnsPrice = item.selectedAddOns?.reduce((addOnTotal, addOn) => 
-          addOnTotal + (addOn.price * item.quantity), 0) || 0;
+        const addOnsPrice =
+          item.selectedAddOns?.reduce(
+            (addOnTotal, addOn) => addOnTotal + addOn.price * item.quantity,
+            0
+          ) || 0;
         return total + basePrice + addOnsPrice;
       }, 0);
     },
-    
-    updateQuantity: (state, action: PayloadAction<{ id: string; quantity: number }>) => {
-      const item = state.items.find(item => item.id === action.payload.id);
+
+    updateQuantity: (
+      state,
+      action: PayloadAction<{ id: string; quantity: number }>
+    ) => {
+      const item = state.items.find((item) => item.id === action.payload.id);
       if (item) {
         item.quantity = action.payload.quantity;
-        
+
         // Recalculate totals
-        state.itemCount = state.items.reduce((total, item) => total + item.quantity, 0);
+        state.itemCount = state.items.reduce(
+          (total, item) => total + item.quantity,
+          0
+        );
         state.total = state.items.reduce((total, item) => {
           const basePrice = item.price * item.quantity;
-          const addOnsPrice = item.selectedAddOns?.reduce((addOnTotal, addOn) => 
-            addOnTotal + (addOn.price * item.quantity), 0) || 0;
+          const addOnsPrice =
+            item.selectedAddOns?.reduce(
+              (addOnTotal, addOn) => addOnTotal + addOn.price * item.quantity,
+              0
+            ) || 0;
           return total + basePrice + addOnsPrice;
         }, 0);
       }
     },
-    
-    updateAddOns: (state, action: PayloadAction<{ id: string; selectedAddOns: Array<{ name: string; price: number }> }>) => {
-      const item = state.items.find(item => item.id === action.payload.id);
+
+    updateAddOns: (
+      state,
+      action: PayloadAction<{
+        id: string;
+        selectedAddOns: Array<{ name: string; price: number }>;
+      }>
+    ) => {
+      const item = state.items.find((item) => item.id === action.payload.id);
       if (item) {
         item.selectedAddOns = action.payload.selectedAddOns;
-        
+
         // Recalculate totals
-        state.itemCount = state.items.reduce((total, item) => total + item.quantity, 0);
+        state.itemCount = state.items.reduce(
+          (total, item) => total + item.quantity,
+          0
+        );
         state.total = state.items.reduce((total, item) => {
           const basePrice = item.price * item.quantity;
-          const addOnsPrice = item.selectedAddOns?.reduce((addOnTotal, addOn) => 
-            addOnTotal + (addOn.price * item.quantity), 0) || 0;
+          const addOnsPrice =
+            item.selectedAddOns?.reduce(
+              (addOnTotal, addOn) => addOnTotal + addOn.price * item.quantity,
+              0
+            ) || 0;
           return total + basePrice + addOnsPrice;
         }, 0);
       }
     },
-    
+
     clearCart: (state) => {
       state.items = [];
       state.total = 0;
@@ -105,5 +163,11 @@ const cartSlice = createSlice({
   },
 });
 
-export const { addToCart, removeFromCart, updateQuantity, updateAddOns, clearCart } = cartSlice.actions;
+export const {
+  addToCart,
+  removeFromCart,
+  updateQuantity,
+  updateAddOns,
+  clearCart,
+} = cartSlice.actions;
 export default cartSlice.reducer;

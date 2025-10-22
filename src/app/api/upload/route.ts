@@ -73,7 +73,7 @@ export async function POST(req: Request) {
     return withCors(
       req,
       NextResponse.json(
-        { success: false, error: err?.message || "Unexpected error" },
+        { success: false, error: err instanceof Error ? err.message : "Unexpected error" },
         { status: 500 }
       )
     );
@@ -105,7 +105,7 @@ export async function DELETE(req: Request) {
     return withCors(
       req,
       NextResponse.json(
-        { success: false, error: err?.message || "Unexpected error" },
+        { success: false, error: err instanceof Error ? err.message : "Unexpected error" },
         { status: 500 }
       )
     );

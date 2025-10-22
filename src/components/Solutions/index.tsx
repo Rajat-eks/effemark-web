@@ -62,7 +62,7 @@ const Solutions: React.FC<IndexProps> = ({ products }) => {
             <span className="text-red-500 text-[13px]">
               *All results designated by the US at WIPO are always included.
             </span>
-            {/* <div className="flex items-center justify-center">
+            <div className="flex items-center justify-center">
                 <div className="flex items-center justify-center">
                     <Link
                       href={`/checkout/${path}`}
@@ -71,7 +71,7 @@ const Solutions: React.FC<IndexProps> = ({ products }) => {
                       Start Your Order <ChevronRight />
                     </Link>
                   </div>
-              </div> */}
+              </div>
           </div>
         ))}
       </section>
