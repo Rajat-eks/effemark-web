@@ -40,7 +40,7 @@ const Footer: React.FC<IndexProps> = (props) => {
               <Link href={"/about-us"}>About Us</Link>
             </li>
             <li>
-              <Link href={"/faq"}>FAQ</Link>
+              <Link href={"/faqs"}>FAQ</Link>
             </li>
             {/* <li>
               <Link href={"/articles"}>Articles</Link>
