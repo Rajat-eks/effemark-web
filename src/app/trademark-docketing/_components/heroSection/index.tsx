@@ -1,8 +1,10 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Background from "@/components/assets/bg/trademark-bg.svg";
 import Image, { StaticImageData } from "next/image";
 import DownArrow from "@/components/assets/Down-arrow.svg";
 import { CircleCheckBig, Globe, UsersRound } from "lucide-react";
+import ContactModal from "@/components/ContactModal";
 
 interface IndexProps {
   // define props here
@@ -18,6 +20,7 @@ const HeroSection: React.FC<IndexProps> = ({
   cunsultant,
   banner,
 }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <div className="hero-section relative h-[70vh] md:h-[400px] w-full">
       {/* Background Image */}
@@ -38,7 +41,10 @@ const HeroSection: React.FC<IndexProps> = ({
         </p>
 
         <div className="flex items-start w-full gap-4 justify-start ">
-          <button className=" rounded py-2 px-5 bg-red-600 text-white hover:bg-white hover:text-red-600">
+          <button 
+            className=" rounded py-2 px-5 bg-red-600 text-white hover:bg-white hover:text-red-600 transition-colors"
+            onClick={() => setIsModalOpen(true)}
+          >
             Get A Quote
           </button>
         </div>
@@ -63,6 +69,12 @@ const HeroSection: React.FC<IndexProps> = ({
           </div>
         </section>
       )}
+      
+      {/* Contact Modal */}
+      <ContactModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+      />
     </div>
   );
 };

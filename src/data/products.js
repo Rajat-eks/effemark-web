@@ -119,7 +119,7 @@ export const trademarkProducts = [
     included: "Canada + WIPO + Domain Names",
     price: 125,
     banner: "/checkout/CanadaTrademark search - Manual.png",
-    path: "/Canada Trademark Search - Manual Full Search",
+    path: "/canada-trademark-search-manual-full-search",
     addOns: [
       {
         name: "US Federal",
@@ -210,7 +210,7 @@ export const trademarkProducts = [
     name: "UK Trademark Search - Manual Full Search",
     included: "United Kingdom + WIPO + Domain Names",
     price: 125,
-    banner: "/checkout/UK TM SEARCH _ AI.png",
+    banner: "/checkout/UK TM SEARCH _ Manual.png",
     path: "/uk-trademark-search-manual-full-search",
     addOns: [
       {

@@ -10,7 +10,6 @@ import Global from "@/components/assets/icons/global.svg";
 import Hybrid from "@/components/assets/icons/hybrid.svg";
 import Timely from "@/components/assets/icons/timely.svg";
 import Premium from "@/components/assets/icons/premium.svg";
-import { trademarkProducts } from "@/data/products";
 
 interface PageProps {
   // define props here
@@ -19,7 +18,7 @@ interface PageProps {
 export const metadata = {
   title: "Trademark Docketing Services | EffeMark",
   description:
-   "Maintain compliance with expert trademark docketing services - providing worldwide coverage, prompt document management & integrated quality assurance. Start today!",
+    "Maintain compliance with expert trademark docketing services - providing worldwide coverage, prompt document management & integrated quality assurance. Start today!",
   keywords: ["Trademark Docketing Services"],
 };
 const FAQs = [
@@ -97,25 +96,25 @@ const page: React.FC<PageProps> = (props) => {
           {
             title: "Global Coverage",
             description:
-              "Comprehensive search across 180+ countries and specialized industry databases",
+              "Comprehensive docketing across 100+ jurisdictions with access to premium databases and worldwide attorney networks",
             logo: Global,
           },
           {
-            title: "Hybrid Technology",
+            title: "Advanced Technology",
             description:
-              "Proprietary AI-powered search algorithms enhanced by expert manual verification",
+              "Industry-leading docketing software integrated with automated deadline tracking and real-time status monitoring systems",
             logo: Hybrid,
           },
           {
             title: "Premium Quality",
             description:
-              "Detailed analysis reports with clear risk assessments and actionable recommendations",
+              "Multi-tier quality assurance with expert verification, data accuracy maintenance, and comprehensive portfolio analysis",
             logo: Premium,
           },
           {
-            title: "Timely Insights",
+            title: "Proactive Alerts ",
             description:
-              "Early detection of potential conflicts to prevent costly legal disputes",
+              "Early deadline notifications and status updates to prevent costly missed deadlines and ensure timely action",
             logo: Timely,
           },
         ]}
@@ -123,7 +122,6 @@ const page: React.FC<PageProps> = (props) => {
       {/* <CaseStudy /> */}
 
       <Testimonial />
-
       <section className="bg-[#202F5A] w-full flex flex-col items-center justify-center py-10 px-6 md:px-20 space-y-5 ">
         <h4 className=" text-[20px]  text-center md:text-[25px] text-white">
           Frequently Asked Questions (FAQs)

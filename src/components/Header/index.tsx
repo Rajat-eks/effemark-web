@@ -60,7 +60,7 @@ const Header: React.FC<IndexProps> = () => {
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
   return (
-    <header className="text-gray-800 flex flex-col bg-white shadow">
+    <header className="text-gray-800 flex flex-col bg-white shadow sticky top-0 z-50">
       {/* Top bar */}
       <section className="bg-[#134493] text-white flex justify-between items-center gap-10 py-2 px-4 text-sm">
         <div className="flex gap-4 flex-wrap">

@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ReduxProvider from "@/components/ReduxProvider";
+import ScrollToTop from "@/components/ScrollToTop";
 
 import { Poppins } from "next/font/google";
 import Head from "next/head";
@@ -44,6 +45,7 @@ export default function RootLayout({
           <Header />
           {children}
           <Footer />
+          <ScrollToTop />
         </ReduxProvider>
       </body>
     </html>

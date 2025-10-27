@@ -104,6 +104,44 @@ const trademarkMonitor = [
       "Using AI, linguistic analysis, and expert review, we detect even minor variations that could compromise your trademark.",
   },
 ];
+const trademarkSearch = [
+  {
+    question: "What exactly is a trademark search?",
+    answer:
+      "A trademark search is a comprehensive review of existing registered and unregistered trademarks to determine if your proposed mark might conflict with others already in use. At EffeMark, we search across federal and state registrations, common law usage, domain names, and business registries to identify potential conflicts that could prevent registration or lead to legal disputes.",
+  },
+  {
+    question: "How long does the trademark search process take?",
+    answer:
+      "Our turnaround times vary based on the type of search you select. Basic screening searches are typically completed within 1-2 business days, while comprehensive searches may take 3-5 business days. International searches depend on the number of jurisdictions involved. Rush services are available for urgent needs at an additional fee.",
+  },
+  {
+    question: "What happens if potential conflicts are found?",
+    answer:
+      "If our search identifies potential conflicts, we provide a risk assessment for each conflict and strategic recommendations for proceeding. Options may include modifying your mark, limiting the scope of goods/services, considering a coexistence agreement, or selecting an alternative mark. Our experts can guide you through the decision-making process based on your business priorities.",
+  },
+  {
+    question: "Why shouldn't I just do a free search myself?",
+    answer:
+      "While free USPTO or Google searches might seem sufficient, they only scratch the surface. Professional trademark searches utilize specialized databases, complex algorithms, and expert analysis to identify similar marks that could present legal risks. Our experts consider phonetic similarities, translation equivalents, and industry context that automated tools miss, potentially saving you from costly disputes and rebranding.",
+  },
+  {
+    question: "Do you handle international trademark searches?",
+    answer:
+      "Yes, we conduct international trademark searches across 180+ countries worldwide. Our team includes specialists with regional expertise and multilingual capabilities to ensure thorough coverage of your target markets. International search packages can be customized to include only the countries relevant to your business expansion plans.",
+  },
+  {
+    question: "What databases do you check during a comprehensive search?",
+    answer:
+      "Our comprehensive searches include the USPTO federal database, state trademark registries, business name databases, domain registrations, social media platforms, industry publications, and common law sources. For international searches, we access the official databases of each country's trademark office, WIPO's international registry, and regional databases like the EUIPO.",
+  },
+  {
+    question:
+      "How do you handle similar-sounding names or alternate spellings?",
+    answer:
+      "Our search methodology includes phonetic variations, alternative spellings, plurals, common misspellings, and translation equivalents of your proposed mark. We utilize specialized algorithms and linguistic expertise to identify marks that sound similar even if spelled differently, as these can still present infringement risks.",
+  },
+];
 const page: React.FC<PageProps> = (props) => {
   return (
     <main>
@@ -133,6 +171,16 @@ const page: React.FC<PageProps> = (props) => {
           <h4 className="md:text-[26px] font-bold text-xl ">Trademark Docketing</h4>
           <ul className="p-4 md:w-[85%] space-y-2">
             {trademarkDocket.map((item) => (
+              <li>
+                <QuesAns ques={item.question} ans={item.answer} />
+              </li>
+            ))}
+          </ul>
+        </section>
+        <section className="flex flex-col items-center justify-center p-5">
+          <h4 className="md:text-[26px] font-bold text-xl ">Trademark Search</h4>
+          <ul className="p-4 md:w-[85%] space-y-2">
+            {trademarkSearch.map((item) => (
               <li>
                 <QuesAns ques={item.question} ans={item.answer} />
               </li>

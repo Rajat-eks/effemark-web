@@ -197,7 +197,7 @@ const page: React.FC<PageProps> = (props) => {
               </p>
               <div className="flex items-center justify-center">
                 <Link
-                  href={`/checkout/${product.path}`}
+                  href={`/product/${product.path}`}
                   className="border-[1px] py-2 px-4 rounded border-gray-400 flex items-center gap-1 hover:ease-in duration-300 group-hover:bg-[#202F5A] group-hover:text-white"
                 >
                   Start Your Order <ChevronRight />

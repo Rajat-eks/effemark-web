@@ -10,12 +10,14 @@ const paypalClientId = process.env.PAYPAL_CLIENT_ID!;
 const paypalClientSecret = process.env.PAYPAL_CLIENT_SECRET!;
 const paypalEnvironment = process.env.NODE_ENV === 'production' ? 'live' : 'live';
 
-// Email Configuration
+// Email Configuration - Hostinger SMTP
 const emailTransporter = nodemailer.createTransport({
-  service: 'gmail',
+  host: 'smtp.hostinger.com',
+  port: 465,
+  secure: true, // SSL
   auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
+    user: process.env.EMAIL_USER || 'info@effemark.com',
+    pass: process.env.EMAIL_PASS || 'Effmrk@3405$',
   },
 });
 
@@ -25,11 +27,11 @@ if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
     if (error) {
       console.log('Email configuration error:', error);
     } else {
-      console.log('Email server is ready to send messages');
+      console.log('✅ Hostinger SMTP server is ready to send messages');
     }
   });
 } else {
-  console.log('Email credentials not configured, emails will be skipped');
+  console.log('⚠️ Email credentials not configured, using fallback values');
 }
 
 // Order Status Enum
@@ -391,7 +393,7 @@ async function sendOrderConfirmationEmail(order: Order) {
     }
 
     const mailOptions = {
-      from: process.env.EMAIL_USER,
+      from: process.env.EMAIL_USER || 'info@effemark.com',
       to: order.customerInfo.email,
       subject: `Order Confirmation - ${order.orderNumber}`,
       html: `
@@ -441,7 +443,7 @@ async function sendOrderStatusUpdateEmail(order: Order) {
     };
 
     const mailOptions = {
-      from: process.env.EMAIL_USER,
+      from: process.env.EMAIL_USER || 'info@effemark.com',
       to: order.customerInfo.email,
       subject: `Order Update - ${order.orderNumber}`,
       html: `
@@ -471,7 +473,7 @@ async function sendOrderStatusUpdateEmail(order: Order) {
 async function sendOrderCompletionEmail(order: Order) {
   try {
     const mailOptions = {
-      from: process.env.EMAIL_USER,
+      from: process.env.EMAIL_USER || 'info@effemark.com',
       to: order.customerInfo.email,
       subject: `Order Completed - ${order.orderNumber}`,
       html: `
@@ -502,7 +504,7 @@ async function sendOrderCompletionEmail(order: Order) {
 async function sendOrderFailureEmail(order: Order) {
   try {
     const mailOptions = {
-      from: process.env.EMAIL_USER,
+      from: process.env.EMAIL_USER || 'info@effemark.com',
       to: order.customerInfo.email,
       subject: `Order Issue - ${order.orderNumber}`,
       html: `

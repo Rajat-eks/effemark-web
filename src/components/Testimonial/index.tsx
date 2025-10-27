@@ -27,7 +27,7 @@ const Testimonial: React.FC<IndexProps> = () => {
     <div className="relative w-full overflow-hidden py-10">
       {/* Scrollable container */}
       <h2 className="text-center text-[30px] font-semibold">
-        What clients says
+        What Clients Says
       </h2>
       <div
         ref={containerRef}
