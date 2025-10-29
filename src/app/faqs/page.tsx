@@ -154,6 +154,16 @@ const page: React.FC<PageProps> = (props) => {
         </div>
       </section>
       <section className="w-full">
+      <section className="flex flex-col items-center justify-center p-5">
+          <h4 className="md:text-[26px] font-bold text-xl ">Trademark Search</h4>
+          <ul className="p-4 md:w-[85%] space-y-2">
+            {trademarkSearch.map((item) => (
+              <li>
+                <QuesAns ques={item.question} ans={item.answer} />
+              </li>
+            ))}
+          </ul>
+        </section>
         <section className="flex flex-col items-center justify-center p-5">
           <h4 className="md:text-[26px]  text-xl font-bold">
             Trademark Monitoring{" "}
@@ -177,16 +187,7 @@ const page: React.FC<PageProps> = (props) => {
             ))}
           </ul>
         </section>
-        <section className="flex flex-col items-center justify-center p-5">
-          <h4 className="md:text-[26px] font-bold text-xl ">Trademark Search</h4>
-          <ul className="p-4 md:w-[85%] space-y-2">
-            {trademarkSearch.map((item) => (
-              <li>
-                <QuesAns ques={item.question} ans={item.answer} />
-              </li>
-            ))}
-          </ul>
-        </section>
+        
       </section>
     </main>
   );

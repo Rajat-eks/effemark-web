@@ -263,7 +263,7 @@ export const trademarkProducts = [
   {
     name: "Australia Trademark Search - Advanced AI Full Search",
     included: "AU Trademarks",
-    price: 125,
+    price: 65,
     banner: "/checkout/Australia Trademark Search - AI.png",
     path: "/australia-trademark-search-advanced-ai-full-search",
     addOns: [
@@ -278,16 +278,16 @@ export const trademarkProducts = [
 
       {
         name: "US Federal",
-        price: 60,
+        price: 65,
       },
 
       {
         name: "US (52) States",
-        price: 100,
+        price: 35,
       },
       {
         name: "Canada",
-        price: 60,
+        price: 65,
       },
       {
         name: "Mexico",
@@ -307,7 +307,7 @@ export const trademarkProducts = [
     name: "Australia Trademark Search - Manual Full Search",
     included: "Australia + WIPO + Domain Names",
     price: 125,
-    banner: "/checkout/Australia Trademark Search - AI.png",
+    banner: "/checkout/Australia Trademark Search - Manual.png",
     path: "/australia-trademark-search-manual-full-search",
     addOns: [
       {
@@ -606,7 +606,7 @@ export const trademarkProducts = [
     name: "China Trademark Search - Manual Full Search",
     included: "China + WIPO + Domain Names",
     price: 125,
-    banner: "/checkout/Europe Trademark Search - Manual.png",
+    banner: "/checkout/china Trademark Search - Manual.png",
     path: "/china-trademark-search-manual-full-search",
     addOns: [
       {
