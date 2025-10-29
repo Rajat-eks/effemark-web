@@ -66,18 +66,44 @@ const AddToCartButton: React.FC<AddToCartButtonProps> = ({
     setIsAdding(true);
     
     // Convert file to base64 if present
-    let processedFormData = { ...formData };
-    if (formData.markImage) {
-      try {
-        const base64 = await convertFileToBase64(formData.markImage);
-        processedFormData = {
-          ...formData,
-          markImage: base64
-        };
-      } catch (error) {
-        console.error('Error converting file to base64:', error);
-        setIsAdding(false);
-        return;
+    let processedFormData: {
+      fullName: string;
+      email: string;
+      contactNumber: string;
+      country: string;
+      markTypes: string;
+      markDetails: string;
+      markImage?: string;
+      niceClasses: string;
+      goodsServices: string;
+      referenceNumber: string;
+      message: string;
+    } | null = null;
+    
+    if (formData) {
+      processedFormData = {
+        fullName: formData.fullName,
+        email: formData.email,
+        contactNumber: formData.contactNumber,
+        country: formData.country,
+        markTypes: formData.markTypes,
+        markDetails: formData.markDetails,
+        niceClasses: formData.niceClasses,
+        goodsServices: formData.goodsServices,
+        referenceNumber: formData.referenceNumber,
+        message: formData.message,
+      };
+      
+      // Convert File to base64 string if present
+      if (formData.markImage) {
+        try {
+          const base64 = await convertFileToBase64(formData.markImage);
+          processedFormData.markImage = base64; // Convert File to string
+        } catch (error) {
+          console.error('Error converting file to base64:', error);
+          setIsAdding(false);
+          return;
+        }
       }
     }
     
@@ -90,7 +116,7 @@ const AddToCartButton: React.FC<AddToCartButtonProps> = ({
       included: product.included,
       addOns: product.addOns,
       selectedAddOns: selectedAddOns,
-      customerInfo: processedFormData, // Include form data with the cart item
+      ...(processedFormData && { customerInfo: processedFormData }), // Only include customerInfo if formData exists
     };
 
     dispatch(addToCart(cartItem));

@@ -21,10 +21,12 @@ export interface CartItem {
     contactNumber: string;
     country: string;
     markTypes: string;
-    niceClasses: string;
-    goodsServices: string;
-    referenceNumber: string;
-    message: string;
+    markDetails?: string;
+    markImage?: string;
+    niceClasses?: string;
+    goodsServices?: string;
+    referenceNumber?: string;
+    message?: string;
   };
 }
 
