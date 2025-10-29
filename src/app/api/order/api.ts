@@ -54,6 +54,7 @@ export interface Order {
     country: string;
     markTypes: string;
     markDetails?: string;
+    markImage?: string;
     niceClasses?: string;
     goodsServices?: string;
     referenceNumber?: string;
@@ -415,6 +416,7 @@ async function sendOrderConfirmationEmail(order: Order) {
           <p><strong>Country:</strong> ${order.customerInfo.country || 'Not specified'}</p>
           <p><strong>Mark Type:</strong> ${order.customerInfo.markTypes}</p>
           ${order.customerInfo.markDetails ? `<p><strong>Mark Details:</strong> ${order.customerInfo.markDetails}</p>` : ''}
+          ${order.customerInfo.markImage ? `<p><strong>Image Mark:</strong> Image file uploaded</p>` : ''}
           ${order.customerInfo.niceClasses ? `<p><strong>Nice Classes:</strong> ${order.customerInfo.niceClasses}</p>` : ''}
           ${order.customerInfo.goodsServices ? `<p><strong>Goods & Services:</strong> ${order.customerInfo.goodsServices}</p>` : ''}
           ${order.customerInfo.referenceNumber ? `<p><strong>Reference Number:</strong> ${order.customerInfo.referenceNumber}</p>` : ''}

@@ -7,6 +7,7 @@ export interface ICustomerInfo {
   country: string;
   markTypes: string;
   markDetails?: string;
+  markImage?: string; // Store file path or base64
   niceClasses?: string;
   goodsServices?: string;
   referenceNumber?: string;
@@ -54,6 +55,7 @@ const CustomerInfoSchema = new Schema<ICustomerInfo>({
   country: { type: String, required: false },
   markTypes: { type: String, required: true },
   markDetails: { type: String },
+  markImage: { type: String },
   niceClasses: { type: String },
   goodsServices: { type: String },
   referenceNumber: { type: String },
