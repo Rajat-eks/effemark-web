@@ -53,6 +53,7 @@ export interface Order {
     contactNumber: string;
     country: string;
     markTypes: string;
+    markDetails?: string;
     niceClasses?: string;
     goodsServices?: string;
     referenceNumber?: string;
@@ -406,6 +407,18 @@ async function sendOrderConfirmationEmail(order: Order) {
           <p><strong>Order Number:</strong> ${order.orderNumber}</p>
           <p><strong>Status:</strong> ${order.status}</p>
           <p><strong>Total:</strong> $${order.total.toFixed(2)}</p>
+          
+          <h3>Customer Information</h3>
+          <p><strong>Name:</strong> ${order.customerInfo.fullName}</p>
+          <p><strong>Email:</strong> ${order.customerInfo.email}</p>
+          <p><strong>Contact:</strong> ${order.customerInfo.contactNumber}</p>
+          <p><strong>Country:</strong> ${order.customerInfo.country || 'Not specified'}</p>
+          <p><strong>Mark Type:</strong> ${order.customerInfo.markTypes}</p>
+          ${order.customerInfo.markDetails ? `<p><strong>Mark Details:</strong> ${order.customerInfo.markDetails}</p>` : ''}
+          ${order.customerInfo.niceClasses ? `<p><strong>Nice Classes:</strong> ${order.customerInfo.niceClasses}</p>` : ''}
+          ${order.customerInfo.goodsServices ? `<p><strong>Goods & Services:</strong> ${order.customerInfo.goodsServices}</p>` : ''}
+          ${order.customerInfo.referenceNumber ? `<p><strong>Reference Number:</strong> ${order.customerInfo.referenceNumber}</p>` : ''}
+          ${order.customerInfo.message ? `<p><strong>Additional Message:</strong> ${order.customerInfo.message}</p>` : ''}
           
           <h3>Items Ordered</h3>
           ${order.items.map(item => `

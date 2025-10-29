@@ -10,6 +10,7 @@ interface FormData {
   contactNumber: string;
   country: string;
   markTypes: string;
+  markDetails: string;
   niceClasses: string;
   goodsServices: string;
   referenceNumber: string;

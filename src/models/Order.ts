@@ -6,6 +6,7 @@ export interface ICustomerInfo {
   contactNumber: string;
   country: string;
   markTypes: string;
+  markDetails?: string;
   niceClasses?: string;
   goodsServices?: string;
   referenceNumber?: string;
@@ -52,6 +53,7 @@ const CustomerInfoSchema = new Schema<ICustomerInfo>({
   contactNumber: { type: String, required: true },
   country: { type: String, required: false },
   markTypes: { type: String, required: true },
+  markDetails: { type: String },
   niceClasses: { type: String },
   goodsServices: { type: String },
   referenceNumber: { type: String },

@@ -46,6 +46,17 @@ export async function POST(request: NextRequest) {
       "country",
       "markTypes",
     ];
+    
+    // Check if markDetails is required based on markTypes
+    const requiresMarkDetails = customerInfo.markTypes === "Word Mark" || 
+                               customerInfo.markTypes === "Image Mark";
+    
+    if (requiresMarkDetails && !customerInfo.markDetails) {
+      return NextResponse.json(
+        { error: "Mark details are required for the selected mark type" },
+        { status: 400 }
+      );
+    }
     const missingFields = requiredCustomerFields.filter(
       (field) => !customerInfo[field]
     );
