@@ -1,23 +1,24 @@
-import { NextRequest, NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
-import { v4 as uuidv4 } from 'uuid';
-import connectDB from '@/lib/mongodb';
-import Order, { IOrder } from '@/models/Order';
-import { FallbackOrder, createFallbackDocument } from '@/lib/fallback-storage';
+import { NextRequest, NextResponse } from "next/server";
+import nodemailer from "nodemailer";
+import { v4 as uuidv4 } from "uuid";
+import connectDB from "@/lib/mongodb";
+import Order, { IOrder } from "@/models/Order";
+import { FallbackOrder, createFallbackDocument } from "@/lib/fallback-storage";
 
 // PayPal Configuration
 const paypalClientId = process.env.PAYPAL_CLIENT_ID!;
 const paypalClientSecret = process.env.PAYPAL_CLIENT_SECRET!;
-const paypalEnvironment = process.env.NODE_ENV === 'production' ? 'live' : 'live';
+const paypalEnvironment =
+  process.env.NODE_ENV === "production" ? "live" : "live";
 
 // Email Configuration - Hostinger SMTP
 const emailTransporter = nodemailer.createTransport({
-  host: 'smtp.hostinger.com',
+  host: "smtp.hostinger.com",
   port: 465,
   secure: true, // SSL
   auth: {
-    user: process.env.EMAIL_USER || 'info@effemark.com',
-    pass: process.env.EMAIL_PASS || 'Effmrk@3405$',
+    user: process.env.EMAIL_USER || "info@effemark.com",
+    pass: process.env.EMAIL_PASS || "Effmrk@3405$",
   },
 });
 
@@ -25,22 +26,22 @@ const emailTransporter = nodemailer.createTransport({
 if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
   emailTransporter.verify((error, success) => {
     if (error) {
-      console.log('Email configuration error:', error);
+      console.log("Email configuration error:", error);
     } else {
-      console.log('✅ Hostinger SMTP server is ready to send messages');
+      console.log("✅ Hostinger SMTP server is ready to send messages");
     }
   });
 } else {
-  console.log('⚠️ Email credentials not configured, using fallback values');
+  console.log("⚠️ Email credentials not configured, using fallback values");
 }
 
 // Order Status Enum
 export enum OrderStatus {
-  PENDING = 'pending',
-  PROCESSING = 'processing',
-  COMPLETED = 'completed',
-  FAILED = 'failed',
-  CANCELLED = 'cancelled',
+  PENDING = "pending",
+  PROCESSING = "processing",
+  COMPLETED = "completed",
+  FAILED = "failed",
+  CANCELLED = "cancelled",
 }
 
 // Order Interface
@@ -86,39 +87,46 @@ export async function POST(request: NextRequest) {
     const { customerInfo, items, total } = body;
 
     // Debug: Log the received data
-    console.log('🔍 Order creation data:', {
-      customerInfo: customerInfo ? 'Present' : 'Missing',
-      items: items ? `${items.length} items` : 'Missing',
+    console.log("🔍 Order creation data:", {
+      customerInfo: customerInfo ? "Present" : "Missing",
+      items: items ? `${items.length} items` : "Missing",
       total: total,
-      totalType: typeof total
+      totalType: typeof total,
     });
 
     // Validate required fields
     if (!customerInfo || !items || !total) {
       return NextResponse.json(
-        { error: 'Missing required fields' },
+        { error: "Missing required fields" },
         { status: 400 }
       );
     }
 
     // Ensure total is a number
-    const numericTotal = typeof total === 'string' ? parseFloat(total) : total;
+    const numericTotal = typeof total === "string" ? parseFloat(total) : total;
     if (isNaN(numericTotal)) {
       return NextResponse.json(
-        { error: 'Invalid total amount' },
+        { error: "Invalid total amount" },
         { status: 400 }
       );
     }
 
     // Generate unique order number
-    let orderNumber: string = '';
+    let orderNumber: string = "";
     let isUnique = false;
-    
+
     while (!isUnique) {
-      orderNumber = `EFFE-${Date.now()}-${Math.random().toString(36).substr(2, 9).toUpperCase()}`;
+      orderNumber = `EFFE-${Date.now()}-${Math.random()
+        .toString(36)
+        .substr(2, 9)
+        .toUpperCase()}`;
       // Check uniqueness in both MongoDB and fallback storage
-      const existingOrder = await Order.findOne({ orderNumber }).catch(() => null);
-      const existingFallbackOrder = await FallbackOrder.findOne({ orderNumber });
+      const existingOrder = await Order.findOne({ orderNumber }).catch(
+        () => null
+      );
+      const existingFallbackOrder = await FallbackOrder.findOne({
+        orderNumber,
+      });
       if (!existingOrder && !existingFallbackOrder) {
         isUnique = true;
       }
@@ -130,24 +138,29 @@ export async function POST(request: NextRequest) {
     try {
       // Try to connect to MongoDB
       await connectDB();
-      
-    // Create order in MongoDB
-    const order = new Order({
-      orderNumber,
-      customerInfo,
-      items,
-      total: numericTotal,
-      status: OrderStatus.PENDING,
-      paymentMethod: 'paypal',
-      paymentMode: process.env.PAYPAL_MODE || 'live',
-    });
+
+      // Create order in MongoDB
+      const order = new Order({
+        orderNumber,
+        customerInfo,
+        items,
+        total: numericTotal,
+        status: OrderStatus.PENDING,
+        paymentMethod: "paypal",
+        paymentMode: process.env.PAYPAL_MODE || "live",
+      });
 
       savedOrder = await order.save();
-      console.log('✅ Order saved to MongoDB:', savedOrder.orderNumber, 'Total:', savedOrder.total);
+      console.log(
+        "✅ Order saved to MongoDB:",
+        savedOrder.orderNumber,
+        "Total:",
+        savedOrder.total
+      );
     } catch (mongoError) {
-      console.log('⚠️ MongoDB unavailable, using fallback storage');
+      console.log("⚠️ MongoDB unavailable, using fallback storage");
       useFallback = true;
-      
+
       // Use fallback storage
       savedOrder = await FallbackOrder.create({
         orderNumber,
@@ -155,8 +168,8 @@ export async function POST(request: NextRequest) {
         items,
         total: numericTotal,
         status: OrderStatus.PENDING,
-        paymentMethod: 'paypal',
-        paymentMode: process.env.PAYPAL_MODE || 'live',
+        paymentMethod: "paypal",
+        paymentMode: process.env.PAYPAL_MODE || "live",
       });
     }
 
@@ -171,12 +184,12 @@ export async function POST(request: NextRequest) {
         status: savedOrder.status,
         total: savedOrder.total,
       },
-      storage: useFallback ? 'fallback' : 'mongodb',
+      storage: useFallback ? "fallback" : "mongodb",
     });
   } catch (error) {
-    console.error('Error creating order:', error);
+    console.error("Error creating order:", error);
     return NextResponse.json(
-      { error: 'Failed to create order' },
+      { error: "Failed to create order" },
       { status: 500 }
     );
   }
@@ -186,13 +199,13 @@ export async function POST(request: NextRequest) {
 export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
-    const orderId = searchParams.get('id');
-    const orderNumber = searchParams.get('orderNumber');
-    const email = searchParams.get('email');
+    const orderId = searchParams.get("id");
+    const orderNumber = searchParams.get("orderNumber");
+    const email = searchParams.get("email");
 
     if (!orderId && !orderNumber && !email) {
       return NextResponse.json(
-        { error: 'Order ID, Order Number, or Email is required' },
+        { error: "Order ID, Order Number, or Email is required" },
         { status: 400 }
       );
     }
@@ -210,16 +223,18 @@ export async function GET(request: NextRequest) {
         order = await Order.findOne({ orderNumber });
       } else if (email) {
         // Return all orders for a customer
-        const orders = await Order.find({ 'customerInfo.email': email }).sort({ createdAt: -1 });
-        return NextResponse.json({ 
-          success: true, 
+        const orders = await Order.find({ "customerInfo.email": email }).sort({
+          createdAt: -1,
+        });
+        return NextResponse.json({
+          success: true,
           orders,
           count: orders.length,
-          storage: 'mongodb'
+          storage: "mongodb",
         });
       }
     } catch (mongoError) {
-      console.log('⚠️ MongoDB unavailable, using fallback storage');
+      console.log("⚠️ MongoDB unavailable, using fallback storage");
       useFallback = true;
 
       if (orderId) {
@@ -229,31 +244,28 @@ export async function GET(request: NextRequest) {
       } else if (email) {
         // Return all orders for a customer
         const orders = await FallbackOrder.findByEmail(email);
-        return NextResponse.json({ 
-          success: true, 
+        return NextResponse.json({
+          success: true,
           orders,
           count: orders.length,
-          storage: 'fallback'
+          storage: "fallback",
         });
       }
     }
 
     if (!order) {
-      return NextResponse.json(
-        { error: 'Order not found' },
-        { status: 404 }
-      );
+      return NextResponse.json({ error: "Order not found" }, { status: 404 });
     }
 
-    return NextResponse.json({ 
-      success: true, 
+    return NextResponse.json({
+      success: true,
       order,
-      storage: useFallback ? 'fallback' : 'mongodb'
+      storage: useFallback ? "fallback" : "mongodb",
     });
   } catch (error) {
-    console.error('Error fetching order:', error);
+    console.error("Error fetching order:", error);
     return NextResponse.json(
-      { error: 'Failed to fetch order' },
+      { error: "Failed to fetch order" },
       { status: 500 }
     );
   }
@@ -270,17 +282,14 @@ export async function PATCH(request: NextRequest) {
 
     if (!orderId || !status) {
       return NextResponse.json(
-        { error: 'Order ID and status are required' },
+        { error: "Order ID and status are required" },
         { status: 400 }
       );
     }
 
     const order = await Order.findById(orderId);
     if (!order) {
-      return NextResponse.json(
-        { error: 'Order not found' },
-        { status: 404 }
-      );
+      return NextResponse.json({ error: "Order not found" }, { status: 404 });
     }
 
     // Update order
@@ -310,9 +319,9 @@ export async function PATCH(request: NextRequest) {
       },
     });
   } catch (error) {
-    console.error('Error updating order:', error);
+    console.error("Error updating order:", error);
     return NextResponse.json(
-      { error: 'Failed to update order' },
+      { error: "Failed to update order" },
       { status: 500 }
     );
   }
@@ -322,65 +331,70 @@ export async function PATCH(request: NextRequest) {
 export async function createPayPalPayment(order: Order) {
   try {
     // Get base URL from environment or use localhost as fallback
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
-    
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+
     // For now, return a mock response
     // In production, integrate with actual PayPal API
     const mockPayment = {
       id: `PAY-${Date.now()}`,
       links: [
         {
-          rel: 'approve',
-          href: `${baseUrl}/payment/process?orderId=${order.id}&paypalOrderId=PAY-${Date.now()}&token=TOKEN-${Date.now()}`,
+          rel: "approve",
+          href: `${baseUrl}/payment/process?orderId=${
+            order.id
+          }&paypalOrderId=PAY-${Date.now()}&token=TOKEN-${Date.now()}`,
         },
       ],
     };
 
     return mockPayment;
   } catch (error) {
-    console.error('Error creating PayPal payment:', error);
+    console.error("Error creating PayPal payment:", error);
     throw error;
   }
 }
 
 // Capture PayPal Payment
-export async function capturePayPalPayment(orderId: string, paypalOrderId: string) {
+export async function capturePayPalPayment(
+  orderId: string,
+  paypalOrderId: string
+) {
   try {
     // Mock capture response
     const mockCapture = {
       id: `CAPTURE-${Date.now()}`,
-      status: 'COMPLETED',
+      status: "COMPLETED",
     };
 
     // Update order status in MongoDB
     await connectDB();
     const order = await Order.findById(orderId);
     if (order) {
-      order.status = 'completed';
+      order.status = "completed";
       order.paymentId = paypalOrderId;
-      order.paymentStatus = 'completed';
+      order.paymentStatus = "completed";
       await order.save();
-      
+
       // Send completion email
       await sendOrderCompletionEmail(order);
     }
 
     return mockCapture;
   } catch (error) {
-    console.error('Error capturing PayPal payment:', error);
-    
+    console.error("Error capturing PayPal payment:", error);
+
     // Update order status to failed in MongoDB
     await connectDB();
     const order = await Order.findById(orderId);
     if (order) {
-      order.status = 'failed';
-      order.paymentStatus = 'failed';
+      order.status = "failed";
+      order.paymentStatus = "failed";
       await order.save();
-      
+
       // Send failure email
       await sendOrderFailureEmail(order);
     }
-    
+
     throw error;
   }
 }
@@ -390,12 +404,14 @@ async function sendOrderConfirmationEmail(order: Order) {
   try {
     // Skip email if credentials are not configured
     if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
-      console.log('Email credentials not configured, skipping confirmation email');
+      console.log(
+        "Email credentials not configured, skipping confirmation email"
+      );
       return;
     }
 
     const mailOptions = {
-      from: process.env.EMAIL_USER || 'info@effemark.com',
+      from: process.env.EMAIL_USER || "info@effemark.com",
       to: order.customerInfo.email,
       subject: `Order Confirmation - ${order.orderNumber}`,
       html: `
@@ -413,26 +429,62 @@ async function sendOrderConfirmationEmail(order: Order) {
           <p><strong>Name:</strong> ${order.customerInfo.fullName}</p>
           <p><strong>Email:</strong> ${order.customerInfo.email}</p>
           <p><strong>Contact:</strong> ${order.customerInfo.contactNumber}</p>
-          <p><strong>Country:</strong> ${order.customerInfo.country || 'Not specified'}</p>
+          <p><strong>Country:</strong> ${
+            order.customerInfo.country || "Not specified"
+          }</p>
           <p><strong>Mark Type:</strong> ${order.customerInfo.markTypes}</p>
-          ${order.customerInfo.markDetails ? `<p><strong>Mark Details:</strong> ${order.customerInfo.markDetails}</p>` : ''}
-          ${order.customerInfo.markImage ? `<p><strong>Image Mark:</strong> Image file uploaded</p>` : ''}
-          ${order.customerInfo.niceClasses ? `<p><strong>Nice Classes:</strong> ${order.customerInfo.niceClasses}</p>` : ''}
-          ${order.customerInfo.goodsServices ? `<p><strong>Goods & Services:</strong> ${order.customerInfo.goodsServices}</p>` : ''}
-          ${order.customerInfo.referenceNumber ? `<p><strong>Reference Number:</strong> ${order.customerInfo.referenceNumber}</p>` : ''}
-          ${order.customerInfo.message ? `<p><strong>Additional Message:</strong> ${order.customerInfo.message}</p>` : ''}
+          ${
+            order.customerInfo.markDetails
+              ? `<p><strong>Mark Details:</strong> ${order.customerInfo.markDetails}</p>`
+              : ""
+          }
+          ${
+            order.customerInfo.markImage
+              ? `<p><strong>Image Mark:</strong> Image file uploaded</p>`
+              : ""
+          }
+          ${
+            order.customerInfo.niceClasses
+              ? `<p><strong>Nice Classes:</strong> ${order.customerInfo.niceClasses}</p>`
+              : ""
+          }
+          ${
+            order.customerInfo.goodsServices
+              ? `<p><strong>Goods & Services:</strong> ${order.customerInfo.goodsServices}</p>`
+              : ""
+          }
+          ${
+            order.customerInfo.referenceNumber
+              ? `<p><strong>Reference Number:</strong> ${order.customerInfo.referenceNumber}</p>`
+              : ""
+          }
+          ${
+            order.customerInfo.message
+              ? `<p><strong>Additional Message:</strong> ${order.customerInfo.message}</p>`
+              : ""
+          }
           
           <h3>Items Ordered</h3>
-          ${order.items.map(item => `
+          ${order.items
+            .map(
+              (item) => `
             <div style="border: 1px solid #ddd; padding: 10px; margin: 10px 0;">
               <h4>${item.name}</h4>
               <p>Price: $${item.price}</p>
               <p>Quantity: ${item.quantity}</p>
-              ${item.selectedAddOns && item.selectedAddOns.length > 0 ? `
-                <p>Add-ons: ${item.selectedAddOns.map(addon => `${addon.name} (+$${addon.price})`).join(', ')}</p>
-              ` : ''}
+              ${
+                item.selectedAddOns && item.selectedAddOns.length > 0
+                  ? `
+                <p>Add-ons: ${item.selectedAddOns
+                  .map((addon) => `${addon.name} (+$${addon.price})`)
+                  .join(", ")}</p>
+              `
+                  : ""
+              }
             </div>
-          `).join('')}
+          `
+            )
+            .join("")}
           
           <p>We will contact you soon to proceed with your trademark services.</p>
           <p>Best regards,<br>EffeMark Team</p>
@@ -443,22 +495,22 @@ async function sendOrderConfirmationEmail(order: Order) {
     await emailTransporter.sendMail(mailOptions);
     console.log(`Confirmation email sent to ${order.customerInfo.email}`);
   } catch (error) {
-    console.error('Error sending confirmation email:', error);
+    console.error("Error sending confirmation email:", error);
   }
 }
 
 async function sendOrderStatusUpdateEmail(order: Order) {
   try {
     const statusMessages: Record<OrderStatus, string> = {
-      [OrderStatus.PENDING]: 'Your order is pending.',
-      [OrderStatus.PROCESSING]: 'Your order is now being processed.',
-      [OrderStatus.COMPLETED]: 'Your order has been completed successfully!',
-      [OrderStatus.FAILED]: 'There was an issue processing your order.',
-      [OrderStatus.CANCELLED]: 'Your order has been cancelled.',
+      [OrderStatus.PENDING]: "Your order is pending.",
+      [OrderStatus.PROCESSING]: "Your order is now being processed.",
+      [OrderStatus.COMPLETED]: "Your order has been completed successfully!",
+      [OrderStatus.FAILED]: "There was an issue processing your order.",
+      [OrderStatus.CANCELLED]: "Your order has been cancelled.",
     };
 
     const mailOptions = {
-      from: process.env.EMAIL_USER || 'info@effemark.com',
+      from: process.env.EMAIL_USER || "info@effemark.com",
       to: order.customerInfo.email,
       subject: `Order Update - ${order.orderNumber}`,
       html: `
@@ -472,7 +524,10 @@ async function sendOrderStatusUpdateEmail(order: Order) {
           <p><strong>New Status:</strong> ${order.status}</p>
           <p><strong>Updated:</strong> ${order.updatedAt.toLocaleString()}</p>
           
-          <p>${statusMessages[order.status] || 'Your order status has been updated.'}</p>
+          <p>${
+            statusMessages[order.status] ||
+            "Your order status has been updated."
+          }</p>
           
           <p>Best regards,<br>EffeMark Team</p>
         </div>
@@ -481,14 +536,14 @@ async function sendOrderStatusUpdateEmail(order: Order) {
 
     await emailTransporter.sendMail(mailOptions);
   } catch (error) {
-    console.error('Error sending status update email:', error);
+    console.error("Error sending status update email:", error);
   }
 }
 
 async function sendOrderCompletionEmail(order: Order) {
   try {
     const mailOptions = {
-      from: process.env.EMAIL_USER || 'info@effemark.com',
+      from: process.env.EMAIL_USER || "info@effemark.com",
       to: order.customerInfo.email,
       subject: `Order Completed - ${order.orderNumber}`,
       html: `
@@ -512,14 +567,14 @@ async function sendOrderCompletionEmail(order: Order) {
 
     await emailTransporter.sendMail(mailOptions);
   } catch (error) {
-    console.error('Error sending completion email:', error);
+    console.error("Error sending completion email:", error);
   }
 }
 
 async function sendOrderFailureEmail(order: Order) {
   try {
     const mailOptions = {
-      from: process.env.EMAIL_USER || 'info@effemark.com',
+      from: process.env.EMAIL_USER || "info@effemark.com",
       to: order.customerInfo.email,
       subject: `Order Issue - ${order.orderNumber}`,
       html: `
@@ -542,7 +597,7 @@ async function sendOrderFailureEmail(order: Order) {
 
     await emailTransporter.sendMail(mailOptions);
   } catch (error) {
-    console.error('Error sending failure email:', error);
+    console.error("Error sending failure email:", error);
   }
 }
 
