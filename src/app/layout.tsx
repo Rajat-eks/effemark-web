@@ -5,9 +5,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ReduxProvider from "@/components/ReduxProvider";
 import ScrollToTop from "@/components/ScrollToTop";
+import Script from "next/script";
 
 import { Poppins } from "next/font/google";
-import Head from "next/head";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -16,8 +16,9 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Effemark",
-  description: "",
+  title: "EffeMark | Professional Trademark Search and Brand Monitoring",
+  description: "Secure your intellectual property with expert trademark services. Relied upon by legal professionals & enterprises globally. Quick, reliable & top-tier trademark solutions. Reach Out Today!",
+  keywords: "Trademark Search, Trademark Monitoring, Trademark Watch",
 };
 
 export default function RootLayout({
@@ -27,19 +28,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
-        <title>
-          EffeMark | Professional Trademark Search and Brand Monitoring
-        </title>
-        <meta
-          name="description"
-          content="Secure your intellectual property with expert trademark services. Relied upon by legal professionals & enterprises globally. Quick, reliable & top-tier trademark solutions. Reach Out Today!"
-        />
-        <meta
-          name="keywords"
-          content="Trademark Search, Trademark Monitoring, Trademark Watch"
-        />
-      </Head>
       <body className={`${poppins.variable}`}>
         <ReduxProvider>
           <Header />
@@ -47,6 +35,10 @@ export default function RootLayout({
           <Footer />
           <ScrollToTop />
         </ReduxProvider>
+        <Script
+          src="//code.tidio.co/uplzcklxy5qk02tcd9t4wbq1weyxfodo.js"
+          async
+        ></Script>
       </body>
     </html>
   );

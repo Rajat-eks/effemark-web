@@ -23,7 +23,7 @@ export const trademarkProducts = [
         price: 65,
       },
       {
-        name: "UIPO",
+        name: "EUIPO",
         price: 65,
       },
       {
@@ -981,6 +981,7 @@ export const monitorProduct = [
   {
     name: "EU(27) Countries Trademark Monitoring",
     path: "/europe-trademark-monitoring",
+    included:'EU(27) Countries + WIPO (*All EU Countries designated WIPO results are always included)',
     price: 135,
     strikePrice: 139,
     avatar: "/flag/Europe.png",
@@ -1021,6 +1022,7 @@ export const monitorProduct = [
     name: "EUIPO Trademark Monitoring",
     path: "/euipo-trademark-monitoring",
     strikePrice: 59,
+    included:'EUIPO + WIPO (*All EUIPO designated WIPO results are always included)',
     price: 55,
     avatar: "/flag/Europe.png",
     banner: "/checkout/EUIPO Countries Trademark Monitoring.png",
@@ -1067,6 +1069,7 @@ export const monitorProduct = [
   {
     name: "United Kingdom Trademark Monitoring",
     path: "/united-kingdom-trademark-monitoring",
+    included:'United Kingdom  + (*All United Kingdom designated WIPO results are always included)',
     strikePrice: 59,
     price: 55,
     avatar: "/flag/UK.png",
@@ -1117,6 +1120,7 @@ export const monitorProduct = [
   {
     name: "New Zealand Trademark Monitoring",
     path: "/new-zealand-trademark-monitoring",
+    included:'New Zealand  + (*All New Zealand and Australia designated WIPO results are always included)',
     strikePrice: 59,
     price: 55,
     avatar: "/flag/New Zealand.png",
@@ -1175,6 +1179,7 @@ export const monitorProduct = [
   {
     name: "Australia Trademark Monitoring",
     path: "/australia-trademark-monitoring",
+    included:' Australia +  (*All Australia and New Zealand designated WIPO results are always included)',
     strikePrice: 59,
     price: 55,
     avatar: "/flag/Australia.png",
@@ -1233,6 +1238,7 @@ export const monitorProduct = [
   {
     name: "Japan Trademark Monitoring",
     path: "/japan-trademark-monitoring",
+    included:'Japan +  (*All Japan designated WIPO results are always included)',
     strikePrice: 109,
     price: 105,
     avatar: "/flag/Japan.png",
@@ -1291,6 +1297,7 @@ export const monitorProduct = [
   {
     name: "China Trademark Monitoring",
     path: "/china-trademark-monitoring",
+    included:" China +  (*All China designated WIPO results are always included)",
     strikePrice: 109,
     price: 105,
     avatar: "/flag/china.png",
@@ -1349,6 +1356,7 @@ export const monitorProduct = [
   {
     name: "Korea Trademark Monitoring",
     path: "/korea-trademark-monitoring",
+    included:' Korea +  (*All Korea designated WIPO results are always included)',
     strikePrice: 109,
     price: 105,
     avatar: "/flag/korea.png",
@@ -1408,6 +1416,7 @@ export const monitorProduct = [
     name: "Global Trademark Monitoring",
     path: "/global-trademark-monitoring",
     strikePrice: 319,
+    included:'Global(190+) Countries',
     price: 315,
     avatar: "/flag/World.png",
     banner: "/checkout/GLOBAL Trademark Monitoring.png",

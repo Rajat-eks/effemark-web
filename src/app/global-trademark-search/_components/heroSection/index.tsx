@@ -38,7 +38,7 @@ const HeroSection: React.FC<IndexProps> = ({
         {cunsultant ? (
           <div className="flex gap-4 ">
             <Link
-              href={"/product/global-trademark-search"}
+              href={"/product/global-trademark-search-manual-full-search"}
               className=" rounded py-2 px-5 bg-red-600 text-white hover:bg-white hover:text-red-600"
             >
               Order Now Global Trademark Search @ $525

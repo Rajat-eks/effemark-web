@@ -161,9 +161,9 @@ const page: React.FC<PageProps> = (props) => {
                   height={100}
                 />
               </div>
-              <h5 className="text-[25px]">{product.name}</h5>
+              <h5 >{product.name}</h5>
 
-              <div className="text-[12px] flex flex-col items-start">
+              <div className="text-[14px] flex flex-col items-start">
                 <span>
                   <b>Monitoring Period:</b> 12 Months
                 </span>
@@ -172,7 +172,7 @@ const page: React.FC<PageProps> = (props) => {
                   preferences
                 </span>
               </div>
-              <div className="text-[12px] flex flex-col items-start">
+              <div className="text-[14px] flex flex-col items-start">
                 <span>
                   <b>Coverage:</b>
                   {product?.included}
