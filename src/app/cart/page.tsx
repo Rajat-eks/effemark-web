@@ -130,14 +130,7 @@ const page: React.FC<PageProps> = (props) => {
                       <div className="text-right">
                         <p className="text-lg font-semibold">
                           $
-                          {(
-                            item.price * item.quantity +
-                            (item.selectedAddOns?.reduce(
-                              (sum, addOn) => sum + addOn.price,
-                              0
-                            ) || 0) *
-                              item.quantity
-                          ).toFixed(2)}
+                          {(item.price * item.quantity).toFixed(2)}
                         </p>
                         <button
                           onClick={() => handleRemoveItem(item.id)}

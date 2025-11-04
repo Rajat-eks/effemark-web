@@ -123,7 +123,7 @@ export async function POST(req: Request) {
       customerInfo ? `Goods/Services: ${customerInfo.goodsServices}` : undefined,
       customerInfo ? `Reference Number: ${customerInfo.referenceNumber}` : undefined,
       customerInfo && customerInfo.message ? `Message: ${customerInfo.message}` : undefined,
-      customerInfo && customerInfo.markImage ? `Mark Image: [Base64 image attached]` : undefined,
+      customerInfo && customerInfo?.markImage ,
     ].filter(Boolean) as string[];
 
     // Build HTML version

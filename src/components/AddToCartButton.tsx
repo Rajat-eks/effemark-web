@@ -107,11 +107,16 @@ const AddToCartButton: React.FC<AddToCartButtonProps> = ({
       }
     }
     
+    // Calculate total price including add-ons
+    const addOnsTotal = selectedAddOns.reduce((sum, addOn) => sum + addOn.price, 0);
+    const totalPrice = product.price
+
     // Create cart item with selected add-ons and form data
+    // Price already includes add-ons to avoid double counting
     const cartItem = {
       id: product.id,
       name: product.name,
-      price: product.price,
+      price: totalPrice, // Price includes add-ons
       banner: product.banner,
       included: product.included,
       addOns: product.addOns,

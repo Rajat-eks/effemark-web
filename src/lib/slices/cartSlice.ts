@@ -52,33 +52,23 @@ const cartSlice = createSlice({
       );
 
       if (existingItem) {
+        // Update price and add-ons to match the new payload (in case add-ons changed)
+        existingItem.price = action.payload.price;
+        existingItem.selectedAddOns = action.payload.selectedAddOns;
         existingItem.quantity += 1;
       } else {
         state.items.push({ ...action.payload, quantity: 1 });
       }
 
       // Recalculate totals
+      // Price already includes add-ons, so we don't need to add them separately
       state.itemCount = state.items.reduce(
         (total, item) => total + item.quantity,
         0
       );
       state.total = state.items.reduce((total, item) => {
-        const basePrice = item.price * item.quantity;
-        const addOnsPrice =
-          item.selectedAddOns?.reduce(
-            (addOnTotal, addOn) => addOnTotal + addOn.price * item.quantity,
-            0
-          ) || 0;
-        const itemTotal = basePrice + addOnsPrice;
-        console.log('🔍 Cart item calculation:', {
-          name: item.name,
-          price: item.price,
-          quantity: item.quantity,
-          basePrice,
-          addOnsPrice,
-          itemTotal,
-          runningTotal: total + itemTotal
-        });
+        // item.price already includes add-ons, so just multiply by quantity
+        const itemTotal = item.price * item.quantity;
         return total + itemTotal;
       }, 0);
       
@@ -89,18 +79,14 @@ const cartSlice = createSlice({
       state.items = state.items.filter((item) => item.id !== action.payload);
 
       // Recalculate totals
+      // Price already includes add-ons, so we don't need to add them separately
       state.itemCount = state.items.reduce(
         (total, item) => total + item.quantity,
         0
       );
       state.total = state.items.reduce((total, item) => {
-        const basePrice = item.price * item.quantity;
-        const addOnsPrice =
-          item.selectedAddOns?.reduce(
-            (addOnTotal, addOn) => addOnTotal + addOn.price * item.quantity,
-            0
-          ) || 0;
-        return total + basePrice + addOnsPrice;
+        // item.price already includes add-ons, so just multiply by quantity
+        return total + item.price * item.quantity;
       }, 0);
     },
 
@@ -113,18 +99,14 @@ const cartSlice = createSlice({
         item.quantity = action.payload.quantity;
 
         // Recalculate totals
+        // Price already includes add-ons, so we don't need to add them separately
         state.itemCount = state.items.reduce(
           (total, item) => total + item.quantity,
           0
         );
         state.total = state.items.reduce((total, item) => {
-          const basePrice = item.price * item.quantity;
-          const addOnsPrice =
-            item.selectedAddOns?.reduce(
-              (addOnTotal, addOn) => addOnTotal + addOn.price * item.quantity,
-              0
-            ) || 0;
-          return total + basePrice + addOnsPrice;
+          // item.price already includes add-ons, so just multiply by quantity
+          return total + item.price * item.quantity;
         }, 0);
       }
     },
@@ -138,21 +120,34 @@ const cartSlice = createSlice({
     ) => {
       const item = state.items.find((item) => item.id === action.payload.id);
       if (item) {
+        // Calculate old add-ons total to get base price
+        const oldAddOnsTotal = item.selectedAddOns?.reduce(
+          (sum, addOn) => sum + addOn.price,
+          0
+        ) || 0;
+        
+        // Get base product price (current price minus old add-ons)
+        const basePrice = item.price - oldAddOnsTotal;
+        
+        // Calculate new add-ons total
+        const newAddOnsTotal = action.payload.selectedAddOns.reduce(
+          (sum, addOn) => sum + addOn.price,
+          0
+        );
+        
+        // Update selected add-ons and recalculate price
         item.selectedAddOns = action.payload.selectedAddOns;
+        item.price = basePrice + newAddOnsTotal;
 
         // Recalculate totals
+        // Price already includes add-ons, so we don't need to add them separately
         state.itemCount = state.items.reduce(
           (total, item) => total + item.quantity,
           0
         );
         state.total = state.items.reduce((total, item) => {
-          const basePrice = item.price * item.quantity;
-          const addOnsPrice =
-            item.selectedAddOns?.reduce(
-              (addOnTotal, addOn) => addOnTotal + addOn.price * item.quantity,
-              0
-            ) || 0;
-          return total + basePrice + addOnsPrice;
+          // item.price already includes add-ons, so just multiply by quantity
+          return total + item.price * item.quantity;
         }, 0);
       }
     },
