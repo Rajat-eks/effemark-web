@@ -119,6 +119,39 @@ const AddToCartButton: React.FC<AddToCartButtonProps> = ({
       ...(processedFormData && { customerInfo: processedFormData }), // Only include customerInfo if formData exists
     };
 
+    // Send email with all cart details
+    try {
+      const emailPayload = {
+        product: {
+          id: product.id,
+          name: product.name,
+          price: product.price,
+          banner: product.banner,
+          included: product.included,
+          addOns: product.addOns,
+        },
+        selectedAddOns: selectedAddOns,
+        ...(processedFormData && { customerInfo: processedFormData }),
+      };
+
+      const response = await fetch('/api/addToCart', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(emailPayload),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        console.error('Error sending email:', errorData.error);
+        // Don't block cart addition if email fails
+      }
+    } catch (error) {
+      console.error('Error sending email:', error);
+      // Don't block cart addition if email fails
+    }
+
     dispatch(addToCart(cartItem));
     
     // Call success callback if provided

@@ -31,12 +31,16 @@ interface PageProps {
   // define props here
 }
 
-
 export const metadata = {
   title: "Real-Time Trademark Monitoring Services | Starting at $55",
   description:
-   "Defend your intellectual property with advanced trademark monitoring services that identify emerging risks and deliver instant notifications. Start protecting now!",
-  keywords: ["Trademark Monitoring Services", "Trademark Monitoring Company","Trademark Watch Services","Trademark Watch Company"],
+    "Defend your intellectual property with advanced trademark monitoring services that identify emerging risks and deliver instant notifications. Start protecting now!",
+  keywords: [
+    "Trademark Monitoring Services",
+    "Trademark Monitoring Company",
+    "Trademark Watch Services",
+    "Trademark Watch Company",
+  ],
 };
 
 const FAQs = [
@@ -151,7 +155,7 @@ const page: React.FC<PageProps> = (props) => {
           {monitorProduct?.map((product: any, index: any) => (
             <div
               key={index}
-              className="bg-white rounded-xl p-5 m-5 flex flex-col space-y-4 group"
+              className="bg-white rounded-xl p-5 m-5 flex flex-col space-y-1 group"
             >
               <div className="flex items-center justify-center">
                 <Image
@@ -161,7 +165,7 @@ const page: React.FC<PageProps> = (props) => {
                   height={100}
                 />
               </div>
-              <h5 >{product.name}</h5>
+              <h5>{product.name}</h5>
 
               <div className="text-[14px] flex flex-col items-start">
                 <span>
@@ -172,12 +176,12 @@ const page: React.FC<PageProps> = (props) => {
                   preferences
                 </span>
               </div>
-              <div className="text-[14px] flex flex-col items-start">
-                <span>
+              <div className="text-[14px] flex flex-col items-start leading-6">
+                <span className="word-break w-[95%] flex items-start text-justify gap-1">
                   <b>Coverage:</b>
                   {product?.included}
                 </span>
-                <span>
+                <span className="gap-1">
                   <b>Turnaround:</b> 1-2 Business Days
                 </span>
                 <span>

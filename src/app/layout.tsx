@@ -17,7 +17,8 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "EffeMark | Professional Trademark Search and Brand Monitoring",
-  description: "Secure your intellectual property with expert trademark services. Relied upon by legal professionals & enterprises globally. Quick, reliable & top-tier trademark solutions. Reach Out Today!",
+  description:
+    "Secure your intellectual property with expert trademark services. Relied upon by legal professionals & enterprises globally. Quick, reliable & top-tier trademark solutions. Reach Out Today!",
   keywords: "Trademark Search, Trademark Monitoring, Trademark Watch",
 };
 
@@ -35,10 +36,29 @@ export default function RootLayout({
           <Footer />
           <ScrollToTop />
         </ReduxProvider>
+        {/* Microsoft Clarity */}
         <Script
-          src="//code.tidio.co/uplzcklxy5qk02tcd9t4wbq1weyxfodo.js"
-          async
-        ></Script>
+          id="microsoft-clarity"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+              })(window, document, "clarity", "script", "tqeua0loir");
+            `,
+          }}
+        />
+        <meta
+          name="google-site-verification"
+          content="6Hu81IiEcY5Lin5bqYcwscx_0hZDtqmO5I0spEWUV4Q"
+        />
+        {/* Tidio Chat Bot */}
+        <Script
+          src="https://code.tidio.co/uplzcklxy5qk02tcd9t4wbq1weyxfodo.js"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );

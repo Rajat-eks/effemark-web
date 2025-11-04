@@ -1,6 +1,9 @@
 export const trademarkProducts = [
   {
     name: "US Trademark Search - Advanced AI Full Search",
+    metaTitle: "AI Trademark Search United States | Starting at $65",
+    metaDescription: "Execute advanced AI trademark search in the US starting at only $65. Verify your trademark eligibility for registration with AI-powered search. Place Order Now!",
+    metaKeywords: "AI Trademark Search United States, US AI Trademark Search, AI Trademark Search in US",
     included: "US Federal",
     price: 65,
     banner: "/checkout/US Trademark search.png",
@@ -34,6 +37,9 @@ export const trademarkProducts = [
   },
   {
     name: "US Trademark Search - Manual Full Search",
+    metaTitle: "Full Trademark Search US | Starting at $125",
+    metaDescription: "Execute comprehensive trademark search in US starting at $125. Verify your trademark eligibility for registration with detailed trademark analysis. Place Order Now!",
+    metaKeywords: "US Trademark Search, Full Trademark Search US, Manual Trademark Search in US",
     included: "US Federal + WIPO + Domain Names",
     price: 125,
     banner: "/checkout/US Trademark search - Manual.png",
@@ -87,6 +93,7 @@ export const trademarkProducts = [
   },
   {
     name: "Canada Trademark Search - Advanced AI Full Search",
+    metaTitle:"AI Trademark Search Canada | Starting at $65",
     included: "Canada",
     price: 65,
     banner: "/checkout/CanadaTrademark search - AI.png",

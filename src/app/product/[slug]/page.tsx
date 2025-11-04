@@ -27,7 +27,7 @@ const page: React.FC<PageProps> = (props) => {
     setData(ck);
   }, [slug]);
 
-  console.log("ck", data);
+
 
   return (
     <>

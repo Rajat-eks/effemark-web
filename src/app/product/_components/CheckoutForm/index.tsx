@@ -64,26 +64,29 @@ const CheckoutForm: React.FC<IndexProps> = ({ data }) => {
       (sum, addOn) => sum + addOn.price,
       0
     );
-    
+
     // Base price
     let basePrice = data?.price || 0;
-    
+
     // Double the price if "Both (Word Mark & Image Mark)" is selected for manual products
-    if (isManualProduct && formData.markTypes === "Both (Word Mark & Image Mark)") {
+    if (
+      isManualProduct &&
+      formData.markTypes === "Both (Word Mark & Image Mark)"
+    ) {
       basePrice = basePrice * 2;
     }
-    
+
     setTotalPrice(basePrice + addOnsTotal);
   }, [selectedAddOns, data?.price, formData.markTypes, isManualProduct]);
 
   useEffect(() => {
     // Set markTypes to "Word Mark" for AI products
     if (isAIProduct && formData.markTypes !== "Word Mark") {
-      setFormData(prev => ({ 
-        ...prev, 
+      setFormData((prev) => ({
+        ...prev,
         markTypes: "Word Mark",
         markDetails: "", // Clear mark details
-        markImage: null  // Clear any uploaded image
+        markImage: null, // Clear any uploaded image
       }));
     }
   }, [isAIProduct]);
@@ -142,7 +145,8 @@ const CheckoutForm: React.FC<IndexProps> = ({ data }) => {
       if (!formData.markDetails.trim()) {
         newErrors.markDetails = "Word Mark details are required";
       } else if (formData.markDetails.trim().length > 1000) {
-        newErrors.markDetails = "Word Mark details must be less than 1000 characters";
+        newErrors.markDetails =
+          "Word Mark details must be less than 1000 characters";
       }
     } else if (isManualProduct) {
       // For Manual products, validate based on mark type
@@ -150,7 +154,8 @@ const CheckoutForm: React.FC<IndexProps> = ({ data }) => {
         if (!formData.markDetails.trim()) {
           newErrors.markDetails = "Word Mark details are required";
         } else if (formData.markDetails.trim().length > 1000) {
-          newErrors.markDetails = "Word Mark details must be less than 1000 characters";
+          newErrors.markDetails =
+            "Word Mark details must be less than 1000 characters";
         }
       } else if (formData.markTypes === "Image Mark") {
         if (!formData.markImage) {
@@ -160,7 +165,8 @@ const CheckoutForm: React.FC<IndexProps> = ({ data }) => {
         if (!formData.markDetails.trim()) {
           newErrors.markDetails = "Word Mark details are required";
         } else if (formData.markDetails.trim().length > 1000) {
-          newErrors.markDetails = "Word Mark details must be less than 1000 characters";
+          newErrors.markDetails =
+            "Word Mark details must be less than 1000 characters";
         }
         if (!formData.markImage) {
           newErrors.markImage = "Image file is required for Image Mark";
@@ -178,13 +184,13 @@ const CheckoutForm: React.FC<IndexProps> = ({ data }) => {
         ...prev,
         [field]: value,
       };
-      
+
       // Clear mark details and image when mark type changes
       if (field === "markTypes") {
         newData.markDetails = "";
         newData.markImage = null;
       }
-      
+
       return newData;
     });
   };
@@ -193,31 +199,38 @@ const CheckoutForm: React.FC<IndexProps> = ({ data }) => {
     // Validate file type and size
     if (file) {
       const maxSize = 5 * 1024 * 1024; // 5MB
-      const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'];
-      
+      const allowedTypes = [
+        "image/jpeg",
+        "image/jpg",
+        "image/png",
+        "image/gif",
+        "image/webp",
+      ];
+
       if (!allowedTypes.includes(file.type)) {
-        setErrors(prev => ({
+        setErrors((prev) => ({
           ...prev,
-          markImage: "Please select a valid image file (JPEG, PNG, GIF, or WebP)"
+          markImage:
+            "Please select a valid image file (JPEG, PNG, GIF, or WebP)",
         }));
         return;
       }
-      
+
       if (file.size > maxSize) {
-        setErrors(prev => ({
+        setErrors((prev) => ({
           ...prev,
-          markImage: "Image file size must be less than 5MB"
+          markImage: "Image file size must be less than 5MB",
         }));
         return;
       }
-      
+
       // Clear any previous errors
-      setErrors(prev => ({
+      setErrors((prev) => ({
         ...prev,
-        markImage: undefined
+        markImage: undefined,
       }));
     }
-    
+
     setFormData((prev) => ({
       ...prev,
       [field]: file,
@@ -291,11 +304,12 @@ const CheckoutForm: React.FC<IndexProps> = ({ data }) => {
             </p>
           </div>
         )}
-        
+
         {showSuccessMessage && (
           <div className="mb-4 p-3 bg-green-50 border border-green-200 rounded-lg">
             <p className="text-green-800 text-sm">
-              <strong>✅ Item added to cart successfully!</strong> You can now proceed to checkout.
+              <strong>✅ Item added to cart successfully!</strong> You can now
+              proceed to checkout.
             </p>
           </div>
         )}
@@ -377,13 +391,16 @@ const CheckoutForm: React.FC<IndexProps> = ({ data }) => {
           {isAIProduct && (
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
-                Provide the Word Mark Details Below <span className="text-red-500">*</span>
+                Provide the Word Mark Details Below{" "}
+                <span className="text-red-500">*</span>
               </label>
               <input
                 type="text"
                 placeholder="Enter word mark details"
                 value={formData.markDetails}
-                onChange={(e) => handleInputChange("markDetails", e.target.value)}
+                onChange={(e) =>
+                  handleInputChange("markDetails", e.target.value)
+                }
                 className={`rounded-lg w-full p-2 text-[14px] border-[1px] ${
                   errors.markDetails
                     ? "border-red-500 bg-red-50"
@@ -391,7 +408,9 @@ const CheckoutForm: React.FC<IndexProps> = ({ data }) => {
                 }`}
               />
               {errors.markDetails && (
-                <p className="text-red-500 text-xs mt-1">{errors.markDetails}</p>
+                <p className="text-red-500 text-xs mt-1">
+                  {errors.markDetails}
+                </p>
               )}
             </div>
           )}
@@ -406,7 +425,9 @@ const CheckoutForm: React.FC<IndexProps> = ({ data }) => {
                 </label>
                 <select
                   value={formData.markTypes}
-                  onChange={(e) => handleInputChange("markTypes", e.target.value)}
+                  onChange={(e) =>
+                    handleInputChange("markTypes", e.target.value)
+                  }
                   className={`rounded-lg w-full p-2 text-[14px] border-[1px] ${
                     errors.markTypes
                       ? "border-red-500 bg-red-50"
@@ -418,12 +439,11 @@ const CheckoutForm: React.FC<IndexProps> = ({ data }) => {
                   </option>
                   <option value="Word Mark">Word Mark</option>
                   <option value="Image Mark">Image Mark</option>
-                  <option value="Both (Word Mark & Image Mark)">
-                    Both (Word Mark & Image Mark)
-                  </option>
                 </select>
                 {errors.markTypes && (
-                  <p className="text-red-500 text-xs mt-1">{errors.markTypes}</p>
+                  <p className="text-red-500 text-xs mt-1">
+                    {errors.markTypes}
+                  </p>
                 )}
                 {formData.markTypes === "Both (Word Mark & Image Mark)" && (
                   <p className="text-blue-600 text-xs mt-1 font-medium">
@@ -431,18 +451,21 @@ const CheckoutForm: React.FC<IndexProps> = ({ data }) => {
                   </p>
                 )}
               </div>
-              
+
               {/* Conditional Mark Details Input for Manual products */}
               {formData.markTypes === "Word Mark" && (
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Provide the Word Mark Details Below <span className="text-red-500">*</span>
+                    Provide the Word Mark Details Below{" "}
+                    <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
                     placeholder="Enter word mark details"
                     value={formData.markDetails}
-                    onChange={(e) => handleInputChange("markDetails", e.target.value)}
+                    onChange={(e) =>
+                      handleInputChange("markDetails", e.target.value)
+                    }
                     className={`rounded-lg w-full p-2 text-[14px] border-[1px] ${
                       errors.markDetails
                         ? "border-red-500 bg-red-50"
@@ -450,7 +473,9 @@ const CheckoutForm: React.FC<IndexProps> = ({ data }) => {
                     }`}
                   />
                   {errors.markDetails && (
-                    <p className="text-red-500 text-xs mt-1">{errors.markDetails}</p>
+                    <p className="text-red-500 text-xs mt-1">
+                      {errors.markDetails}
+                    </p>
                   )}
                 </div>
               )}
@@ -458,12 +483,15 @@ const CheckoutForm: React.FC<IndexProps> = ({ data }) => {
               {formData.markTypes === "Image Mark" && (
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Upload Image Mark File <span className="text-red-500">*</span>
+                    Upload Image Mark File{" "}
+                    <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="file"
                     accept="image/*"
-                    onChange={(e) => handleFileChange("markImage", e.target.files?.[0] || null)}
+                    onChange={(e) =>
+                      handleFileChange("markImage", e.target.files?.[0] || null)
+                    }
                     className={`rounded-lg w-full p-2 text-[14px] border-[1px] ${
                       errors.markImage
                         ? "border-red-500 bg-red-50"
@@ -476,7 +504,9 @@ const CheckoutForm: React.FC<IndexProps> = ({ data }) => {
                     </p>
                   )}
                   {errors.markImage && (
-                    <p className="text-red-500 text-xs mt-1">{errors.markImage}</p>
+                    <p className="text-red-500 text-xs mt-1">
+                      {errors.markImage}
+                    </p>
                   )}
                 </div>
               )}
@@ -485,13 +515,16 @@ const CheckoutForm: React.FC<IndexProps> = ({ data }) => {
                 <div className="space-y-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Provide the Word Mark Details Below <span className="text-red-500">*</span>
+                      Provide the Word Mark Details Below{" "}
+                      <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
                       placeholder="Enter word mark details"
                       value={formData.markDetails}
-                      onChange={(e) => handleInputChange("markDetails", e.target.value)}
+                      onChange={(e) =>
+                        handleInputChange("markDetails", e.target.value)
+                      }
                       className={`rounded-lg w-full p-2 text-[14px] border-[1px] ${
                         errors.markDetails
                           ? "border-red-500 bg-red-50"
@@ -499,18 +532,26 @@ const CheckoutForm: React.FC<IndexProps> = ({ data }) => {
                       }`}
                     />
                     {errors.markDetails && (
-                      <p className="text-red-500 text-xs mt-1">{errors.markDetails}</p>
+                      <p className="text-red-500 text-xs mt-1">
+                        {errors.markDetails}
+                      </p>
                     )}
                   </div>
-                  
+
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Upload Image Mark File <span className="text-red-500">*</span>
+                      Upload Image Mark File{" "}
+                      <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="file"
                       accept="image/*"
-                      onChange={(e) => handleFileChange("markImage", e.target.files?.[0] || null)}
+                      onChange={(e) =>
+                        handleFileChange(
+                          "markImage",
+                          e.target.files?.[0] || null
+                        )
+                      }
                       className={`rounded-lg w-full p-2 text-[14px] border-[1px] ${
                         errors.markImage
                           ? "border-red-500 bg-red-50"
@@ -523,14 +564,16 @@ const CheckoutForm: React.FC<IndexProps> = ({ data }) => {
                       </p>
                     )}
                     {errors.markImage && (
-                      <p className="text-red-500 text-xs mt-1">{errors.markImage}</p>
+                      <p className="text-red-500 text-xs mt-1">
+                        {errors.markImage}
+                      </p>
                     )}
                   </div>
                 </div>
               )}
             </>
           )}
-          
+
           <h6 className="text-[16px] font-semibold px-2">
             Additional Instruction (Optional)
           </h6>
@@ -592,21 +635,29 @@ const CheckoutForm: React.FC<IndexProps> = ({ data }) => {
             ></textarea>
           </div>
           <div className="px-4">
-            {isManualProduct && formData.markTypes === "Both (Word Mark & Image Mark)" ? (
+            {isManualProduct &&
+            formData.markTypes === "Both (Word Mark & Image Mark)" ? (
               <div className="space-y-1">
                 <div className="flex items-center justify-between">
                   <span className="text-[14px]">Base Price (Word Mark)</span>
-                  <span className="text-[#C31117] font-bold">${(data?.price || 0).toFixed(2)}</span>
+                  <span className="text-[#C31117] font-bold">
+                    ${(data?.price || 0).toFixed(2)}
+                  </span>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-[14px]">Base Price (Image Mark)</span>
-                  <span className="text-[#C31117] font-bold">${(data?.price || 0).toFixed(2)}</span>
+                  <span className="text-[#C31117] font-bold">
+                    ${(data?.price || 0).toFixed(2)}
+                  </span>
                 </div>
                 {selectedAddOns.length > 0 && (
                   <div className="flex items-center justify-between">
                     <span className="text-[14px]">Add-ons</span>
                     <span className="text-[#C31117] font-bold">
-                      ${selectedAddOns.reduce((sum, addOn) => sum + addOn.price, 0).toFixed(2)}
+                      $
+                      {selectedAddOns
+                        .reduce((sum, addOn) => sum + addOn.price, 0)
+                        .toFixed(2)}
                     </span>
                   </div>
                 )}
