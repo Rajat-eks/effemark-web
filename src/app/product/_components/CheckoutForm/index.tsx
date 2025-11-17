@@ -274,8 +274,11 @@ const CheckoutForm: React.FC<IndexProps> = ({ data }) => {
   }
 
   return (
-    <div className="shadow-2xl rounded-2xl p-8 bg-white">
+    <div className="shadow-2xl rounded-2xl px-8 py-4 bg-white">
       <div>
+        <h6 className="text-justify  text-[14px]">{data?.metaDescription}</h6>
+      </div>
+      <div className="pt-4">
         <h6 className="text-[16px] font-semibold">
           Choose Add-ons (Optional){" "}
         </h6>

@@ -61,6 +61,7 @@ const ProductClient: React.FC<ProductClientProps> = ({ slug }) => {
         </section>
         <section className="w-1/2">
           <h5 className="text-center pb-5">{data?.name}</h5>
+
           <CheckoutForm data={data} />
         </section>
       </main>
@@ -98,4 +99,3 @@ const ProductClient: React.FC<ProductClientProps> = ({ slug }) => {
 };
 
 export default ProductClient;
-
