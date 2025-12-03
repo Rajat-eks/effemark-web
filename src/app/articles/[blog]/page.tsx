@@ -331,16 +331,16 @@ const page: React.FC<PageProps> = (props) => {
           <Image src={Question} alt="Question Icon" />
           <div className="flex flex-col items-center absolute top-[60%] left-0 right-0 bottom-0 inset-0 space-y-2">
             <a
-              href=""
+              href="mailto:info@effemark.in"
               className="flex items-center gap-2 text-[18px] text-white"
             >
               <Mail /> info@effemark.in
             </a>
             <a
-              href=""
+              href="tel:+19722568133"
               className="flex items-center gap-2 text-[18px] text-white"
             >
-              <Phone /> +1-972-256-8133
+              <Phone /> +1 (972) 256-8133
             </a>
           </div>
         </section>
