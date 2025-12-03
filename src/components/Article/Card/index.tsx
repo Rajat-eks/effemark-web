@@ -17,8 +17,8 @@ const Card: React.FC<IndexProps> = ({article}) => {
         <Image
           src={filepath}
           alt="blog"
-          width={300}
-          height={300}
+          width={600}
+          height={600}
           className="w-full transform transition-all duration-400 ease-out group-hover:scale-105 "
         />
         <div className="absolute top-4 left-4">
@@ -42,8 +42,10 @@ const Card: React.FC<IndexProps> = ({article}) => {
           </span>
           <span className="text-[#255AF0] text-[12px]">{articleDate}</span>
         </div>
-        <h4 className="text-[15px] font-semibold">
+        <h4 className="text-[20px] font-semibold">
+          <a href={`/articles/${slug}`}>
           {heading}
+          </a>
         </h4>
         <p className="text-[13px] text-justify text-gray-700">
           {content}

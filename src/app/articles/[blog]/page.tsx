@@ -8,6 +8,12 @@ interface PageProps {
   // define props here
 }
 
+export const metadata = {
+  title: 'Why DIY Trademark Searches Always Fail?',
+  description: 'Discover why DIY trademark searches often fail and lead to costly mistakes. Learn about the hidden pitfalls, legal complexities, and professional alternatives that can protect your brand from infringement issues.',
+  keywords: ['DIY Trademark Searches'],
+};
+
 const page: React.FC<PageProps> = (props) => {
   return (
     <main className="flex flex-col md:flex-row p-6 md:p-14 gap-5">

@@ -16,7 +16,7 @@ const articles = [
    slug: 'diy-trademark-searches-always-fail',
    filepath: '/images/article.jpg',
    heading: 'Why DIY Trademark Searches Always Fail?',
-   content: 'When launching a new business or product, many entrepreneurs attempt DIY trademark searches to save money. However, these self-conducted searches frequently fail to uncover critical conflicts, leading to expensive legal battles, rebranding costs, and business disruptions. Understanding why DIY trademark searches fall short can save you from devastating financial and legal consequences down the road.',
+   content: 'When launching a new business or product, many entrepreneurs attempt DIY trademark searches to save money. However, these self-conducted searches frequently fail to uncover critical conflicts, leading to expensive legal battles, rebranding costs, and business disruptions.  ',
   },
 ];
 
