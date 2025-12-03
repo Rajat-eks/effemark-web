@@ -6,20 +6,27 @@ import Link from "next/link";
 
 interface IndexProps {
   // define props here
+  article: any;
 }
 
-const Card: React.FC<IndexProps> = (props) => {
+const Card: React.FC<IndexProps> = ({article}) => {
+  const {heading, content, slug, filepath, metaTitle, metaDescription, metakewword, articleDate, status, createdAt, updatedAt} = article;
   return (
     <div className="bg-[#F8F4F4] flex flex-col items-center justify-center w-full  rounded-xl">
       <section className="w-full relative group overflow-hidden">
-        <Image src={BLOG} alt="blog" className="w-full transform transition-all duration-400 ease-out group-hover:scale-105 " />
+        <Image
+          src={filepath}
+          alt="blog"
+          width={300}
+          height={300}
+          className="w-full transform transition-all duration-400 ease-out group-hover:scale-105 "
+        />
         <div className="absolute top-4 left-4">
           <Link
-            href={"/articles/1"}
+            href={`/articles/${slug}`}
             className="text-[12px]  text-white  flex items-center gap-0 h-[30px] justify-center"
           >
             <span className="bg-[#C31117] h-full px-2 flex items-center">
-              {" "}
               Read More
             </span>
             <span className="bg-white text-[#C31117] h-full px-1 flex items-center">
@@ -33,15 +40,13 @@ const Card: React.FC<IndexProps> = (props) => {
           <span className="bg-[#FBC6C7] text-[13px] py-[4px] px-[14px] rounded-full text-[#E90303]">
             Article
           </span>
-          <span className="text-[#255AF0] text-[12px]">31/07/2025</span>
+          <span className="text-[#255AF0] text-[12px]">{articleDate}</span>
         </div>
-        <h4 className='text-[15px] font-semibold'>
-          Comprehensive Guide to Conducting Effective Trademark Search
-          Strategies
+        <h4 className="text-[15px] font-semibold">
+          {heading}
         </h4>
         <p className="text-[13px] text-justify text-gray-700">
-          Detailed methodology for examining existing trademarks to identify
-          similar marks that may conflict with desired brand names or logos.
+          {content}
         </p>
       </section>
     </div>

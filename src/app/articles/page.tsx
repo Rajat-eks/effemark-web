@@ -6,6 +6,19 @@ import Card from "@/components/Article/Card";
 interface PageProps {
   // define props here
 }
+const articles = [
+  {
+   metaTitle:'Why DIY Trademark Searches Always Fail?',
+   metaDescription:'Discover why DIY trademark searches often fail and lead to costly mistakes. Learn about the hidden pitfalls, legal complexities, and professional alternatives that can protect your brand from infringement issues.',
+   metakewword:['trademark search', 'trademark protection', 'brand protection'],
+   status: true,
+   createdAt: new Date('2025-01-01'),
+   slug: 'diy-trademark-searches-always-fail',
+   filepath: '/images/article.jpg',
+   heading: 'Why DIY Trademark Searches Always Fail?',
+   content: 'When launching a new business or product, many entrepreneurs attempt DIY trademark searches to save money. However, these self-conducted searches frequently fail to uncover critical conflicts, leading to expensive legal battles, rebranding costs, and business disruptions. Understanding why DIY trademark searches fall short can save you from devastating financial and legal consequences down the road.',
+  },
+];
 
 const page: React.FC<PageProps> = (props) => {
   return (
@@ -19,13 +32,9 @@ const page: React.FC<PageProps> = (props) => {
         </div>
       </section>
       <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-6 md:p-16">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-
-        <Card />
+        {articles.map((article) => (
+          <Card key={article.slug}  article={article}/>
+        ))}
       </section>
     </main>
   );
