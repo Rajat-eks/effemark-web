@@ -18,6 +18,17 @@ const articles = [
    heading: 'Why DIY Trademark Searches Always Fail?',
    content: 'When launching a new business or product, many entrepreneurs attempt DIY trademark searches to save money. However, these self-conducted searches frequently fail to uncover critical conflicts, leading to expensive legal battles, rebranding costs, and business disruptions.  ',
   },
+  {
+    metaTitle:'International Trademark Search Strategy Guide',
+    metaDescription:'An international trademark search is a critical process that helps businesses identify potential conflicts before expanding their brand into global markets.',
+    metakewword:['International Trademark Search'],
+    status: true,
+    createdAt: new Date('2025-01-04'),
+    slug: 'international-trademark-search-strategy-guide',
+    filepath: '/images/International Trademark Search.jpg',
+    heading: 'International Trademark Search Strategy Guide',
+    content: 'An international trademark search is a critical process that helps businesses identify potential conflicts before expanding their brand into global markets. This comprehensive guide will walk you through the essential strategies for conducting an effective international trademark search, ensuring your brand remains protected across borders while avoiding expensive legal disputes. ',
+   },
 ];
 
 const page: React.FC<PageProps> = (props) => {
