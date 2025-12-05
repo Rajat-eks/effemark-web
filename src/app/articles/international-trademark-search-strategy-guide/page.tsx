@@ -27,13 +27,19 @@ const page: React.FC<PageProps> = (props) => {
         />
         <div className="flex flex-col ">
           <h1 className="text-[30px] font-bold">
-          Understanding International Trademark Search
+        International Trademark Search Strategy Guide
           </h1>
+      
           <span className="text-[14px] text-blue-600">
             Published on 04/12/2025
           </span>
+
+          
         </div>
         <div className="space-y-5 text-justify">
+              <h2 className="text-[25px] font-bold">
+          Understanding International Trademark Search
+          </h2>
           <p className="text-justify text-[16px] ">
           An international trademark search is a critical process that helps businesses identify potential conflicts before expanding their brand into global markets. This comprehensive guide will walk you through the essential strategies for conducting an effective international trademark search, ensuring your brand remains protected across borders while avoiding expensive legal disputes.
           </p>
