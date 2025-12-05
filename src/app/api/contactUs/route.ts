@@ -83,8 +83,10 @@ export async function POST(req: Request) {
     const secure =
       (getEnv("SMTP_SECURE", "true") as string).toLowerCase() === "true";
     const from = (getEnv("SMTP_FROM", "info@effemark.com") as string) || user;
-    // const to = "ram.tenneti@effectualservices.com, amit.goel@effectualservices.com, naveen.kumar@effectualservices.in";
-    const to = "rajat.verma@effectualservices.in";
+    const to = "ram.tenneti@effectualservices.com, amit.goel@effectualservices.com, naveen.kumar@effectualservices.in";
+    // const to = "rajat.verma@effectualservices.in";
+
+    console.log("Sending contact us email via SMTP:", user, pass);
 
     const transporter = nodemailer.createTransport({
       host,

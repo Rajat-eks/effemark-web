@@ -9,9 +9,10 @@ interface PageProps {
 }
 
 export const metadata = {
-  title: 'Why DIY Trademark Searches Always Fail?',
-  description: 'Discover why DIY trademark searches often fail and lead to costly mistakes. Learn about the hidden pitfalls, legal complexities, and professional alternatives that can protect your brand from infringement issues.',
-  keywords: ['DIY Trademark Searches'],
+  title: "Why DIY Trademark Searches Always Fail?",
+  description:
+    "Discover why DIY trademark searches often fail and lead to costly mistakes. Learn about the hidden pitfalls, legal complexities, and professional alternatives that can protect your brand from infringement issues.",
+  keywords: ["DIY Trademark Searches"],
 };
 
 const page: React.FC<PageProps> = (props) => {
@@ -308,7 +309,7 @@ const page: React.FC<PageProps> = (props) => {
               <div className="flex items-center gap-3">
                 <div>
                   <Image
-                    src={'/images/article.jpg'}
+                    src={"/images/article.jpg"}
                     alt="Blog Banner"
                     width={100}
                     height={100}
@@ -317,7 +318,7 @@ const page: React.FC<PageProps> = (props) => {
                 </div>
                 <div>
                   <h3 className="text-white text-[13px]">
-                  Why DIY Trademark Searches Always Fail?
+                    Why DIY Trademark Searches Always Fail?
                   </h3>
                   <span className="text-gray-400 text-[12px]">
                     Published on 02/12/2025
@@ -325,27 +326,27 @@ const page: React.FC<PageProps> = (props) => {
                 </div>
               </div>
             </li>
-              <li className="cursor-pointer border-b-[1px] border-white p-1 rounded">
-                          <div className="flex items-center gap-3">
-                            <div>
-                              <Image
-                                src={'/images/International Trademark Search.jpg'}
-                                alt="Blog Banner"
-                                width={100}
-                                height={100}
-                                className="w-28 h-auto"
-                              />
-                            </div>
-                            <div>
-                              <h3 className="text-white text-[13px]">
-                              International Trademark Search Strategy Guide
-                              </h3>
-                              <span className="text-gray-400 text-[12px]">
-                                Published on 04/12/2025
-                              </span>
-                            </div>
-                          </div>
-                        </li>
+            <li className="cursor-pointer border-b-[1px] border-white p-1 rounded">
+              <div className="flex items-center gap-3">
+                <div>
+                  <Image
+                    src={"/images/International Trademark Search.jpg"}
+                    alt="Blog Banner"
+                    width={100}
+                    height={100}
+                    className="w-28 h-auto"
+                  />
+                </div>
+                <div>
+                  <h3 className="text-white text-[13px]">
+                    International Trademark Search Strategy Guide
+                  </h3>
+                  <span className="text-gray-400 text-[12px]">
+                    Published on 04/12/2025
+                  </span>
+                </div>
+              </div>
+            </li>
           </ul>
         </section>
         <section className="flex items-center justify-center  relative">
