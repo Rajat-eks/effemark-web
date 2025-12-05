@@ -331,6 +331,27 @@ const page: React.FC<PageProps> = (props) => {
                 </div>
               </div>
             </li>
+              <li className="cursor-pointer border-b-[1px] border-white p-1 rounded">
+              <div className="flex items-center gap-3">
+                <div>
+                  <Image
+                    src={'/images/International Trademark Search.jpg'}
+                    alt="Blog Banner"
+                    width={100}
+                    height={100}
+                    className="w-28 h-auto"
+                  />
+                </div>
+                <div>
+                  <h3 className="text-white text-[13px]">
+                  International Trademark Search Strategy Guide
+                  </h3>
+                  <span className="text-gray-400 text-[12px]">
+                    Published on 04/12/2025
+                  </span>
+                </div>
+              </div>
+            </li>
           </ul>
         </section>
         <section className="flex items-center justify-center  relative">
