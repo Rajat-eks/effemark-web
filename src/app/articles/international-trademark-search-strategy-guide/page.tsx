@@ -337,10 +337,10 @@ const page: React.FC<PageProps> = (props) => {
           <Image src={Question} alt="Question Icon" />
           <div className="flex flex-col items-center absolute top-[60%] left-0 right-0 bottom-0 inset-0 space-y-2">
             <a
-              href="mailto:info@effemark.in"
+              href="mailto:info@effemark.com"
               className="flex items-center gap-2 text-[18px] text-white"
             >
-              <Mail /> info@effemark.in
+              <Mail /> info@effemark.com
             </a>
             <a
               href="tel:+19722568133"
