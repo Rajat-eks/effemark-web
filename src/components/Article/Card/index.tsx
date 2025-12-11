@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import BLOG from "@/components/assets/img/blog.svg";
 import { MoveRight } from "lucide-react";
 import Link from "next/link";
 
@@ -9,8 +8,20 @@ interface IndexProps {
   article: any;
 }
 
-const Card: React.FC<IndexProps> = ({article}) => {
-  const {heading, content, slug, filepath, metaTitle, metaDescription, metakewword, articleDate, status, createdAt, updatedAt} = article;
+const Card: React.FC<IndexProps> = ({ article }) => {
+  const {
+    heading,
+    content,
+    slug,
+    filepath,
+    metaTitle,
+    metaDescription,
+    metakewword,
+    articleDate,
+    status,
+    createdAt,
+    updatedAt,
+  } = article;
   return (
     <div className="bg-[#F8F4F4] flex flex-col items-center justify-center w-full  rounded-xl">
       <section className="w-full relative group overflow-hidden">
@@ -43,13 +54,9 @@ const Card: React.FC<IndexProps> = ({article}) => {
           <span className="text-[#255AF0] text-[12px]">{articleDate}</span>
         </div>
         <h4 className="text-[20px] font-semibold">
-          <a href={`/articles/${slug}`}>
-          {heading}
-          </a>
+          <a href={`/articles/${slug}`}>{heading}</a>
         </h4>
-        <p className="text-[13px] text-justify text-gray-700">
-          {content}
-        </p>
+        <p className="text-[13px] text-justify text-gray-700">{content}</p>
       </section>
     </div>
   );

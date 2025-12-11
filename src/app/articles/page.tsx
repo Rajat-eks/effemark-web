@@ -3,6 +3,7 @@ import React from "react";
 import Banner from "@/components/assets/img/article-banner.svg";
 import Card from "@/components/Article/Card";
 
+
 interface PageProps {
   // define props here
 }
@@ -28,6 +29,17 @@ const articles = [
     filepath: '/images/International Trademark Search.jpg',
     heading: 'International Trademark Search Strategy Guide',
     content: 'An international trademark search is a critical process that helps businesses identify potential conflicts before expanding their brand into global markets. This comprehensive guide will walk you through the essential strategies for conducting an effective international trademark search, ensuring your brand remains protected across borders while avoiding expensive legal disputes. ',
+   },
+    {
+    metaTitle:'Trademark Search vs Monitoring: Key Differences',
+    metaDescription:'When protecting your brand identity, understanding the difference between trademark search and trademark monitoring can save you from costly legal battles and brand confusion.',
+    metakewword:['Trademark Search vs Monitoring'],
+    status: true,
+    createdAt: new Date('2025-01-04'),
+    slug: 'trademark-search-vs-monitoring-key-differences',
+    filepath: '/images/Trademark_search.jpg',
+    heading: 'Trademark Search vs Monitoring: Key Differences',
+    content: 'When protecting your brand identity, understanding the difference between trademark search and trademark monitoring can save you from costly legal battles and brand confusion. While both are crucial components of trademark management.',
    },
 ];
 
