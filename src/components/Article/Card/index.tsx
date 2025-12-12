@@ -30,7 +30,7 @@ const Card: React.FC<IndexProps> = ({ article }) => {
           alt="blog"
           width={600}
           height={600}
-          className="w-full transform transition-all duration-400 ease-out group-hover:scale-105 "
+          className="w-full transform transition-all duration-400 ease-out object-cover group-hover:scale-105 "
         />
         <div className="absolute top-4 left-4">
           <Link

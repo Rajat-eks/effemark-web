@@ -17,7 +17,9 @@ export const QuesAns = ({
       className={`flex justify-between items-center bg-[#202F5A] py-[9px] px-4 w-full rounded-2xl ${className}`}
     >
       <div>
-        <div className=" text-white text-[17px] md:text-[21px] font-[300]  ">{ques}</div>
+        <div className=" text-white text-[17px] md:text-[21px] font-[300]  ">
+          {ques}
+        </div>
         {isOpen && (
           <div className="text-white text-[14px] md:text-[17px] pt-4 text-justify px-3">
             {ans}

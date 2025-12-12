@@ -9,10 +9,10 @@ interface PageProps {
 }
 
 export const metadata = {
-  title: "Understanding International Trademark Search",
+  title: "Trademark Search vs Monitoring: Key Differences",
   description:
-    "An international trademark search is a critical process that helps businesses identify potential conflicts before expanding their brand into global markets.",
-  keywords: ["International Trademark Search"],
+    "When protecting your brand identity, understanding the difference between trademark search and trademark monitoring can save you from costly legal battles and brand confusion.",
+  keywords: ["Trademark Search vs Monitoring"],
 };
 
 const page: React.FC<PageProps> = (props) => {
@@ -279,7 +279,7 @@ const page: React.FC<PageProps> = (props) => {
                 </div>
               </div>
             </li>
-              <li className="cursor-pointer border-b-[1px] border-white p-1 rounded">
+            <li className="cursor-pointer border-b-[1px] border-white p-1 rounded">
               <div className="flex items-center gap-3">
                 <div>
                   <Image
@@ -296,6 +296,27 @@ const page: React.FC<PageProps> = (props) => {
                   </h3>
                   <span className="text-gray-400 text-[12px]">
                     Published on 10/12/2025
+                  </span>
+                </div>
+              </div>
+            </li>
+              <li className="cursor-pointer border-b-[1px] border-white p-1 rounded">
+              <div className="flex items-center gap-3">
+                <div>
+                  <Image
+                    src={"/images/Madrid_protocol_trademark.jpg"}
+                    alt="Blog Banner"
+                    width={100}
+                    height={100}
+                    className="w-28 h-auto"
+                  />
+                </div>
+                <div>
+                  <h3 className="text-white text-[13px]">
+                    Madrid Protocol Global Trademark Search
+                  </h3>
+                  <span className="text-gray-400 text-[12px]">
+                    Published on 12/12/2025
                   </span>
                 </div>
               </div>
