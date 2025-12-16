@@ -91,11 +91,11 @@ const Footer: React.FC<IndexProps> = (props) => {
           </div>
           <div className="flex items-center justify-center gap-2">
             <a
-              href="tel:+19722568133"
+              href="tel:+1-312-428-5732"
               className="flex gap-2 items-center text-white "
             >
               <Phone size={20} />
-              +1-972-256-8133
+             +1-312-428-5732
             </a>
           </div>
           <div className="flex flex-col">

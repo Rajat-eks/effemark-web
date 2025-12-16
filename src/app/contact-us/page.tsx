@@ -57,11 +57,11 @@ const page: React.FC<PageProps> = (props) => {
             <div className="border-b-[1px]  py-4 border-gray-500 w-[80%]">
               <span className=" flex flex-col items-center justify-start gap-4 text-[15px]">
                 <a
-                  href="tel:+19722568133"
+                  href="tel:+1-312-428-5732"
                   className="flex flex-col gap-2 items-center text-white "
                 >
                   <Phone size={30} />
-                  +1-972-256-8133
+                +1-312-428-5732
                 </a>
               </span>
             </div>

@@ -588,7 +588,7 @@ async function sendOrderFailureEmail(order: Order) {
           <p><strong>Status:</strong> ${order.status}</p>
           <p><strong>Total:</strong> $${order.total.toFixed(2)}</p>
           
-          <p>Please contact us at <a href="mailto:support@effemark.com">support@effemark.com</a> or call us at +1-972-256-8133 for assistance.</p>
+          <p>Please contact us at <a href="mailto:support@effemark.com">support@effemark.com</a> or call us at +1-312-428-5732 for assistance.</p>
           <p>We apologize for any inconvenience.</p>
           <p>Best regards,<br>EffeMark Team</p>
         </div>
