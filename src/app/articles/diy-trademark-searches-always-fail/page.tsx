@@ -425,7 +425,7 @@ const page: React.FC<PageProps> = (props) => {
               href="tel:+19722568133"
               className="flex items-center gap-2 text-[18px] text-white"
             >
-              <Phone /> +1 (972) 256-8133
+              <Phone /> +1 (312) 428-5732 
             </a>
           </div>
         </section>
