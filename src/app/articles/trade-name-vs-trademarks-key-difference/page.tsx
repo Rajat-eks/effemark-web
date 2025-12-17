@@ -9,10 +9,10 @@ interface PageProps {
 }
 
 export const metadata = {
-  title: "Madrid Protocol Global Trademark Search Guide",
+  title: "Trade Name Vs Trademarks: Key Difference",
   description:
-    "Understanding how to perform a Madrid Protocol Global Trademark Search can save your business significant time, money, and legal complications when expanding internationally.",
-  keywords: ["Madrid Protocol Global Trademark Search"],
+    "When starting a business, one of the most confusing aspects entrepreneurs face is understanding Trade Name Vs Trademarks.",
+  keywords: ["Trade Name Vs Trademarks"],
 };
 
 const page: React.FC<PageProps> = (props) => {
