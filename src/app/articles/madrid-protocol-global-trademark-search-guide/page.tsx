@@ -278,113 +278,134 @@ const page: React.FC<PageProps> = (props) => {
       <section className="md:w-[35%]  space-y-10">
         <section className="bg-[#202F5A] py-5 rounded-2xl">
           <h4 className="text-white text-center text-xl">Recent Posts</h4>
-          <ul className="p-5 space-y-5">
-            <li className="cursor-pointer border-b-[1px] border-white p-1 rounded">
-              <div className="flex items-center gap-3">
-                <div>
-                  <Image
-                    src={"/images/article.jpg"}
-                    alt="Blog Banner"
-                    width={100}
-                    height={100}
-                    className="w-28 h-auto"
-                  />
-                </div>
-                <div>
-                  <h3 className="text-white text-[13px]">
-                    Why DIY Trademark Searches Always Fail?
-                  </h3>
-                  <span className="text-gray-400 text-[12px]">
-                    Published on 02/12/2025
-                  </span>
-                </div>
-              </div>
-            </li>
-            <li className="cursor-pointer border-b-[1px] border-white p-1 rounded">
-              <div className="flex items-center gap-3">
-                <div>
-                  <Image
-                    src={"/images/International Trademark Search.jpg"}
-                    alt="Blog Banner"
-                    width={100}
-                    height={100}
-                    className="w-28 h-auto"
-                  />
-                </div>
-                <div>
-                  <h3 className="text-white text-[13px]">
-                    International Trademark Search Strategy Guide
-                  </h3>
-                  <span className="text-gray-400 text-[12px]">
-                    Published on 04/12/2025
-                  </span>
-                </div>
-              </div>
-            </li>
-            <li className="cursor-pointer border-b-[1px] border-white p-1 rounded">
-              <div className="flex items-center gap-3">
-                <div>
-                  <Image
-                    src={"/images/Trademark_search.jpg"}
-                    alt="Blog Banner"
-                    width={100}
-                    height={100}
-                    className="w-28 h-auto"
-                  />
-                </div>
-                <div>
-                  <h3 className="text-white text-[13px]">
-                    Trademark Search vs Monitoring: Key Differences
-                  </h3>
-                  <span className="text-gray-400 text-[12px]">
-                    Published on 10/12/2025
-                  </span>
-                </div>
-              </div>
-            </li>
-            <li className="cursor-pointer border-b-[1px] border-white p-1 rounded">
-              <div className="flex items-center gap-3">
-                <div>
-                  <Image
-                    src={"/images/Madrid_protocol_trademark.jpg"}
-                    alt="Blog Banner"
-                    width={100}
-                    height={100}
-                    className="w-28 h-auto"
-                  />
-                </div>
-                <div>
-                  <h3 className="text-white text-[13px]">
-                    Madrid Protocol Global Trademark Search
-                  </h3>
-                  <span className="text-gray-400 text-[12px]">
-                    Published on 12/12/2025
-                  </span>
-                </div>
-              </div>
-            </li>
-            <li className="cursor-pointer border-b-[1px] border-white p-1 rounded">
-              <div className="flex items-center gap-3">
-                <div>
-                  <Image
-                    src={"/images/International Brand Protection.jpg"}
-                    alt="Blog Banner"
-                    width={100}
-                    height={100}
-                    className="w-28 h-auto"
-                  />
-                </div>
-                <div>
-                  <h3 className="text-white text-[13px]">
-                  International Brand Protection Through Global Monitoring
-                  </h3>
-                  <span className="text-gray-400 text-[12px]">
-                    Published on 16/12/2025
-                  </span>
-                </div>
-              </div>
-            </li>
-          </ul>
+           <ul className="p-5 space-y-5">
+                    <li className="cursor-pointer border-b-[1px] border-white p-1 rounded">
+                      <div className="flex items-center gap-3">
+                        <div>
+                          <Image
+                            src={"/images/article.jpg"}
+                            alt="Blog Banner"
+                            width={100}
+                            height={100}
+                            className="w-28 h-auto"
+                          />
+                        </div>
+                        <div>
+                          <h3 className="text-white text-[13px]">
+                            Why DIY Trademark Searches Always Fail?
+                          </h3>
+                          <span className="text-gray-400 text-[12px]">
+                            Published on 02/12/2025
+                          </span>
+                        </div>
+                      </div>
+                    </li>
+                    <li className="cursor-pointer border-b-[1px] border-white p-1 rounded">
+                      <div className="flex items-center gap-3">
+                        <div>
+                          <Image
+                            src={"/images/International Trademark Search.jpg"}
+                            alt="Blog Banner"
+                            width={100}
+                            height={100}
+                            className="w-28 h-auto"
+                          />
+                        </div>
+                        <div>
+                          <h3 className="text-white text-[13px]">
+                            International Trademark Search Strategy Guide
+                          </h3>
+                          <span className="text-gray-400 text-[12px]">
+                            Published on 04/12/2025
+                          </span>
+                        </div>
+                      </div>
+                    </li>
+                    <li className="cursor-pointer border-b-[1px] border-white p-1 rounded">
+                      <div className="flex items-center gap-3">
+                        <div>
+                          <Image
+                            src={"/images/Trademark_search.jpg"}
+                            alt="Blog Banner"
+                            width={100}
+                            height={100}
+                            className="w-28 h-auto"
+                          />
+                        </div>
+                        <div>
+                          <h3 className="text-white text-[13px]">
+                            Trademark Search vs Monitoring: Key Differences
+                          </h3>
+                          <span className="text-gray-400 text-[12px]">
+                            Published on 10/12/2025
+                          </span>
+                        </div>
+                      </div>
+                    </li>
+                    <li className="cursor-pointer border-b-[1px] border-white p-1 rounded">
+                      <div className="flex items-center gap-3">
+                        <div>
+                          <Image
+                            src={"/images/Madrid_protocol_trademark.jpg"}
+                            alt="Blog Banner"
+                            width={100}
+                            height={100}
+                            className="w-28 h-auto"
+                          />
+                        </div>
+                        <div>
+                          <h3 className="text-white text-[13px]">
+                            Madrid Protocol Global Trademark Search
+                          </h3>
+                          <span className="text-gray-400 text-[12px]">
+                            Published on 12/12/2025
+                          </span>
+                        </div>
+                      </div>
+                    </li>
+                    <li className="cursor-pointer border-b-[1px] border-white p-1 rounded">
+                      <div className="flex items-center gap-3">
+                        <div>
+                          <Image
+                            src={"/images/International Brand Protection.jpg"}
+                            alt="Blog Banner"
+                            width={100}
+                            height={100}
+                            className="w-28 h-auto"
+                          />
+                        </div>
+                        <div>
+                          <h3 className="text-white text-[13px]">
+                            International Brand Protection Through Global Monitoring
+                          </h3>
+                          <span className="text-gray-400 text-[12px]">
+                            Published on 16/12/2025
+                          </span>
+                        </div>
+                      </div>
+                    </li>
+                    <li className="cursor-pointer border-b-[1px] border-white p-1 rounded">
+                      <div className="flex items-center gap-3">
+                        <div>
+                          <Image
+                            src={"/images/Trade Name Vs Trademarks.jpg"}
+                            alt="Blog Banner"
+                            width={100}
+                            height={100}
+                            className="w-28 h-auto"
+                          />
+                        </div>
+                        <div>
+                          <h3 className="text-white text-[13px]">
+                            Trade Name Vs Trademarks: Key Difference
+                          </h3>
+                          <span className="text-gray-400 text-[12px]">
+                            Published on 17/12/2025
+                          </span>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
         </section>
         <section className="flex items-center justify-center  relative">
           <Image src={Question} alt="Question Icon" />
