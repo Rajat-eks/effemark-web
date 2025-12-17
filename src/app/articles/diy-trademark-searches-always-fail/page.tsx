@@ -422,7 +422,7 @@ const page: React.FC<PageProps> = (props) => {
               <Mail /> info@effemark.com
             </a>
             <a
-              href="tel:+19722568133"
+              href="tel:+13124285732"
               className="flex items-center gap-2 text-[18px] text-white"
             >
               <Phone /> +1 (312) 428-5732 
