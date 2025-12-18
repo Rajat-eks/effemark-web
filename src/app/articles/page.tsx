@@ -89,6 +89,19 @@ const articles = [
     content:
       "When starting a business, one of the most confusing aspects entrepreneurs face is understanding Trade Name Vs Trademarks. While these terms are often used interchangeably, they serve distinct purposes in protecting your business.",
   },
+  {
+    metaTitle: "What is a Certification Trademark? Complete Guide",
+    metaDescription:
+      "A certification trademark is a unique type of intellectual property that guarantees a product or service meets certain standards, characteristics, or quality requirements.",
+    metakewword: ["Trade Name Vs Trademarks"],
+    status: true,
+    createdAt: new Date("2025-01-04"),
+    slug: "certification-trademark-complete-guide",
+    filepath: "/images/Certification Trademark.jpg",
+    heading: "What is a Certification Trademark? Complete Guide",
+    content:
+      "A certification trademark is a unique type of intellectual property that guarantees a product or service meets certain standards, characteristics, or quality requirements. Unlike regular trademarks that identify the source of goods.",
+  },
 ];
 
 const page: React.FC<PageProps> = (props) => {
