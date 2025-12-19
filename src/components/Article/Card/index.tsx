@@ -53,7 +53,7 @@ const Card: React.FC<IndexProps> = ({ article }) => {
           </span>
           <span className="text-[#255AF0] text-[12px]">{articleDate}</span>
         </div>
-        <h4 className="text-[20px] font-semibold">
+        <h4 className="text-[18px] md:text-[20px] font-semibold">
           <a href={`/articles/${slug}`}>{heading}</a>
         </h4>
         <p className="text-[13px] text-justify text-gray-700">{content}</p>

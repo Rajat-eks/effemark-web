@@ -15,7 +15,7 @@ interface PageProps {
 const page: React.FC<PageProps> = (props) => {
   return (
     <main>
-      <div className="hero-section relative min-h-screen sm:h-[70vh] w-full">
+      <div className="hero-section relative h-[180vh] md:h-[100vh] w-full">
         {/* Background Image */}
         <Image
           src={Background}
@@ -93,7 +93,7 @@ const page: React.FC<PageProps> = (props) => {
               </span>
             </div>
           </section>
-          <section className="bg-white text-black w-[55%] h-[81vh] rounded-2xl">
+          <section className="bg-white text-black w-full md:w-[55%] h-[81vh] rounded-2xl">
             <Form />
           </section>
         </div>
