@@ -115,6 +115,19 @@ const articles = [
     content:
       "Choosing a name for your business or product is an exciting milestone, but before you print those business cards or launch your website, you must conduct a trademark search. This essential step ensures that your proposed brand name, logo, or slogan isn't already legally owned by someone else.",
   },
+  {
+    metaTitle: "Why Global Search Matters for E-commerce",
+    metaDescription:
+      ": When we talk about why global search matters for e-commerce platforms, we're really discussing the foundation of customer satisfaction and business profitability.",
+    metakewword: ["Global Search Matters"],
+    status: true,
+    createdAt: new Date("2025-01-04"),
+    slug: "global-search-matters-e-commerce",
+    filepath: "/images/Global Search Matters.jpg",
+    heading: "Why Global Search Matters for E-commerce",
+    content:
+      "In the rapidly evolving world of online retail, customers expect instant results when they're looking for products. Global search matters because it serves as the primary gateway between your customers and your product catalog.",
+  },
 ];
 
 const page: React.FC<PageProps> = (props) => {
@@ -129,7 +142,7 @@ const page: React.FC<PageProps> = (props) => {
         </div>
       </section>
       <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-6 md:p-16">
-        {articles.map((article) => (
+        {articles.reverse().map((article) => (
           <Card key={article.slug} article={article} />
         ))}
       </section>
