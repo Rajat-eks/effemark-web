@@ -3,6 +3,8 @@ import React from "react";
 import Banner from "@/components/assets/img/blog.svg";
 import Question from "@/components/assets/img/question.svg";
 import { Mail, Phone } from "lucide-react";
+import { articles } from "../page";
+import Link from "next/link";
 
 interface PageProps {
   // define props here
@@ -303,134 +305,37 @@ const page: React.FC<PageProps> = (props) => {
           <h4 className="text-white text-center text-lg sm:text-xl">
             Recent Posts
           </h4>
-          <ul className="p-3 sm:p-5 space-y-3 sm:space-y-5">
-            <li className="cursor-pointer border-b-[1px] border-white p-1 rounded">
-              <div className="flex items-center gap-2 sm:gap-3">
-                <div className="flex-shrink-0">
-                  <Image
-                    src={"/images/article.jpg"}
-                    alt="Blog Banner"
-                    width={100}
-                    height={100}
-                    className="w-20 sm:w-24 md:w-28 h-auto"
-                  />
-                </div>
-                <div className="min-w-0 flex-1">
-                  <h3 className="text-white text-[11px] sm:text-[12px] md:text-[13px] line-clamp-2">
-                    Why DIY Trademark Searches Always Fail?
-                  </h3>
-                  <span className="text-gray-400 text-[10px] sm:text-[11px] md:text-[12px]">
-                    Published on 02/12/2025
-                  </span>
-                </div>
-              </div>
-            </li>
-            <li className="cursor-pointer border-b-[1px] border-white p-1 rounded">
-              <div className="flex items-center gap-2 sm:gap-3">
-                <div className="flex-shrink-0">
-                  <Image
-                    src={"/images/International Trademark Search.jpg"}
-                    alt="Blog Banner"
-                    width={100}
-                    height={100}
-                    className="w-20 sm:w-24 md:w-28 h-auto"
-                  />
-                </div>
-                <div className="min-w-0 flex-1">
-                  <h3 className="text-white text-[11px] sm:text-[12px] md:text-[13px] line-clamp-2">
-                    International Trademark Search Strategy Guide
-                  </h3>
-                  <span className="text-gray-400 text-[10px] sm:text-[11px] md:text-[12px]">
-                    Published on 04/12/2025
-                  </span>
-                </div>
-              </div>
-            </li>
-            <li className="cursor-pointer border-b-[1px] border-white p-1 rounded">
-              <div className="flex items-center gap-2 sm:gap-3">
-                <div className="flex-shrink-0">
-                  <Image
-                    src={"/images/Trademark_search.jpg"}
-                    alt="Blog Banner"
-                    width={100}
-                    height={100}
-                    className="w-20 sm:w-24 md:w-28 h-auto"
-                  />
-                </div>
-                <div className="min-w-0 flex-1">
-                  <h3 className="text-white text-[11px] sm:text-[12px] md:text-[13px] line-clamp-2">
-                    Trademark Search vs Monitoring: Key Differences
-                  </h3>
-                  <span className="text-gray-400 text-[10px] sm:text-[11px] md:text-[12px]">
-                    Published on 10/12/2025
-                  </span>
-                </div>
-              </div>
-            </li>
-            <li className="cursor-pointer border-b-[1px] border-white p-1 rounded">
-              <div className="flex items-center gap-2 sm:gap-3">
-                <div className="flex-shrink-0">
-                  <Image
-                    src={"/images/Madrid_protocol_trademark.jpg"}
-                    alt="Blog Banner"
-                    width={100}
-                    height={100}
-                    className="w-20 sm:w-24 md:w-28 h-auto"
-                  />
-                </div>
-                <div className="min-w-0 flex-1">
-                  <h3 className="text-white text-[11px] sm:text-[12px] md:text-[13px] line-clamp-2">
-                    Madrid Protocol Global Trademark Search
-                  </h3>
-                  <span className="text-gray-400 text-[10px] sm:text-[11px] md:text-[12px]">
-                    Published on 12/12/2025
-                  </span>
-                </div>
-              </div>
-            </li>
-            <li className="cursor-pointer border-b-[1px] border-white p-1 rounded">
-              <div className="flex items-center gap-2 sm:gap-3">
-                <div className="flex-shrink-0">
-                  <Image
-                    src={"/images/International Brand Protection.jpg"}
-                    alt="Blog Banner"
-                    width={100}
-                    height={100}
-                    className="w-20 sm:w-24 md:w-28 h-auto"
-                  />
-                </div>
-                <div className="min-w-0 flex-1">
-                  <h3 className="text-white text-[11px] sm:text-[12px] md:text-[13px] line-clamp-2">
-                    International Brand Protection Through Global Monitoring
-                  </h3>
-                  <span className="text-gray-400 text-[10px] sm:text-[11px] md:text-[12px]">
-                    Published on 16/12/2025
-                  </span>
-                </div>
-              </div>
-            </li>
-            <li className="cursor-pointer border-b-[1px] border-white p-1 rounded">
-              <div className="flex items-center gap-2 sm:gap-3">
-                <div className="flex-shrink-0">
-                  <Image
-                    src={"/images/Trade Name Vs Trademarks.jpg"}
-                    alt="Blog Banner"
-                    width={100}
-                    height={100}
-                    className="w-20 sm:w-24 md:w-28 h-auto"
-                  />
-                </div>
-                <div className="min-w-0 flex-1">
-                  <h3 className="text-white text-[11px] sm:text-[12px] md:text-[13px] line-clamp-2">
-                    Trade Name Vs Trademarks: Key Difference
-                  </h3>
-                  <span className="text-gray-400 text-[10px] sm:text-[11px] md:text-[12px]">
-                    Published on 17/12/2025
-                  </span>
-                </div>
-              </div>
-            </li>
-          </ul>
+       <ul className="p-3 sm:p-5 space-y-3 sm:space-y-5">
+                   {articles
+                     .slice(-5)
+                     .reverse()
+                     .map((article) => (
+                       <Link href={`/articles/${article.slug}`} key={article.slug} className="p-3 sm:p-5 space-y-3 sm:space-y-5">
+                         <li className="cursor-pointer border-b-[1px] border-white p-1 rounded">
+                           <div className="flex items-center gap-2 sm:gap-3">
+                             <div className="flex-shrink-0">
+                               <Image
+                                 src={article.filepath}
+                                 alt="Blog Banner"
+                                 width={100}
+                                 height={100}
+                                 className="w-20 sm:w-24 md:w-28 h-auto"
+                               />
+                             </div>
+                             <div className="min-w-0 flex-1">
+                               <h3 className="text-white text-[11px] sm:text-[12px] md:text-[13px] line-clamp-2">
+                                 {article.heading}
+                               </h3>
+       
+                               {/* <span className="text-gray-400 text-[10px] sm:text-[11px] md:text-[12px]">
+                           P
+                         </span> */}
+                             </div>
+                           </div>
+                         </li>
+                       </Link>
+                     ))}
+                 </ul>
         </section>
         <section className="flex items-center justify-center relative">
           <Image

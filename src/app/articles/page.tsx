@@ -6,7 +6,7 @@ import Card from "@/components/Article/Card";
 interface PageProps {
   // define props here
 }
-const articles = [
+export const articles = [
   {
     metaTitle: "Why DIY Trademark Searches Always Fail?",
     metaDescription:
