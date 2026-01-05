@@ -180,6 +180,19 @@ export const articles = [
     content:
       "Choosing the perfect name for your business is exciting, but before you invest in branding, marketing materials, or domain names, you need to ensure your chosen name is legally available ",
   },
+   {
+    metaTitle: "Understanding the Trademark Electronic Search System (TESS)",
+    metaDescription:
+      "Trademark Electronic Search System is a free online database provided by the United States Patent and Trademark Office (USPTO) that allows anyone to search through millions of registered and pending trademarks.",
+    metakewword: ["Trademark Electronic Search System"],
+    status: true,
+    createdAt: new Date("2025-01-04"),
+    slug: "understanding-trademark-electronic-search-system-tess",
+    filepath: "/images/Trademark Electronic Search System.jpg",
+    heading: "Understanding the Trademark Electronic Search System (TESS)",
+    content:
+      "When starting a new business or launching a product, choosing the right name is crucial. But before you fall in love with that perfect brand name, you need to ensure it's not already taken. This is where the Trademark Electronic Search System comes into play.",
+  },
 ];
 
 const page: React.FC<PageProps> = (props) => {
