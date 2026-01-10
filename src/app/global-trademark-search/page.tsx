@@ -20,7 +20,7 @@ interface PageProps {
 export const metadata = {
   title: "International Trademark Search | Covering 190+ Countries",
   description:
-   "Secure your brand through comprehensive worldwide trademark search spanning 190+ nations. International trademark research from $525. Reach Out Today!",
+    "Secure your brand through comprehensive worldwide trademark search spanning 190+ nations. International trademark research from $525. Reach Out Today!",
   keywords: ["Global Trademark Search", "International Trademark Search"],
 };
 
