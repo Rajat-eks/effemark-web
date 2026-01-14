@@ -234,6 +234,21 @@ export const articles = [
     content:
       "When launching a new brand or product, most businesses focus on federal trademark registration through the USPTO. However, there's a hidden danger that many entrepreneurs and companies overlook: common law trademarks",
   },
+  {
+    metaTitle:
+      "Understanding All 45 Classes Explained Trademark Classification System",
+    metaDescription:
+      "The Trademark Classification System is an internationally recognized framework that organizes goods and services into 45 distinct classes.",
+    metakewword: ["Trademark Classification System"],
+    status: true,
+    createdAt: new Date("2025-01-04"),
+    slug: "understanding-classes-explained-trademark-classification-system ",
+    filepath: "/images/Trademark Classification System.jpg",
+    heading:
+      "Understanding All 45 Classes Explained Trademark Classification System",
+    content:
+      "The Trademark Classification System is an internationally recognized framework that organizes goods and services into 45 distinct classes. This systematic approach, known as the Nice Classification",
+  },
 ];
 
 const page: React.FC<PageProps> = (props) => {
