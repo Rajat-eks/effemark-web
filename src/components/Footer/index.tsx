@@ -132,7 +132,7 @@ const Footer: React.FC<IndexProps> = (props) => {
       </section>
       <section className="text-[14px] text-white flex flex-col md:flex-row items-start justify-between p-3 border-t-[1px] border-dotted">
         <span className="order-2 md:order-1">
-          @2025 EffeMark. All rights reserved.
+          @2026 EffeMark. All rights reserved.
         </span>
         <ul className="flex flex-col md:flex-row items-start justify-between gap-5 order-1 md:order-2">
           <li>
