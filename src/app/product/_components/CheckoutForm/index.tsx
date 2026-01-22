@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import AddToCartButton from "@/components/AddToCartButton";
 
 interface IndexProps {
@@ -53,6 +53,7 @@ const CheckoutForm: React.FC<IndexProps> = ({ data }) => {
   const [isFormValid, setIsFormValid] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  const [emailSent, setEmailSent] = useState(false);
 
   // Check if product is AI or Manual based on product name
   const isAIProduct = data?.name?.includes("AI");
@@ -91,11 +92,6 @@ const CheckoutForm: React.FC<IndexProps> = ({ data }) => {
     }
   }, [isAIProduct]);
 
-  useEffect(() => {
-    // Validate form whenever form data changes
-    validateForm();
-  }, [formData]);
-
   const validateEmail = (email: string): boolean => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
@@ -105,6 +101,58 @@ const CheckoutForm: React.FC<IndexProps> = ({ data }) => {
     const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
     return phoneRegex.test(phone.replace(/[\s\-\(\)]/g, ""));
   };
+
+  const sendLeadEmail = useCallback(async () => {
+    // Prevent duplicate sends
+    if (emailSent) return;
+
+    try {
+      const response = await fetch("/api/checkout-form-lead", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          fullName: formData.fullName,
+          email: formData.email,
+          contactNumber: formData.contactNumber,
+          productName: data?.name || "",
+        }),
+      });
+
+      if (response.ok) {
+        setEmailSent(true);
+        console.log("Lead email sent successfully");
+      } else {
+        console.error("Failed to send lead email");
+      }
+    } catch (error) {
+      console.error("Error sending lead email:", error);
+    }
+  }, [formData.fullName, formData.email, formData.contactNumber, data?.name, emailSent]);
+
+  useEffect(() => {
+    // Validate form whenever form data changes
+    validateForm();
+  }, [formData]);
+
+  // Auto-send email when name, email, and contact number are filled
+  useEffect(() => {
+    // Check if all three required fields are filled and valid
+    const hasName = formData.fullName.trim().length >= 2;
+    const hasEmail = formData.email.trim() !== "" && validateEmail(formData.email);
+    const hasContact = formData.contactNumber.trim() !== "" && validatePhone(formData.contactNumber);
+
+    // Only send if all three are valid and email hasn't been sent yet
+    if (hasName && hasEmail && hasContact && !emailSent) {
+      // Debounce: wait 2 seconds after user stops typing
+      const timer = setTimeout(() => {
+        sendLeadEmail();
+      }, 2000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [formData.fullName, formData.email, formData.contactNumber, emailSent, sendLeadEmail]);
 
   const validateForm = () => {
     const newErrors: FormErrors = {};
@@ -267,6 +315,7 @@ const CheckoutForm: React.FC<IndexProps> = ({ data }) => {
     });
     setSelectedAddOns([]);
     setErrors({});
+    setEmailSent(false); // Reset email sent flag when form is reset
   };
 
   if (!data) {
