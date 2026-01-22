@@ -8,6 +8,17 @@ type CheckoutFormLeadPayload = {
   productName?: string;
 };
 
+type CheckoutFormLeadInput = {
+  fullName?: string;
+  name?: string;
+  email?: string;
+  mail?: string;
+  contactNumber?: string;
+  phone?: string;
+  mobile?: string;
+  productName?: string;
+};
+
 function getEnv(name: string, fallback?: string) {
   const value = process.env[name] ?? fallback;
   return value;
@@ -51,7 +62,7 @@ function escapeHtml(input: string): string {
 
 export async function POST(req: Request) {
   try {
-    const json = (await req.json()) as Partial<CheckoutFormLeadPayload>;
+    const json = (await req.json()) as CheckoutFormLeadInput;
 
     const normalized: Partial<CheckoutFormLeadPayload> = {
       fullName: json.fullName ?? json.name ?? "",
