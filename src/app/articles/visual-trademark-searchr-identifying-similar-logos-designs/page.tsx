@@ -34,7 +34,7 @@ const page: React.FC<PageProps> = (props) => {
           </h1>
 
           <span className="text-[12px] sm:text-[14px] text-blue-600">
-            Published on 05/01/2026
+            Published on 28/01/2026
           </span>
         </div>
         <div className="space-y-4 sm:space-y-5 text-justify">
@@ -234,7 +234,7 @@ const page: React.FC<PageProps> = (props) => {
             presence. Remember that visual trademark search is not a one-time
             activity but an ongoing process that should accompany your brand's
             growth and evolution. Take the time to <a href="https://www.effemark.com/product/us-trademark-search-advanced-manual-full-search">conduct comprehensive
-            searches</a>, <a href="https://www.effemark.com/contact-us">consult with professionals</a> when needed, and build a visual
+              searches</a>, <a href="https://www.effemark.com/contact-us">consult with professionals</a> when needed, and build a visual
             identity that truly belongs to you.
           </p>
         </div>
