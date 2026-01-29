@@ -33,15 +33,15 @@ const Solutions: React.FC<IndexProps> = ({ products }) => {
             </div>
             <h5>{name}</h5>
             <p className="text-[14px]">
-                <p className="text-[16px]">
-                    {name?.toLowerCase().includes("ai")
-                      ? "Similar + Phonetic Alternatives [Searched + Curated by Advanced AI]"
-                      : ["china", "japan", "korea"].some((country) =>
-                          name?.toLowerCase().includes(country)
-                        )
-                      ? "Similar + Phonetic Alternatives  [AI-Enhanced + Expert Verified]"
-                      : "Similar + Phonetic Alternatives + Language Variants [AI-Enhanced + Expert Verified]"}
-                  </p>
+              <p className="text-[16px]">
+                {name?.toLowerCase().includes("ai")
+                  ? "Similar + Phonetic Alternatives [Searched + Curated by Advanced AI]"
+                  : ["china", "japan", "korea"].some((country) =>
+                        name?.toLowerCase().includes(country),
+                      )
+                    ? "Similar + Phonetic Alternatives  [AI-Enhanced + Expert Verified]"
+                    : "Similar + Phonetic Alternatives + Language Variants [AI-Enhanced + Expert Verified]"}
+              </p>
             </p>
             <span>
               <b>Coverage: </b>
@@ -49,7 +49,9 @@ const Solutions: React.FC<IndexProps> = ({ products }) => {
             </span>
             <span>
               <b>Turnaround: </b>
-              1-2 Business Days
+
+              {name.includes("AI") ? '1-2 Business Days' : '3-4 Business Days'}
+            
             </span>
             <span>
               <b>Add-Ons: </b> {addOns.length}+ Add-Ons Available
@@ -63,15 +65,15 @@ const Solutions: React.FC<IndexProps> = ({ products }) => {
               *All results designated by the US at WIPO are always included.
             </span>
             <div className="flex items-center justify-center">
-                <div className="flex items-center justify-center">
-                    <Link
-                      href={`/product/${path}`}
-                      className="border-[1px] py-2 px-4 rounded border-gray-400 flex items-center gap-1 hover:ease-in duration-300 group-hover:bg-[#202F5A] group-hover:text-white"
-                    >
-                      Start Your Order <ChevronRight />
-                    </Link>
-                  </div>
+              <div className="flex items-center justify-center">
+                <Link
+                  href={`/product/${path}`}
+                  className="border-[1px] py-2 px-4 rounded border-gray-400 flex items-center gap-1 hover:ease-in duration-300 group-hover:bg-[#202F5A] group-hover:text-white"
+                >
+                  Start Your Order <ChevronRight />
+                </Link>
               </div>
+            </div>
           </div>
         ))}
       </section>

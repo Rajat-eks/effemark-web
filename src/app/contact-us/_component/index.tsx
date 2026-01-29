@@ -112,8 +112,8 @@ const Form: React.FC<IndexProps> = (props) => {
 
         <div>
           <textarea
-            rows={10}
-            cols={10}
+            rows={5}
+            cols={5}
             placeholder="Message"
             className="rounded-xl border-[1px] p-2 w-full border-gray-300 text-[11px]"
             value={form.message}
