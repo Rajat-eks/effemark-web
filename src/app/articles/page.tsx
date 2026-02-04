@@ -360,6 +360,20 @@ export const articles = [
       "How Technology Improves Accuracy AI Trademark Search Tools?",
     content:
     "In today's fast-paced business environment, protecting brand identity has become more critical than ever. Traditional trademark searches were time-consuming, often requiring hours of manual research through databases"
+  },
+  {
+    metaTitle: "CIPO Database: Complete Guide to Canadian Trademark Search",
+    metaDescription:
+      "Starting a business in Canada requires careful brand protection, and knowing how to conduct a canadian trademark search is your first step toward securing your intellectual property.",
+    metakewword: ["Canadian Trademark Search"],
+    status: true,
+    createdAt: new Date("2025-01-04"),
+    slug: "cipo-database-complete-guide-canadian-trademark-search",
+    filepath: "/images/Canadian Trademark Search.jpg",
+    heading:
+      "CIPO Database: Complete Guide to Canadian Trademark Search",
+    content:
+    "Starting a business in Canada requires careful brand protection, and knowing how to conduct a canadian trademark search is your first step toward securing your intellectual property. The Canadian Intellectual Property Office (CIPO) database serves as the central repository for all registered and pending trademarks in Canada.",
   }
 ];
 
