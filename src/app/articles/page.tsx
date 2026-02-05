@@ -382,7 +382,7 @@ export const articles = [
     metakewword: ["Startup Trademark Strategy"],
     status: true,
     createdAt: new Date("2025-01-04"),
-    slug: "trademark-strategy-startups--search-secure-your-brand",
+    slug: "trademark-strategy-startups-search-secure-your-brand",
     filepath: "/images/Startup Trademark Strategy.jpg",
     heading:
       "Trademark Strategy for Startups: When to Search and Secure Your Brand",
