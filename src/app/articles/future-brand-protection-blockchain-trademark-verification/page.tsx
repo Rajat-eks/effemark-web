@@ -215,7 +215,7 @@ const page: React.FC<PageProps> = (props) => {
             sophisticated. Artificial intelligence integration will enable
             automated monitoring of trademark infringements across global
             marketplaces.{" "}
-            <a href="https://www.ibm.com/think/topics/internet-of-things">
+            <a href="https://www.ibm.com/think/topics/internet-of-things" className="text-blue-600 hover:underline">
               Internet of Things (IoT) devices
             </a>{" "}
             will connect physical products directly to blockchain verification
@@ -265,17 +265,17 @@ const page: React.FC<PageProps> = (props) => {
           </h2>
           <p className="text-[14px] sm:text-[15px] md:text-[16px]">
             With over two decades of combined experience in intellectual
-            property services, <a href="https://www.effemark.com/">EffeMark</a>{" "}
+            property services, <a href="https://www.effemark.com/" className="text-blue-600 hover:underline">EffeMark</a>{" "}
             delivers comprehensive trademark search and monitoring solutions
             that protect your brand&apos;s future across 180+ countries
             worldwide.
           </p>
           <p className="text-[14px] sm:text-[15px] md:text-[16px]">
-            <a href="https://www.effemark.com/product/global-trademark-search-manual-full-search">
+            <a className="text-blue-600 underline" href="https://www.effemark.com/product/global-trademark-search-manual-full-search">
               Worldwide Trademark search
             </a>{" "}
             &amp;{" "}
-            <a href="https://www.effemark.com/product/global-trademark-search-manual-full-search">
+            <a className="text-blue-600 underline" href="https://www.effemark.com/product/global-trademark-monitoring">
               monitoring
             </a>{" "}
             requires combination of skilled analysts and access to wide-ranging
