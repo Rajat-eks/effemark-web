@@ -1503,7 +1503,7 @@ export const monitorProduct = [
     included:'Global(190+) Countries',
     price: 315,
     avatar: "/flag/World.png",
-    banner: "/checkout/GLOBAL Trademark Monitoring.png",
+    banner: "/checkout/GLOBAL-Trademark Monitoring.png",
     addOns: [
       {
         name: "Common Law",
