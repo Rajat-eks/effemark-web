@@ -327,14 +327,14 @@ const page: React.FC<PageProps> = (props) => {
             About EffeMark
           </h2>
           <p className="text-[14px] sm:text-[15px] md:text-[16px]">
-            EffeMark is a leading provider of <a href="https://www.effemark.com/trademark-search-services">comprehensive trademark search</a>
+            EffeMark is a leading provider of <a className="text-blue-600 underline" href="https://www.effemark.com/trademark-search-services">comprehensive trademark search</a>
             and monitoring services, trusted by over 1,000 clients worldwide.
             We specialize in protecting brand identities through intelligent
-            <a href="https://www.effemark.com/product/global-trademark-monitoring">trademark monitoring across 190+ countries</a>, combining proprietary
+            <a className="text-blue-600 underline" href="https://www.effemark.com/product/global-trademark-monitoring">trademark monitoring across 190+ countries</a>, combining proprietary
             AI-powered technology with expert manual verification to deliver
             unparalleled accuracy. Our mission is to make trademark protection
             accessible and affordable for businesses of all sizes, offering
-            <a href="https://www.effemark.com/product/us-trademark-monitoring">competitively priced services starting at just $55</a>. With rapid
+            <a className="text-blue-600 underline" href="https://www.effemark.com/product/us-trademark-monitoring">competitively priced services starting at just $55</a>. With rapid
             1-2 business day turnaround times, customizable reporting
             schedules, and 24/7 global surveillance, EffeMark empowers
             businesses to stay ahead of potential infringements and maintain
