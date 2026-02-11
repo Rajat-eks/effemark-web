@@ -329,11 +329,11 @@ const page: React.FC<PageProps> = (props) => {
           <p className="text-[14px] sm:text-[15px] md:text-[16px]">
             EffeMark is a leading provider of <a className="text-blue-600 underline" href="https://www.effemark.com/trademark-search-services">comprehensive trademark search</a>
             and monitoring services, trusted by over 1,000 clients worldwide.
-            We specialize in protecting brand identities through intelligent
+            We specialize in protecting brand identities through intelligent " "
             <a className="text-blue-600 underline" href="https://www.effemark.com/product/global-trademark-monitoring">trademark monitoring across 190+ countries</a>, combining proprietary
             AI-powered technology with expert manual verification to deliver
             unparalleled accuracy. Our mission is to make trademark protection
-            accessible and affordable for businesses of all sizes, offering
+            accessible and affordable for businesses of all sizes, offering " "
             <a className="text-blue-600 underline" href="https://www.effemark.com/product/us-trademark-monitoring">competitively priced services starting at just $55</a>. With rapid
             1-2 business day turnaround times, customizable reporting
             schedules, and 24/7 global surveillance, EffeMark empowers
@@ -349,6 +349,7 @@ const page: React.FC<PageProps> = (props) => {
           </h4>
           <ul className="p-3 sm:p-5 space-y-3 sm:space-y-5">
             {articles
+              .sort()
               .slice(-5)
               .reverse()
               .map((article) => (
