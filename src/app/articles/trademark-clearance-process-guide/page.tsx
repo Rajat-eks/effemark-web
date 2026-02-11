@@ -273,7 +273,7 @@ const page: React.FC<PageProps> = (props) => {
                     <p className="text-[14px] sm:text-[15px] md:text-[16px]">
                         Once you&apos;ve successfully completed the trademark clearance
                         process and received positive recommendations, the next step is
-                        <a href="https://www.effectualservices.com/trademark-registration/">filing your application</a> with the appropriate trademark office.
+                        <a className="text-blue-600 underline hover:no-underline" href="https://www.effectualservices.com/trademark-registration/">filing your application</a> with the appropriate trademark office.
                     </p>
                     <h4 className="text-[16px] sm:text-[18px] md:text-[20px] font-bold">
                         Application Best Practices:
@@ -295,7 +295,7 @@ const page: React.FC<PageProps> = (props) => {
                     </h3>
                     <p className="text-[14px] sm:text-[15px] md:text-[16px]">
                         The trademark clearance process doesn&apos;t end with registration.
-                        <a href="https://www.effemark.com/trademark-monitoring">Maintaining your trademark rights</a> requires ongoing vigilance:
+                        <a className="text-blue-600 underline hover:no-underline" href="https://www.effemark.com/trademark-monitoring">Maintaining your trademark rights</a> requires ongoing vigilance:
                     </p>
                     <ul className="list-disc list-inside space-y-2 text-[14px] sm:text-[15px] md:text-[16px]">
                         <li>
@@ -346,7 +346,7 @@ const page: React.FC<PageProps> = (props) => {
                         180+ countries worldwide.
                     </p>
                     <p className="text-[14px] sm:text-[15px] md:text-[16px]">
-                        <a href="https://www.effemark.com/product/global-trademark-search-manual-full-search">Worldwide Trademark search</a> &amp; monitoring requires combination of
+                        <a className="text-blue-600 underline hover:no-underline" href="https://www.effemark.com/product/global-trademark-search-manual-full-search">Worldwide Trademark search</a> &amp; <a className="text-blue-600 underline hover:no-underline" href="https://www.effemark.com/product/global-trademark-monitoring">monitoring</a> requires combination of
                         skilled analysts and access to wide-ranging Trademark databases. We
                         at Effemark offer comprehensive Trademark search and monitoring
                         solutions across the globe which helps you protect and build your
