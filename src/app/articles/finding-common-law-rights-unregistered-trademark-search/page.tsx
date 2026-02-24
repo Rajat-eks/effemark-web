@@ -180,42 +180,81 @@ const page: React.FC<PageProps> = (props) => {
             strong signal that the owner considers it proprietary, even if
             unregistered.
           </p>
-
-
           //////////////
-         
           <h2 className="text-[20px] sm:text-[22px] md:text-[25px] font-bold">
-           When to Hire a Trademark Attorney for an Unregistered Trademark Search
+            When to Hire a Trademark Attorney for an Unregistered Trademark
+            Search
           </h2>
           <p className="text-[14px] sm:text-[15px] md:text-[16px]">
-            While you can conduct a basic unregistered trademark search on your own, there are situations where professional guidance becomes necessary. If you are entering a crowded market, launching in multiple geographic regions, or investing heavily in a new brand, the cost of a professional search is far less than the cost of rebranding after a dispute.
+            While you can conduct a basic unregistered trademark search on your
+            own, there are situations where professional guidance becomes
+            necessary. If you are entering a crowded market, launching in
+            multiple geographic regions, or investing heavily in a new brand,
+            the <a href="https://www.effemark.com/product/us-trademark-search-advanced-ai-full-search">cost of a professional search</a> is far less than the cost of
+            rebranding after a dispute.
           </p>
-          <p>A trademark attorney or a specialized IP search firm can access comprehensive databases, analyze the legal strength of conflicting marks, and provide a formal clearance opinion. This opinion documents that a reasonable search was performed, which can be valuable evidence if a dispute ever arises.</p>
-
+          <p>
+            A trademark attorney or a specialized IP search firm can access
+            comprehensive databases, analyze the legal strength of conflicting
+            marks, and provide a formal clearance opinion. This opinion
+            documents that a reasonable search was performed, which can be
+            valuable evidence if a dispute ever arises.
+          </p>
           <h4 className="font-bold text-[16px] sm:text-[18px] md:text-[20px]">
-           Protecting Your Brand After the Search
+            Protecting Your Brand After the Search
           </h4>
           <p className="text-[14px] sm:text-[15px] md:text-[16px]">
-            Once you have completed your unregistered trademark search and confirmed that your mark is clear, the next step is to protect it. Begin using the mark in commerce immediately to establish your own common law rights. Document your first use carefully with time-stamped records, receipts, and marketing materials. Then pursue formal registration as soon as possible to add a public legal record to your claim.
-
+            Once you have completed your unregistered trademark search and
+            confirmed that your mark is clear, the next step is to protect it.
+            Begin using the mark in commerce immediately to establish your own
+            common law rights. Document your first use carefully with
+            time-stamped records, receipts, and marketing materials. Then pursue
+            formal registration as soon as possible to add a public legal record
+            to your claim.
           </p>
-          <p>Remember, conducting an unregistered trademark search is not a one-time activity. Brands evolve, markets change, and new businesses emerge constantly. Periodic searches help you monitor the trademark landscape and catch potential conflicts before they escalate into expensive legal battles.</p>
-
+          <p>
+            Remember, conducting an unregistered trademark search is not a
+            one-time activity. Brands evolve, markets change, and new businesses
+            emerge constantly. Periodic searches help you monitor the trademark
+            landscape and catch potential conflicts before they escalate into
+            expensive legal battles.
+          </p>
           <h4 className="font-bold text-[16px] sm:text-[18px] md:text-[20px]">
-           Conclusion
+            Conclusion
           </h4>
           <p className="text-[14px] sm:text-[15px] md:text-[16px]">
-          Finding common law rights through a detailed unregistered trademark search is one of the most important steps a business owner can take before building a brand. Official registries only reveal part of the picture. The real risk often hides in unregistered usage across the internet, local markets, and industry communities. By taking a thorough, multi-source approach to your unregistered trademark search, you protect your investment, avoid legal liability, and build your brand on solid legal ground.
+            Finding common law rights through a detailed unregistered trademark
+            search is one of the most important steps a business owner can take
+            before building a brand. Official registries only reveal part of the
+            picture. The real risk often hides in unregistered usage across the
+            internet, local markets, and industry communities. By taking a
+            thorough, multi-source approach to your unregistered trademark
+            search, you protect your investment, avoid legal liability, and
+            build your brand on solid legal ground.
           </p>
           <h4 className="font-bold text-[16px] sm:text-[18px] md:text-[20px]">
             About EffeMark
           </h4>
           <p className="text-[14px] sm:text-[15px] md:text-[16px]">
-          With over two decades of combined experience in intellectual property services, EffeMark delivers comprehensive trademark search and monitoring solutions that protect your brand's future across 180+ countries worldwide.
+            With over two decades of combined experience in intellectual
+            property services, EffeMark delivers <a className="text-blue-600" href="https://www.effemark.com/trademark-search-services">comprehensive trademark search</a>
+            and monitoring solutions that protect your brand's future across
+            180+ countries worldwide.
           </p>
-          <p>Worldwide Trademark Search & monitoring requires combination of skilled analysts and access to wide-ranging Trademark databases. We at Effemark offer comprehensive Trademark search and monitoring solutions across the globe which helps you protect and build your critical brands. Our customizable reports are delivered by team of professional analysts. Our analysts perform various strategies including checking availability of Trademark across multiple countries in different languages, different spellings, similar marks, and phonetic equivalents. We deliver in a matter of days. we can then deliver a straightforward and highly useful report, allowing clients to make decisions that could potentially save them thousands.</p>
-
-          
+          <p>
+            Worldwide Trademark Search & monitoring requires combination of
+            skilled analysts and access to wide-ranging Trademark databases. We
+            at Effemark offer comprehensive Trademark search and <a className="text-blue-600" href="https://www.effemark.com/trademark-monitoring">monitoring
+            solutions</a> across the globe which helps you protect and build your
+            critical brands. Our customizable reports are delivered by team of
+            professional analysts. Our analysts perform various strategies
+            including checking availability of Trademark across multiple
+            countries in different languages, different spellings, similar
+            marks, and phonetic equivalents. We deliver in a matter of days. we
+            can then deliver a straightforward and highly useful report,
+            allowing clients to make decisions that could potentially save them
+            thousands.
+          </p>
           <p className="text-[14px] sm:text-[15px] md:text-[16px]">
             <b>Follow Us:</b>{" "}
             <a
