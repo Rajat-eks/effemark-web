@@ -465,6 +465,18 @@ export const articles = [
     heading: "State vs. Federal Trademarks: Which Shields Your Brand Better?",
     content:
       "When you build a business from the ground up, your brand name becomes one of your most valuable assets. Protecting it is not just smart, it is necessary. But here is where most entrepreneurs get stuck: should you go with state trademarks or federal trademarks?"
+  },
+  {
+    metaTitle: "Finding Common Law Rights: Unregistered Trademark Search",
+    metaDescription:
+      "Common law trademark rights exist outside the registration system, and if you skip an unregistered trademark search, you may unknowingly infringe on a brand that has been in use for years.",
+    status: true,
+    createdAt: new Date("2025-01-04"),
+    slug: "/finding-common-law-rights-unregistered-trademark-search",
+    filepath: "/images/Unregistered Trademark Search.jpg",
+    heading: "Finding Common Law Rights: Unregistered Trademark Search",
+    content:
+      "In the world of intellectual property, most business owners assume that trademark protection only comes after formal registration with a government body like the USPTO. "
   }
 ];
 
