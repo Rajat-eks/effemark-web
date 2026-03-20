@@ -33,7 +33,7 @@ const page: React.FC<PageProps> = (props) => {
           </h1>
 
           <span className="text-[12px] sm:text-[14px] text-blue-600">
-            Published on 01/07/2026
+            Published on 20/03/2026
           </span>
         </div>
         <h2 className="text-[20px] sm:text-[22px] md:text-[25px] font-bold">
