@@ -32,7 +32,7 @@ const page: React.FC<PageProps> = (props) => {
             The Future of Brand Protection Blockchain Trademark Verification
           </h1>
           <span className="text-[12px] sm:text-[14px] text-blue-600">
-            Published on 06/02/2026
+            Published on 08/04/2026
           </span>
         </div>
         <div className="space-y-4 sm:space-y-5 text-justify">
