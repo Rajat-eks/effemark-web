@@ -319,7 +319,7 @@ const page: React.FC = () => {
             </a>
           </p>
           <p className="text-[14px] sm:text-[15px] md:text-[16px]">
-            Follow Us: LinkedIn
+            Follow Us: <a href="https://www.linkedin.com/company/effemark" target="_blank" rel="noopener noreferrer" className="text-blue-600">LinkedIn</a>
           </p>
         </div>
       </section>
