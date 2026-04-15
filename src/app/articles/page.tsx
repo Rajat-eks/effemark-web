@@ -838,6 +838,21 @@ export const articles = [
     content:
       "If you are a franchise owner or planning to expand your business across multiple cities or states, protecting your brand is not optional - it is a necessity. A trademark search for franchises is the foundation of any strong brand protection strategy.",
   },
+  {
+    metaTitle:
+      "ASEAN Trademark Search: Protecting Your Brand Across Southeast Asia",
+    metaDescription:
+      "If you are a business owner, startup founder, or legal professional planning to operate in this region, conducting a thorough ASEAN trademark search is not optional.",
+    metakewword: ["ASEAN Trademark Search"],
+    status: true,
+    createdAt: new Date("2026-04-15"),
+    slug: "asean-trademark-search-protecting-your-brand-across-southeast-asia",
+    filepath: "/images/ASEAN Trademark Search.jpg",
+    heading:
+      "ASEAN Trademark Search: Protecting Your Brand Across Southeast Asia",
+    content:
+      "Southeast Asia is one of the fastest-growing economic regions in the world. Conducting a thorough ASEAN trademark search is essential before you file, launch, or invest in brand-building across member states.",
+  },
 ];
 
 const page: React.FC<PageProps> = (props) => {
