@@ -853,6 +853,21 @@ export const articles = [
     content:
       "Southeast Asia is one of the fastest-growing economic regions in the world. Conducting a thorough ASEAN trademark search is essential before you file, launch, or invest in brand-building across member states.",
   },
+  {
+    metaTitle:
+      "Managing a Large Trademark Portfolio: How Docketing Keeps You Compliant?",
+    metaDescription:
+      "Managing a large trademark portfolio without a proper system leads to missed deadlines and lost rights. Learn how trademark portfolio docketing keeps your brand protected and fully compliant.",
+    metakewword: ["Trademark Portfolio Docketing"],
+    status: true,
+    createdAt: new Date("2026-04-16"),
+    slug: "managing-large-trademark-portfolio-docketing-keeps-compliant",
+    filepath: "/images/Trademark Portfolio Docketing.jpg",
+    heading:
+      "Managing a Large Trademark Portfolio: How Docketing Keeps You Compliant?",
+    content:
+      "Trademark portfolio docketing centralizes deadlines, jurisdiction-specific requirements, ownership, and monitoring actions so large portfolios stay compliant and enforceable. Learn the key system components, failure risks, and how docketing supports broader IP strategy.",
+  },
 ];
 
 const page: React.FC<PageProps> = (props) => {
