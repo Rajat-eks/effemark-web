@@ -296,9 +296,9 @@ const page: React.FC<PageProps> = () => {
             <li>
               <strong>Expand protection as you grow:</strong> As your business
               enters new markets or product categories, update your trademark
-              registrations accordingly. A trademark registered only in one
-              class may not protect you in adjacent areas where competitors might
-              encroach.
+              registrations accordingly. Coverage limited to a single class of
+              goods or services may not protect you in adjacent areas where
+              competitors might encroach.
             </li>
           </ul>
 
