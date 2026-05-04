@@ -18,10 +18,13 @@ interface ProductClientProps {
 const ProductClient: React.FC<ProductClientProps> = ({ slug }) => {
   const [data, setData] = useState<any>({});
 
+
   useEffect(() => {
     const ck = [...trademarkProducts, ...monitorProduct].find(
       (item: any) => item.path === `/${slug}`
     );
+
+    console.log("ck", slug);
     setData(ck);
   }, [slug]);
 

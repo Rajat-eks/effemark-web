@@ -941,7 +941,7 @@ export const monitorProduct = [
   },
   {
     name: "Canada Trademark Monitoring",
-    path: "/canada-trademark-monitoring",
+    path: "canada-trademark-monitoring",
     included:
       "Canada + WIPO (*All Canada designated WIPO results are always included)",
     strikePrice: 59,

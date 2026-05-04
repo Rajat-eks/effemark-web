@@ -1,19 +1,14 @@
-import React from "react";
 import { monitorProduct, trademarkProducts } from "@/data/products";
 import type { Metadata } from "next";
 import ProductClient from "./ProductClient";
-
-interface PageProps {
-  params: { slug: string };
-}
 
 // Generate metadata for SEO
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-  const slug = params.slug;
+  const { slug } = await params;
   const product = [...trademarkProducts, ...monitorProduct].find(
     (item: any) => item.path === `/${slug}`
   );
@@ -78,8 +73,11 @@ export async function generateMetadata({
   };
 }
 
-const page: React.FC<PageProps> = ({ params }) => {
-  return <ProductClient slug={params.slug} />;
-};
-
-export default page;
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  return <ProductClient slug={slug} />;
+}
