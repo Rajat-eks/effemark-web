@@ -26,7 +26,7 @@ const page: React.FC<PageProps> = (props) => {
     <main className="flex flex-col md:flex-row p-4 sm:p-6 md:p-14 gap-5">
       <section className="w-full md:w-[65%] space-y-5">
         <Image
-          src="/images/S1_Step-by-Step_ Converting Your 3D Model.jpg"
+          src="/images/S2_The Hidden Dangers of Filing a.jpg"
           alt="The Hidden Dangers of Filing a Trademark Without a Prior Search"
           width={300}
           height={300}

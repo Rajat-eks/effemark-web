@@ -1480,11 +1480,31 @@ export const articles = [
     status: true,
     createdAt: new Date("2026-06-16"),
     slug: "hidden-dangers-filing-trademark-without-prior-search",
-    filepath: "/images/S1_Step-by-Step_ Converting Your 3D Model.jpg",
+    filepath: "/images/S2_The Hidden Dangers of Filing a.jpg",
     heading:
       "The Hidden Dangers of Filing a Trademark Without a Prior Search",
     content:
       "Filing a trademark without a prior search can trigger refusals, infringement claims, forced rebranding, and investor red flags. This guide explains eight hidden dangers and why comprehensive clearance is a strategic safeguard before you invest in branding.",
+  },
+  {
+    metaTitle:
+      "Australian Trademark Search: A Complete Guide to IP Australia's Database",
+    metaDescription:
+      "Learn how to conduct an effective trademark search in Australia using IP Australia's official database — classification, similarity analysis, common-law rights, and step-by-step search guidance.",
+    metakewword: [
+      "Australian Trademark Search",
+      "IP Australia",
+      "IP Australia Database",
+      "Trademark Search Australia",
+    ],
+    status: true,
+    createdAt: new Date("2026-06-17"),
+    slug: "australian-trademark-search-complete-guide-ip-australia-database",
+    filepath: "/images/S2_Australian Trademark Search.jpg",
+    heading:
+      "Australian Trademark Search: A Complete Guide to IP Australia's Database",
+    content:
+      "A trademark search in Australia starts with IP Australia's official database — but effective clearance requires Nice Classification, similarity analysis, pending-application review, and common-law checks. This guide walks through each step.",
   },
 ];
 
