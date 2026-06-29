@@ -1632,6 +1632,27 @@ export const articles = [
     content:
       "A German trademark search through DPMAregister is essential for global brands — analyze exact and similar marks, Nice Classification scope, EU and Madrid System registrations, and application status before entering Germany's market.",
   },
+  {
+    metaTitle:
+      "French Trademark Search: INPI France Guide for International Registrants",
+    metaDescription:
+      "Learn how to conduct a comprehensive French trademark search using the INPI database — exact and similarity searches, Nice Classification, EUIPO and WIPO clearance, and step-by-step guidance for international registrants.",
+    metakewword: [
+      "French Trademark Search",
+      "INPI France",
+      "INPI Database",
+      "France Trademark Search",
+      "Trademark Search France",
+    ],
+    status: true,
+    createdAt: new Date("2026-06-29"),
+    slug: "french-trademark-search-inpi-france-guide-for-international-registrants",
+    filepath: "/images/S2_French Trademark Search.jpg",
+    heading:
+      "French Trademark Search: INPI France Guide for International Registrants",
+    content:
+      "A French trademark search through INPI is essential for international registrants — analyze exact and similar marks, Nice Classification scope, EUIPO and WIPO registrations, and application status before entering France's market.",
+  },
 ];
 
 const page: React.FC<PageProps> = (props) => {
