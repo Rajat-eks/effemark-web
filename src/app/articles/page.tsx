@@ -1653,6 +1653,27 @@ export const articles = [
     content:
       "A French trademark search through INPI is essential for international registrants — analyze exact and similar marks, Nice Classification scope, EUIPO and WIPO registrations, and application status before entering France's market.",
   },
+  {
+    metaTitle:
+      "Russian Trademark Search: How to Use Rospatent for Brand Clearance",
+    metaDescription:
+      "Learn how to conduct a comprehensive Russian trademark search using Rospatent — exact and similarity searches, Cyrillic transliterations, Nice Classification, image-based logo clearance, and step-by-step brand clearance guidance.",
+    metakewword: [
+      "Russian Trademark Search",
+      "Rospatent",
+      "Russia Trademark Search",
+      "Trademark Search Russia",
+      "Rospatent Database",
+    ],
+    status: true,
+    createdAt: new Date("2026-06-29"),
+    slug: "russian-trademark-search-how-to-use-rospatent-for-brand-clearance",
+    filepath: "/images/S2_Russian Trademark Search.jpg",
+    heading:
+      "Russian Trademark Search: How to Use Rospatent for Brand Clearance",
+    content:
+      "A Russian trademark search through Rospatent is essential before entering the Russian market — analyze exact and similar marks, Cyrillic transliterations, Nice Classification scope, image-based logo conflicts, and pending application status for thorough brand clearance.",
+  },
 ];
 
 const page: React.FC<PageProps> = (props) => {
