@@ -1674,6 +1674,27 @@ export const articles = [
     content:
       "A Russian trademark search through Rospatent is essential before entering the Russian market — analyze exact and similar marks, Cyrillic transliterations, Nice Classification scope, image-based logo conflicts, and pending application status for thorough brand clearance.",
   },
+  {
+    metaTitle:
+      "Turkish Trademark Search: TURKPATENT Database Guide for Brand Owners",
+    metaDescription:
+      "Learn how to conduct effective trademark clearance searches using the TURKPATENT database — trademark name, applicant, Nice Classification, and status filters, plus step-by-step guidance for brand owners in Türkiye.",
+    metakewword: [
+      "Turkish Trademark Search",
+      "TURKPATENT",
+      "Türkiye Trademark Search",
+      "Turkey Trademark Search",
+      "TURKPATENT Database",
+    ],
+    status: true,
+    createdAt: new Date("2026-07-01"),
+    slug: "turkish-trademark-search-turkpatent-database-guide-for-brand-owners",
+    filepath: "/images/S2_Turkish Trademark Search.png",
+    heading:
+      "Turkish Trademark Search: TURKPATENT Database Guide for Brand Owners",
+    content:
+      "A Turkish trademark search through TURKPATENT is essential before filing — brand owners must analyze exact and similar marks, phonetic and figurative conflicts, Nice Classification scope, and application status to reduce registration risks in Türkiye.",
+  },
 ];
 
 const page: React.FC<PageProps> = (props) => {
