@@ -1774,7 +1774,29 @@ export const articles = [
     heading:
       "South Africa Trademark Search: CIPC Database and Registration Guide",
     content:
-      "Protecting your brand is an essential step for any business operating in South Africa. Whether you're launching a startup, expanding internationally, or introducing a new product, conducting a trademark search before filing an application can help you avoid legal disputes and costly rebranding."},
+      "Protecting your brand is an essential step for any business operating in South Africa. Whether you're launching a startup, expanding internationally, or introducing a new product, conducting a trademark search before filing an application can help you avoid legal disputes and costly rebranding.",
+  },
+  {
+    metaTitle:
+      "Southeast Asia Brand Protection: Building a Multi-Country Trademark Strategy",
+    metaDescription:
+      "Learn how businesses can protect trademarks across Southeast Asia with a coordinated multi-country filing, monitoring, enforcement, and portfolio management strategy.",
+    metakewword: [
+      "Southeast Asia Brand Protection",
+      "Multi-Country Trademark Strategy",
+      "ASEAN Trademark Protection",
+      "Trademark Protection Southeast Asia",
+      "International Trademark Strategy",
+    ],
+    status: true,
+    createdAt: new Date("2026-07-08"),
+    slug: "southeast-asia-brand-protection-building-multi-country-trademark-strategy",
+    filepath: "/images/S1_Southeast Asia Brand Protection.jpg",
+    heading:
+      "Southeast Asia Brand Protection: Building a Multi-Country Trademark Strategy",
+    content:
+      "Southeast Asia offers major opportunities for international expansion, but trademark rights remain territorial. This guide explains how to build a coordinated multi-country trademark strategy across the region.",
+  },
 ];
 
 const page: React.FC<PageProps> = (props) => {
