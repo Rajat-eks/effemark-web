@@ -1839,6 +1839,27 @@ export const articles = [
     content:
       "Luxury brands face sophisticated counterfeit threats across marketplaces and jurisdictions. This guide explains how trademark watch services enable early detection, opposition, and anti-counterfeiting enforcement before fakes damage reputation and revenue.",
   },
+  {
+    metaTitle:
+      "Trademark Search for Mobile Apps: Protecting Your App Name and Icon",
+    metaDescription:
+      "Before launching a mobile app, a trademark search protects your app name, icon, and brand identity from conflicts, marketplace removals, and costly rebranding.",
+    metakewword: [
+      "Trademark Search for Mobile Apps",
+      "Mobile App Trademark Search",
+      "App Name Trademark",
+      "App Icon Trademark Protection",
+    ],
+    status: true,
+    createdAt: new Date("2026-07-15"),
+    slug: "trademark-search-for-mobile-apps-protecting-your-app-name-and-icon",
+    filepath:
+      "/images/S2_Trademark Search for Mobile App.jpg",
+    heading:
+      "Trademark Search for Mobile Apps: Protecting Your App Name and Icon",
+    content:
+      "App store availability does not mean trademark clearance. This guide explains how to search app names, icons, and branding across trademark databases, marketplaces, and jurisdictions before launch.",
+  },
 ];
 
 const page: React.FC<PageProps> = (props) => {
