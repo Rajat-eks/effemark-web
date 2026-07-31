@@ -2081,6 +2081,26 @@ export const articles = [
     content:
       "Automation is reshaping trademark docketing for IP professionals—cutting human error, centralizing global portfolios, strengthening deadline management, and unlocking AI-driven efficiency.",
   },
+  {
+    metaTitle:
+      "Trademark Docketing for In-House Counsel: Streamlining Compliance Across Jurisdictions",
+    metaDescription:
+      "Learn how trademark docketing helps in-house counsel streamline multi-jurisdiction compliance, reduce missed deadlines, and protect global brand portfolios.",
+    metakewword: [
+      "Trademark Docketing for In-House Counsel",
+      "Multi-Jurisdiction Trademark Compliance",
+      "Trademark Portfolio Management",
+      "Trademark Deadline Tracking",
+    ],
+    status: true,
+    createdAt: new Date("2026-07-31"),
+    slug: "trademark-docketing-for-in-house-counsel-streamlining-compliance-across-jurisdictions",
+    filepath: "/images/S1_Trademark Docketing for In-House Counsel_ Streamlining Compliance Across Jurisdictions.jpg",
+    heading:
+      "Trademark Docketing for In-House Counsel: Streamlining Compliance Across Jurisdictions",
+    content:
+      "In-house counsel managing global trademark portfolios need structured docketing to track multi-jurisdiction deadlines, renewals, and compliance. Learn how professional docketing streamlines brand protection.",
+  },
 ];
 
 const page: React.FC<PageProps> = (props) => {
