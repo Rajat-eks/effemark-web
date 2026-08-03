@@ -133,23 +133,14 @@ export default function SmartDocketingArticle() {
   return (
     <main className="flex flex-col gap-5 p-4 sm:p-6 md:flex-row md:p-14">
       <section className="w-full space-y-5 md:w-[65%]">
-        <Image src="/images/ {
-    metaTitle: "How Smart Docketing Prevents Accidental Trademark Abandonment",
-    metaDescription:
-      "Learn how smart trademark docketing helps prevent accidental abandonment through automated deadlines, reminders, workflows, and centralized portfolio management.",
-    metakewword: [
-      "smart trademark docketing",
-      "trademark abandonment prevention",
-      "trademark deadline management",
-    ],
-    status: true,
-    createdAt: new Date("2026-08-03"),
-    slug: "how-smart-docketing-prevents-accidental-trademark-abandonment",
-    filepath: "/images/S1_How Smart Docketing Prevents Accidental Trademark Abandonment.jpg",
-    heading: "How Smart Docketing Prevents Accidental Trademark Abandonment",
-    content:
-      "Learn how smart docketing systems help trademark owners avoid missed deadlines, streamline workflows, and protect valuable intellectual property rights.",
-  }," alt="How Smart Docketing Prevents Accidental Trademark Abandonment" width={1200} height={630} className="h-auto w-full" priority />
+        <Image
+          src="/images/S1_How Smart Docketing Prevents Accidental Trademark Abandonment.jpg"
+          alt="How Smart Docketing Prevents Accidental Trademark Abandonment"
+          width={1200}
+          height={630}
+          className="h-auto w-full"
+          priority
+        />
         <div className="flex flex-col"><h1 className="text-[20px] font-bold sm:text-[25px] md:text-[30px]">How Smart Docketing Prevents Accidental Trademark Abandonment</h1><span className="text-[12px] text-blue-600 sm:text-[14px]">Published on 03/08/2026</span></div>
         <article className="space-y-4 text-justify sm:space-y-5">
           {sections.map((section) => <section key={section.title} className="space-y-3"><h2 className="text-[20px] font-bold sm:text-[22px] md:text-[25px]">{section.title}</h2>{section.paragraphs?.map((paragraph) => <p key={paragraph} className="text-[14px] sm:text-[15px] md:text-[16px]">{paragraph}</p>)}{section.list && <ul className="list-disc space-y-1 pl-5 text-[14px] sm:text-[15px] md:text-[16px]">{section.list.map((item) => <li key={item}>{item}</li>)}</ul>}{section.after && <p className="text-[14px] sm:text-[15px] md:text-[16px]">{section.after}</p>}{section.items?.map(([heading, body]) => <div key={heading} className="space-y-1"><h3 className="text-[17px] font-semibold sm:text-[18px]">{heading}</h3><p className="text-[14px] sm:text-[15px] md:text-[16px]">{body}</p></div>)}</section>)}
