@@ -2175,6 +2175,25 @@ export const articles = [
     content:
       "Trademark Office Actions carry strict response deadlines. Learn how centralized tracking, reminder stages, clear ownership, and response workflows can keep applications moving toward registration.",
   },
+  {
+    metaTitle: "Trademark Docketing for Small IP Law Firms: Affordable Tools and Strategies",
+    metaDescription:
+      "Trademark Docketing for Small IP Law Firms: Affordable Tools and Strategies",
+    metakewword: [
+      "Trademark Office Action Deadlines",
+      "Trademark Deadline Management",
+      "Trademark Application Abandonment",
+      "Trademark Docketing",
+    ],
+    status: true,
+    createdAt: new Date("2026-08-06"),
+    slug: "trademark-docketing-for-small-IP-law-firms",
+    filepath: "/images/S2_Trademark Docketing for Small IP Law Firms_ Affordable Tools and Strategies.jpg",
+    heading:
+      "Trademark Docketing for Small IP Law Firms: Affordable Tools and Strategies",
+    content:
+      "Managing trademark deadlines is one of the most critical responsibilities for any intellectual property (IP) law firm. Missing a filing deadline, renewal date, or office action response can have significant consequences for both clients and legal practitioners",
+  },
 ];
 
 const page: React.FC<PageProps> = (props) => {
