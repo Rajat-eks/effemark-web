@@ -27,7 +27,7 @@ const page: React.FC<PageProps> = () => {
     <main className="flex flex-col md:flex-row p-4 sm:p-6 md:p-14 gap-5">
       <section className="w-full md:w-[65%] space-y-5">
         <Image
-          src="/images/Trademark Watch Frequency Guide.jpg"
+          src="/images/S2_How Often Should You Run a Trademark Watch_.jpg"
           alt="How often should you run a trademark watch - a frequency guide for every brand"
           width={300}
           height={300}
