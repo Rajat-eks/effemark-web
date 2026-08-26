@@ -2412,6 +2412,26 @@ export const articles = [
     content:
       "The priority date is the date of first use of a trademark in the United States. It is the date that the trademark was first used in the United States, and it is used to determine the date of first use of a trademark in the United States."
   },
+  {
+    metaTitle:
+      "Trademark Specimen Requirements: What Qualifies and What Gets Rejected",
+    metaDescription:
+      "Trademark Specimen Requirements: What Qualifies and What Gets Rejected",
+    metakewword: [
+      "Trademark Monitoring False Positives",
+      "Trademark Watch Screening",
+      "Trademark Alert Triage",
+      "Trademark Monitoring Workflow",
+    ],
+    status: true,
+    createdAt: new Date("2026-08-17"),
+    slug: "trademark-specimen-requirements",
+    filepath: "/images/S2_Trademark Specimen Requirement.jpg",
+    heading:
+      "Trademark Specimen Requirements: What Qualifies and What Gets Rejected",
+    content:
+      "A trademark specimen is one of the most important pieces of evidence in a U.S. trademark application when registration is based on actual use in commerce. "
+  },
 ];
 
 const page: React.FC<PageProps> = (props) => {
