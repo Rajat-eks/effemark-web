@@ -2472,6 +2472,26 @@ export const articles = [
     content:
       "Trademark licensing can be an effective way for businesses to expand brand reach, enter new markets and generate additional revenue without directly manufacturing or selling every licensed product or service. "
   },
+  {
+    metaTitle:
+      "TM, SM and ®: When and How to Use Each Trademark Symbol Correctly",
+    metaDescription:
+      "TM, SM and ®: When and How to Use Each Trademark Symbol Correctly",
+    metakewword: [
+      "Trademark Monitoring False Positives",
+      "Trademark Watch Screening",
+      "Trademark Alert Triage",
+      "Trademark Monitoring Workflow",
+    ],
+    status: true,
+    createdAt: new Date("2026-08-17"),
+    slug: "tm-sm-and-when-and-how-to-use-each-trademark-symbol-correctly",
+    filepath: "/images/S1_TM, SM.jpg",
+    heading:
+      "TM, SM and ®: When and How to Use Each Trademark Symbol Correctly",
+    content:
+      "Trademark symbols may look small, but they serve an important purpose. The symbols TM, SM and ® communicate information about the status of a brand name, logo, slogan, or other identifier."
+  },
 ];
 
 const page: React.FC<PageProps> = (props) => {
