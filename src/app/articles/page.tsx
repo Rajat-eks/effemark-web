@@ -2486,7 +2486,7 @@ export const articles = [
     status: true,
     createdAt: new Date("2026-08-17"),
     slug: "tm-sm-and-when-and-how-to-use-each-trademark-symbol-correctly",
-    filepath: "/images/S1_TM, SM.jpg",
+    filepath: "/images/S1-TM-SM.jpg",
     heading:
       "TM, SM and ®: When and How to Use Each Trademark Symbol Correctly",
     content:
