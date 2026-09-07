@@ -2552,6 +2552,26 @@ export const articles = [
     content:
       "Choosing a trademark that immediately tells consumers what a product or service does can be tempting. Descriptive terms can be easy to communicate and market because customers understand them without much explanation"
   },
+  {
+    metaTitle:
+      "Trademark Rights Exhaustion: What It Means for Global Brand Owners",
+    metaDescription:
+      "Trademark Rights Exhaustion: What It Means for Global Brand Owners",
+    metakewword: [
+      "Trademark Monitoring False Positives",
+      "Trademark Watch Screening",
+      "Trademark Alert Triage",
+      "Trademark Monitoring Workflow",
+    ],
+    status: true,
+    createdAt: new Date("2026-08-17"),
+    slug: "trademark-rights-exhaustion",
+    filepath: "/images/S2_Trademark Rights Exhaustion.jpg",
+    heading:
+      "Trademark Rights Exhaustion: What It Means for Global Brand Owners",
+    content:
+      "A brand owner can spend years building consistent pricing, packaging and distribution for a product  - and then watch a container of the same product show up on a discount retailer's shelves in another country"
+  },
 ];
 
 const page: React.FC<PageProps> = (props) => {
