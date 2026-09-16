@@ -2692,6 +2692,26 @@ export const articles = [
     content:
       "For most of trademark law's history, the archetypal trademark owner was a company: a manufacturer, a retailer, a corporation with a legal department. Today, some of the most valuable and most vulnerable brands"
   },
+   {
+    metaTitle:
+      "Color Trademark Search: How to Check if a Color Is Already Claimed",
+    metaDescription:
+      "Color Trademark Search: How to Check if a Color Is Already Claimed",
+    metakewword: [
+      "Trademark Monitoring False Positives",
+      "Trademark Watch Screening",
+      "Trademark Alert Triage",
+      "Trademark Monitoring Workflow",
+    ],
+    status: true,
+    createdAt: new Date("2026-08-17"),
+    slug: "color-trademark-search",
+    filepath: "/images/S2_Color Trademark Search.jpg",
+    heading:
+      "Color Trademark Search: How to Check if a Color Is Already Claimed",
+    content:
+      "Color marks are among the most powerful - and most difficult to clear - assets in trademark law. Tiffany's robin's-egg blue, UPS's brown, T-Mobile's magenta and Owens Corning's pink insulation all function as source identifiers in their respective industries"
+  },
 ];
 
 const page: React.FC<PageProps> = (props) => {
