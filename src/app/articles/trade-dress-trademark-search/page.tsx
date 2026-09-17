@@ -28,7 +28,7 @@ const page: React.FC<PageProps> = () => {
     <main className="flex flex-col md:flex-row p-4 sm:p-6 md:p-14 gap-5">
       <section className="w-full md:w-[65%] space-y-5">
         <Image
-          src="/imagesS1_Trade Dress Trademark Search.jpg"
+          src="/images/S1_Trade Dress Trademark Search.jpg"
           alt="Trade dress trademark search: protecting the look and feel of your brand"
           width={300}
           height={300}
