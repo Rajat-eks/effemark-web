@@ -2712,6 +2712,26 @@ export const articles = [
     content:
       "Color marks are among the most powerful - and most difficult to clear - assets in trademark law. Tiffany's robin's-egg blue, UPS's brown, T-Mobile's magenta and Owens Corning's pink insulation all function as source identifiers in their respective industries"
   },
+   {
+    metaTitle:
+      "Color Trademark Search: How to Check if a Color Is Already Claimed",
+    metaDescription:
+      "Color Trademark Search: How to Check if a Color Is Already Claimed",
+    metakewword: [
+      "Trademark Monitoring False Positives",
+      "Trademark Watch Screening",
+      "Trademark Alert Triage",
+      "Trademark Monitoring Workflow",
+    ],
+    status: true,
+    createdAt: new Date("2026-08-17"),
+    slug: "trade-dress-trademark-search",
+    filepath: "/images/S1_Trade Dress Trademark Search.jpg",
+    heading:
+      "Trade Dress Trademark Search: Protecting the Look and Feel of Your Brand",
+    content:
+      "A brand's identity is rarely just its name and logo. It's the deep blue of a Tiffany box, the contoured glass of a Coca-Cola bottle, the layout and color scheme of an Apple retail store, the plating and garnish style of a signature restaurant dish. Collectively"
+  },
 ];
 
 const page: React.FC<PageProps> = (props) => {
