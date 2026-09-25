@@ -2758,9 +2758,9 @@ export const articles = [
     heading:
       "Motion Trademarks Explained: How to Search for Animated Brand Marks",
     content:
-      "A motion mark protects a sequence of images or animations as a source identifier. Because there's no single image to compare, clearing a motion mark before filing works differently than clearing a word or logo mark."
+      "A motion mark protects a sequence of images or animations as a source identifier. Because there's no single image to compare, clearing a motion mark before filing works differently than clearing a word or logo mark.",
   },
-   {
+  {
     metaTitle:
       "3D Shape Trademark Search: Protecting Packaging and Product Design",
     metaDescription:
@@ -2778,7 +2778,7 @@ export const articles = [
     heading:
       "3D Shape Trademark Search: Protecting Packaging and Product Design",
     content:
-      "Some of the most valuable brand assets are not words or logos at all. The curve of a soda bottle, the silhouette of a chocolate, and the profile of a lighter are recognized by consumers even with the name stripped away."
+      "Some of the most valuable brand assets are not words or logos at all. The curve of a soda bottle, the silhouette of a chocolate, and the profile of a lighter are recognized by consumers even with the name stripped away.",
   },
   {
     metaTitle:
@@ -2798,9 +2798,9 @@ export const articles = [
     heading:
       "Trademark Search During Rebranding: Steps to Protect Your New Identity",
     content:
-      "When you name a brand for the first time, a conflict costs you a name that has little equity. A rebrand is different. You've usually spent money on the new name before anyone tells you it's a problem: a new logo"
+      "When you name a brand for the first time, a conflict costs you a name that has little equity. A rebrand is different. You've usually spent money on the new name before anyone tells you it's a problem: a new logo",
   },
-    {
+  {
     metaTitle:
       "Trademark Due Diligence in M&A: Why a Deep Search Is Non-Negotiable",
     metaDescription:
@@ -2818,7 +2818,28 @@ export const articles = [
     heading:
       "Trademark Due Diligence in M&A: Why a Deep Search Is Non-Negotiable",
     content:
-      "Trademarks are frequently among the most valuable - and most underexamined - assets in a merger or acquisition. A brand can represent decades of goodwill, customer loyalty and market recognition, yet trademark due diligence is often treated as a checkbox"
+      "Trademarks are frequently among the most valuable - and most underexamined - assets in a merger or acquisition. A brand can represent decades of goodwill, customer loyalty and market recognition, yet trademark due diligence is often treated as a checkbox",
+  },
+
+  {
+    metaTitle:
+      "Trademark Due Diligence Checklist for Business Acquisitions and Investments",
+    metaDescription:
+      "Trademark Due Diligence Checklist for Business Acquisitions and Investments",
+    metakewword: [
+      "Trademark Monitoring False Positives",
+      "Trademark Watch Screening",
+      "Trademark Alert Triage",
+      "Trademark Monitoring Workflow",
+    ],
+    status: true,
+    createdAt: new Date("2026-08-17"),
+    slug: "trademark-due-diligence-checklist",
+    filepath: "/images/S1_Trademark Due Diligence Checklist for Business.jpg",
+    heading:
+      "Trademark Due Diligence Checklist for Business Acquisitions and Investments",
+    content:
+      "Trademarks are often among the most valuable - and most overlooked - assets in an M&A or investment deal. A target's brand equity can represent a significant share of purchase price",
   },
 ];
 
