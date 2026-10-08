@@ -2861,9 +2861,8 @@ export const articles = [
     content:
       "A trademark is legal protection wrapped around a commercial promise. Its worth is not the registration certificate. It is the future economic benefit that flows from customers recognizing the mark and choosing the branded product over alternatives, less the risk that the benefit is eroded or lost.",
   },
-   {
-    metaTitle:
-      "Trademark Portfolio Audit: When, Why andHow to Conduct One",
+  {
+    metaTitle: "Trademark Portfolio Audit: When, Why andHow to Conduct One",
     metaDescription:
       "Trademark Portfolio Audit: When, Why andHow to Conduct One",
     metakewword: [
@@ -2876,12 +2875,11 @@ export const articles = [
     createdAt: new Date("2026-08-17"),
     slug: "trademark-portfolio-audit-when-why-andhow-to-conduct-one",
     filepath: "/images/S2_Trademark Portfolio Audit.jpg",
-    heading:
-      "Trademark Portfolio Audit: When, Why andHow to Conduct One",
+    heading: "Trademark Portfolio Audit: When, Why andHow to Conduct One",
     content:
       "A trademark portfolio is a living asset - it grows through new filings, shifts through rebranding anddecays through abandonment, non-use andmarket changes. Left unmanaged, even a carefully built portfolio accumulates dead weight",
   },
-   {
+  {
     metaTitle:
       "Trademark Watch for Private Label Brands: Protecting Products Without a Big Budget",
     metaDescription:
@@ -2901,7 +2899,7 @@ export const articles = [
     content:
       "Private label brands, sold under a retailer's or seller's own name rather than a manufacturer's, are among the fastest-growing segments in retail. Grocers, drugstores, marketplace sellers and small direct-to-consumer businesses all build their own labels for margin and loyalty reasons.",
   },
-   {
+  {
     metaTitle:
       "International Trademark Filing Strategy: Choosing Between Madrid and National Routes",
     metaDescription:
@@ -2922,7 +2920,7 @@ export const articles = [
       "Trademark rights are territorial. A registration in one country gives you no rights in another, so any brand that sells, manufactures, or advertises across borders needs a plan for where and how to file.",
   },
 
-     {
+  {
     metaTitle:
       "Why Trademark Monitoring Is Even More Critical After Registration",
     metaDescription:
@@ -2941,6 +2939,26 @@ export const articles = [
       "Why Trademark Monitoring Is Even More Critical After Registration",
     content:
       "Many businesses treat registration as the finish line. The certificate arrives, the mark goes on the wall and the file gets closed. In reality, registration is the point at which your obligations as an owner begin. ",
+  },
+   {
+    metaTitle:
+      "Using Trademark Monitoring Evidence in Infringement Litigation",
+    metaDescription:
+      "Using Trademark Monitoring Evidence in Infringement Litigation",
+    metakewword: [
+      "Trademark Monitoring False Positives",
+      "Trademark Watch Screening",
+      "Trademark Alert Triage",
+      "Trademark Monitoring Workflow",
+    ],
+    status: true,
+    createdAt: new Date("2026-08-17"),
+    slug: "using-trademark-monitoring-evidence-in-infringement-litigation",
+    filepath: "/images/S2_Using Trademark Monitoring Evidence.jpg",
+    heading:
+      "Using Trademark Monitoring Evidence in Infringement Litigation",
+    content:
+      "Trademark monitoring, also called trademark watching, is the systematic surveillance of new applications, registrations, marketplace listings, domain names, social media handles and other uses that may conflict with a mark.",
   },
 ];
 
