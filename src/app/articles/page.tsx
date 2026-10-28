@@ -3175,6 +3175,26 @@ export const articles = [
     content:
       "A cybersecurity company sells trust. Customers hand over network visibility, credentials and sometimes administrative control of their systems on the strength of a brand.",
   },
+  {
+    metaTitle:
+      "Global Trademark Docketing: How to Track and Manage International Filings",
+    metaDescription:
+      "Global Trademark Docketing: How to Track and Manage International Filings",
+    metakewword: [
+      "Trademark Monitoring False Positives",
+      "Trademark Watch Screening",
+      "Trademark Alert Triage",
+      "Trademark Monitoring Workflow",
+    ],
+    status: true,
+    createdAt: new Date("2026-08-17"),
+    slug: "global-trademark-docketing",
+    filepath: "/images/S2_Global Trademark Docketing.jpg",
+    heading:
+      "Global Trademark Docketing",
+    content:
+      "A trademark portfolio is only as strong as the deadlines that keep it alive. A missed renewal, a late declaration of use or an unanswered office action can end rights that took years and substantial budget to build.",
+  },
 ];
 
 const page: React.FC<PageProps> = (props) => {
