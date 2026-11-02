@@ -3215,6 +3215,46 @@ export const articles = [
     content:
       "Trademark rights are maintained through deadlines. A missed maintenance filing can cancel a registration, a late office action response can abandon an application and an unmonitored opposition window can let a conflicting mark proceed to registration. ",
   },
+   {
+    metaTitle:
+      "How to Conduct a Trademark Docketing Audit to Eliminate Compliance Gaps",
+    metaDescription:
+      "How to Conduct a Trademark Docketing Audit to Eliminate Compliance Gaps",
+    metakewword: [
+      "Trademark Monitoring False Positives",
+      "Trademark Watch Screening",
+      "Trademark Alert Triage",
+      "Trademark Monitoring Workflow",
+    ],
+    status: true,
+    createdAt: new Date("2026-08-17"),
+    slug: "how-to-conduct-a-trademark-docketing-audit-to-eliminate-compliance-gaps",
+    filepath: "/images/S2_How to Conduct a Trademark Docketing.jpg",
+    heading:
+      "How to Conduct a Trademark Docketing Audit to Eliminate Compliance Gaps",
+    content:
+      "Trademark rights are maintained through deadlines. A missed maintenance filing can cancel a registration, a late office action response can abandon an application and an unmonitored opposition window can let a conflicting mark proceed to registration. ",
+  },
+  {
+    metaTitle:
+      "Trademark Watch After a Company Name Change: Keeping Your Brand Protected Through Transitions",
+    metaDescription:
+      "Trademark Watch After a Company Name Change: Keeping Your Brand Protected Through Transitions",
+    metakewword: [
+      "Trademark Monitoring False Positives",
+      "Trademark Watch Screening",
+      "Trademark Alert Triage",
+      "Trademark Monitoring Workflow",
+    ],
+    status: true,
+    createdAt: new Date("2026-08-17"),
+    slug: "trademark-watch-after-a-company-name-change-keeping-your-brand-protected-through-transitions",
+    filepath: "/images/Trademark Watch After a Company Name Change.jpg",
+    heading:
+      "Trademark Watch After a Company Name Change: Keeping Your Brand Protected Through Transitions",
+    content:
+      "A company name change is common after a merger, acquisition, rebrand, restructuring or reincorporation. It is also one of the moments when trademark protection is most likely to develop gaps.",
+  },
 ];
 
 const page: React.FC<PageProps> = (props) => {
