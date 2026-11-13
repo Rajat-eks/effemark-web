@@ -3355,6 +3355,46 @@ export const articles = [
     content:
       "A founder’s brand is often the first asset an investor can see and the one customers are most likely to remember. Yet it is also an asset that can be taken away by a single cease-and-desist letter."
   },
+   {
+    metaTitle:
+      "Trademark Use in Commerce",
+    metaDescription:
+      "Trademark Use in Commerce",
+    metakewword: [
+      "Trademark Monitoring False Positives",
+      "Trademark Watch Screening",
+      "Trademark Alert Triage",
+      "Trademark Monitoring Workflow",
+    ],
+    status: true,
+    createdAt: new Date("2026-08-17"),
+    slug: "trademark-use-in-commerce",
+    filepath: "/images/S2_Why Investors Expect a Clean Trademark.jpg",
+    heading:
+      "Trademark Use in Commerce",
+    content:
+      "A founder’s brand is often the first asset an investor can see and the one customers are most likely to remember. Yet it is also an asset that can be taken away by a single cease-and-desist letter."
+  },
+   {
+    metaTitle:
+      "Trademark Squatting Explained",
+    metaDescription:
+      "Trademark Squatting Explained",
+    metakewword: [
+      "Trademark Monitoring False Positives",
+      "Trademark Watch Screening",
+      "Trademark Alert Triage",
+      "Trademark Monitoring Workflow",
+    ],
+    status: true,
+    createdAt: new Date("2026-08-17"),
+    slug: "trademark-squatting-explained",
+    filepath: "/images/S2_Trademark Squatting Explained.jpg",
+    heading:
+      "Trademark Squatting Explained",
+    content:
+      "A brand can be registered in someone else’s name before its true owner ever arrives in a market. That is the essence of trademark squatting."
+  },
 ];
 
 const page: React.FC<PageProps> = (props) => {
