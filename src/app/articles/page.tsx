@@ -3135,11 +3135,9 @@ export const articles = [
     content:
       "Trademark Watch for Cannabis Brands: Navigating a Rapidly Growing and Competitive Space",
   },
-   {
-    metaTitle:
-      "Trademark Search for Fintech Brands",
-    metaDescription:
-      "Trademark Search for Fintech Brands",
+  {
+    metaTitle: "Trademark Search for Fintech Brands",
+    metaDescription: "Trademark Search for Fintech Brands",
     metakewword: [
       "Trademark Monitoring False Positives",
       "Trademark Watch Screening",
@@ -3150,8 +3148,7 @@ export const articles = [
     createdAt: new Date("2026-08-17"),
     slug: "trademark-search-fintech-brands",
     filepath: "/images/S2_Trademark Search for Fintech Brands.jpg",
-    heading:
-      "Trademark Search for Fintech Brands",
+    heading: "Trademark Search for Fintech Brands",
     content:
       "Financial technology has produced an enormous number of new brands in a short time: payment apps, neobanks, lending platforms, crypto and digital-asset services, insurtech, wealthtech, regtech and embedded-finance tools.",
   },
@@ -3190,8 +3187,7 @@ export const articles = [
     createdAt: new Date("2026-08-17"),
     slug: "global-trademark-docketing",
     filepath: "/images/S2_Global Trademark Docketing.jpg",
-    heading:
-      "Global Trademark Docketing",
+    heading: "Global Trademark Docketing",
     content:
       "A trademark portfolio is only as strong as the deadlines that keep it alive. A missed renewal, a late declaration of use or an unanswered office action can end rights that took years and substantial budget to build.",
   },
@@ -3215,7 +3211,7 @@ export const articles = [
     content:
       "Trademark rights are maintained through deadlines. A missed maintenance filing can cancel a registration, a late office action response can abandon an application and an unmonitored opposition window can let a conflicting mark proceed to registration. ",
   },
-   {
+  {
     metaTitle:
       "How to Conduct a Trademark Docketing Audit to Eliminate Compliance Gaps",
     metaDescription:
@@ -3275,11 +3271,9 @@ export const articles = [
     content:
       "Trademark monitoring is one of those programs that is easy to approve when a crisis hits and easy to cut when budgets tighten. When it works, nothing visibly happens.",
   },
-   {
-    metaTitle:
-      "Trademark Search for Crowdfunding Campaigns",
-    metaDescription:
-      "Trademark Search for Crowdfunding Campaigns",
+  {
+    metaTitle: "Trademark Search for Crowdfunding Campaigns",
+    metaDescription: "Trademark Search for Crowdfunding Campaigns",
     metakewword: [
       "Trademark Monitoring False Positives",
       "Trademark Watch Screening",
@@ -3290,8 +3284,7 @@ export const articles = [
     createdAt: new Date("2026-08-17"),
     slug: "trademark-search-for-crowdfunding-campaigns",
     filepath: "/images/S2_Trademark Search for Crowdfunding Campaigns.jpg",
-    heading:
-      "Trademark Search for Crowdfunding Campaigns",
+    heading: "Trademark Search for Crowdfunding Campaigns",
     content:
       "A crowdfunding campaign is a public product launch compressed into a few weeks. Within days of going live, a project name, logo and tagline can reach thousands of backers, journalists and competitors. ",
   },
@@ -3315,7 +3308,7 @@ export const articles = [
     content:
       "A trademark is only as strong as its owner’s willingness to police it. Registration gives you rights, but those rights can erode if conflicting marks are allowed to spread unchallenged.",
   },
-   {
+  {
     metaTitle:
       "Trademark Watch for Subscription Box and DTC Brands: Monitoring in High-Growth Markets",
     metaDescription:
@@ -3329,13 +3322,14 @@ export const articles = [
     status: true,
     createdAt: new Date("2026-08-17"),
     slug: "trademark-watch-for-subscription-box-and-dtc-brands-monitoring-in-high-growth-markets",
-    filepath: "/images/S2_Trademark Watch for Subscription Box and DTC Brands.jpg",
+    filepath:
+      "/images/S2_Trademark Watch for Subscription Box and DTC Brands.jpg",
     heading:
       "Trademark Watch for Subscription Box and DTC Brands: Monitoring in High-Growth Markets",
     content:
       "Subscription box and direct-to-consumer (DTC) brands live and die by their names. A distinctive brand is the main asset that carries customer acquisition spending, social media following, influencer relationships and repeat purchases. ",
   },
-   {
+  {
     metaTitle:
       "Why Investors Expect a Clean Trademark Search Before Funding Your Brand",
     metaDescription:
@@ -3353,13 +3347,11 @@ export const articles = [
     heading:
       "Why Investors Expect a Clean Trademark Search Before Funding Your Brand",
     content:
-      "A founder’s brand is often the first asset an investor can see and the one customers are most likely to remember. Yet it is also an asset that can be taken away by a single cease-and-desist letter."
+      "A founder’s brand is often the first asset an investor can see and the one customers are most likely to remember. Yet it is also an asset that can be taken away by a single cease-and-desist letter.",
   },
-   {
-    metaTitle:
-      "Trademark Use in Commerce",
-    metaDescription:
-      "Trademark Use in Commerce",
+  {
+    metaTitle: "Trademark Use in Commerce",
+    metaDescription: "Trademark Use in Commerce",
     metakewword: [
       "Trademark Monitoring False Positives",
       "Trademark Watch Screening",
@@ -3370,16 +3362,13 @@ export const articles = [
     createdAt: new Date("2026-08-17"),
     slug: "trademark-use-in-commerce",
     filepath: "/images/S2_Why Investors Expect a Clean Trademark.jpg",
-    heading:
-      "Trademark Use in Commerce",
+    heading: "Trademark Use in Commerce",
     content:
-      "A founder’s brand is often the first asset an investor can see and the one customers are most likely to remember. Yet it is also an asset that can be taken away by a single cease-and-desist letter."
+      "A founder’s brand is often the first asset an investor can see and the one customers are most likely to remember. Yet it is also an asset that can be taken away by a single cease-and-desist letter.",
   },
-   {
-    metaTitle:
-      "Trademark Squatting Explained",
-    metaDescription:
-      "Trademark Squatting Explained",
+  {
+    metaTitle: "Trademark Squatting Explained",
+    metaDescription: "Trademark Squatting Explained",
     metakewword: [
       "Trademark Monitoring False Positives",
       "Trademark Watch Screening",
@@ -3390,12 +3379,11 @@ export const articles = [
     createdAt: new Date("2026-08-17"),
     slug: "trademark-squatting-explained",
     filepath: "/images/S2_Trademark Squatting Explained.jpg",
-    heading:
-      "Trademark Squatting Explained",
+    heading: "Trademark Squatting Explained",
     content:
-      "A brand can be registered in someone else’s name before its true owner ever arrives in a market. That is the essence of trademark squatting."
+      "A brand can be registered in someone else’s name before its true owner ever arrives in a market. That is the essence of trademark squatting.",
   },
-    {
+  {
     metaTitle:
       "Trademark Protection for AI-Generated Brand Names: Ownership, Risks and Legal Challenges",
     metaDescription:
@@ -3413,7 +3401,7 @@ export const articles = [
     heading:
       "Trademark Protection for AI-Generated Brand Names: Ownership, Risks and Legal Challenges",
     content:
-      "Generative AI tools can produce hundreds of candidate brand names in seconds. For startups and marketing teams, that is attractive: faster brainstorming, a wider range of coined words and lower naming-agency costs."
+      "Generative AI tools can produce hundreds of candidate brand names in seconds. For startups and marketing teams, that is attractive: faster brainstorming, a wider range of coined words and lower naming-agency costs.",
   },
   {
     metaTitle:
@@ -3433,8 +3421,9 @@ export const articles = [
     heading:
       "Trademark Rights in Co-Branding Partnerships: Avoiding Ownership and Usage Disputes",
     content:
-      "Co-branding is a marketing arrangement in which two independent brands appear together on a product, service, promotion or event. Familiar patterns include a consumer brand on a partner’s device."
-  },{
+      "Co-branding is a marketing arrangement in which two independent brands appear together on a product, service, promotion or event. Familiar patterns include a consumer brand on a partner’s device.",
+  },
+  {
     metaTitle:
       "Geographical Indications vs. Trademarks: Understanding the Differences in Brand Protection",
     metaDescription:
@@ -3452,7 +3441,27 @@ export const articles = [
     heading:
       "Geographical Indications vs. Trademarks: Understanding the Differences in Brand Protection",
     content:
-      "Geographical indications (GIs) and trademarks are both important tools for brand protection, but they serve different purposes and have distinct characteristics."
+      "Geographical indications (GIs) and trademarks are both important tools for brand protection, but they serve different purposes and have distinct characteristics.",
+  },
+  {
+    metaTitle:
+      "Trademark Rights in Employee-Created Brands: Who Owns the Intellectual Property?",
+    metaDescription:
+      "Trademark Rights in Employee-Created Brands: Who Owns the Intellectual Property?",
+    metakewword: [
+      "Trademark Monitoring False Positives",
+      "Trademark Watch Screening",
+      "Trademark Alert Triage",
+      "Trademark Monitoring Workflow",
+    ],
+    status: true,
+    createdAt: new Date("2026-08-17"),
+    slug: "trademark-rights-in-employee-created-brands-who-owns-the-intellectual-property",
+    filepath: "/images/S2_Trademark Rights in Employee-Created Brands.jpg",
+    heading:
+      "Trademark Rights in Employee-Created Brands: Who Owns the Intellectual Property?",
+    content:
+      "When employees create brands or intellectual property as part of their job duties, questions arise about ownership and rights. This article explores the legal considerations and best practices for handling such situations.",
   },
 ];
 
