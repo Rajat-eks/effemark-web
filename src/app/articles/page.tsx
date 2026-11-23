@@ -3483,6 +3483,26 @@ export const articles = [
     content:
       "Few sensory experiences are as closely tied to memory and emotion as smell. Hotels pipe signature scents through lobbies, toy makers build a smell into modeling dough and fragrance houses spend years perfecting a single accord. ",
   },
+   {
+    metaTitle:
+      "Can a Trademark Be Inherited?",
+    metaDescription:
+      "Can a Trademark Be Inherited?",
+    metakewword: [
+      "Trademark Monitoring False Positives",
+      "Trademark Watch Screening",
+      "Trademark Alert Triage",
+      "Trademark Monitoring Workflow",
+    ],
+    status: true,
+    createdAt: new Date("2026-08-17"),
+    slug: "can-a-trademark-be-inherited",
+    filepath: "/images/Can a Trademark Be Inherited.jpg",
+    heading:
+      "Can a Trademark Be Inherited?",
+    content:
+      "When the founder of a business dies, the family often inherits the house, the bank accounts and the equipment. What is easily overlooked is the brand. The name, logo or slogan that customers recognise may be the most valuable asset of all.",
+  },
 ];
 
 const page: React.FC<PageProps> = (props) => {
