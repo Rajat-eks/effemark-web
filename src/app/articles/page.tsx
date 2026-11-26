@@ -3523,6 +3523,26 @@ export const articles = [
     content:
       "For many businesses the brand is the most valuable asset left when operations stop. Customers recognise the name, the logo and the goodwill attached to them long after the stores close or the product line is discontinued.",
   },
+  {
+    metaTitle:
+      "Trademark Rights in AI Training Data: Can Brand Owners Control How Their Marks Are Used?",
+    metaDescription:
+        "Trademark Protection in Bankruptcy: What Happens to Brand Rights When a Business Fails?",
+      metakewword: [
+      "Trademark Monitoring False Positives",
+      "Trademark Watch Screening",
+      "Trademark Alert Triage",
+      "Trademark Monitoring Workflow",
+    ],
+    status: true,
+    createdAt: new Date("2026-08-17"),
+    slug: "trademark-rights-in-ai-training-data-can-brand-owners-control-how-their-marks-are-used",
+    filepath: "/images/S1_Trademark Rights in AI Training Data.jpg",
+    heading:
+      "Trademark Rights in AI Training Data: Can Brand Owners Control How Their Marks Are Used?",
+    content:
+      "Brand owners generally cannot use trademark law alone to stop the mere ingestion of their marks into an AI training dataset.",
+  },
 ];
 
 const page: React.FC<PageProps> = (props) => {
