@@ -3543,6 +3543,26 @@ export const articles = [
     content:
       "Brand owners generally cannot use trademark law alone to stop the mere ingestion of their marks into an AI training dataset.",
   },
+   {
+    metaTitle:
+      "Trademark Protection for Celebrity Endorsements: Managing Brand Rights and Commercial Identity",
+    metaDescription:
+        "Trademark Protection for Celebrity Endorsements: Managing Brand Rights and Commercial Identity",
+      metakewword: [
+      "Trademark Monitoring False Positives",
+      "Trademark Watch Screening",
+      "Trademark Alert Triage",
+      "Trademark Monitoring Workflow",
+    ],
+    status: true,
+    createdAt: new Date("2026-08-17"),
+    slug: "trademark-protection-for-celebrity-endorsements-managing-brand-rights-and-commercial-identity",
+    filepath: "/images/S1_Trademark Protection for Celebrity.jpg",
+    heading:
+      "Trademark Protection for Celebrity Endorsements: Managing Brand Rights and Commercial Identity",
+    content:
+      "A celebrity endorsement is valuable because consumers transfer trust and aspiration from a person to a product. That same transfer creates legal risk in every direction.",
+  },
 ];
 
 const page: React.FC<PageProps> = (props) => {
